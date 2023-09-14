@@ -1,8 +1,8 @@
 <h1 align="center">
-📄<br>Gerenciador para biblioteca
+📄<br>Gerenciador para bibliotecas
 </h1>
  <h3 align="center">
-Projeto de um gerenciador de biblioteca requisitado aos alunos do MI-Algoritmos e programação II da Universidade Estadual de Feira de Santana.
+Projeto de um gerenciador para bibliotecas requisitado aos alunos do MI-Algoritmos e programação II da Universidade Estadual de Feira de Santana.
 </h3>
 
 <h3 align="center">
