@@ -1,0 +1,93 @@
+@startuml PBL_JAVA
+
+abstract class Pessoa{
+    -nome: String
+    -endereco: String
+    -telefone: String
+    -id: String
+    -senha: String
+    -CARGO1: String = bibliotecario (final)
+    -CARGO2: String =  administrador (final)
+    +logar(objeto: Pessoa) : Pessoa
+    +mudarNome(objeto: Pessoa) : Pessoa
+    +mudarEndereco(objeto: Pessoa) : Pessoa
+    +mudarTelefone(objeto: Pessoa) : Pessoa
+    +pesquisarLivro(objeto: Livro) : Livro
+}
+
+class Convidado {
+    -statusConta: Boolean
+    +reservarLivro(objeto: Livro) : boolean
+    +renovarEmprestimo(objeto: Livro, objeto: Emprestimo) : boolean
+}
+
+class Bibliotecario{
+    +registrarEmprestimo(objeto: Livro, objeto: Emprestimo) : boolean
+    +registrarDevolucao(objeto: Livro, , objeto: Emprestimo) : boolean
+    +registrarLivro(objeto: Livro) : Livro
+}
+
+class Administrador{
+    +removerLivro(objeto: Livro) : Livro
+    +editarLivro(objeto: Livro) : Livro
+    +registrarUsuario(objeto: Usuario) : Usuario
+    +bloquearUsuario(objeto: Usuario) : Usuario
+    +gerarMulta(objeto: Emprestimo)
+    +gerarEstatistica(objeto: Livro) : void
+    +relatorioDeUsuarios(objeto: Usuario) : void
+}
+
+class Livro{
+    -título: String
+    -autor: String
+    -editora: String
+    -isbn: String
+    -anoDePublicação: String
+    -categoria: Categoria
+    -editora: String
+    -localização: String
+    -statusLivro: Boolean
+    +mudarNome(objeto: Livro) : Livro
+    +mudarAutor(objeto: Livro) : Livro
+    +mudarCategoria(objeto: Livro) : Livro
+    +mudarEditora(objeto: Livro) : Livro
+    +mudarAnoDepublicacao(objeto: Livro) : Livro
+    +mudarLocalizacao(objeto: Livro) : Livro
+}
+
+class Emprestimo{
+    -dataEmprestimo: String
+    -dataDevolucao: String
+    -infoUsuario: Usuario
+    -infoLivro: Livro
+    -NUMERO_RENOVACOES: int = 2 (final)
+    +renovarEmprestimo(objeto: Livro, objeto: Emprestimo) : void
+    +devolucaoEmprestimo(objeto: Livro, objeto: Emprestimo) : void
+}
+
+class Categoria {
+    -CATEGORIA1: String = didatico (final)
+    -CATEGORIA2: String = romance (final)
+    -CATEGORIA3: String = comedia (final)
+    -CATEGORIA4: String = ficcaoCientifica (final)
+    -CATEGORIA5: String = fantasia (final)
+    -CATEGORIA6: String = infantoJuvenil(final)
+    -CATEGORIA7: String = biografia (final)
+    -CATEGORIA8: String = misterio (final)
+    -CATEGORIA9: String = outros(as) (final)
+}
+
+Emprestimo --> Livro : usa
+Emprestimo --> Convidado : usa
+Administrador --> Emprestimo : usa
+Bibliotecario --> Emprestimo : usa
+
+Categoria "1..*"--"1..*" Livro : possui
+Emprestimo "1"--"1" Convidado
+
+Pessoa <|-- Bibliotecario : é um
+Pessoa <|-- Administrador : é um
+Pessoa <|-- Convidado : é um
+Adminsitrador <|-- Bibliotecario : é um
+
+@enduml
