@@ -1,26 +1,15 @@
 package com.uefs.gerenciadorparabibliotecas.dao;
 
-import com.uefs.gerenciadorparabibliotecas.dao.pessoa.PessoaDAO;
-import com.uefs.gerenciadorparabibliotecas.dao.pessoa.PessoaDAOList;
-import com.uefs.gerenciadorparabibliotecas.dao.usuario.UsuarioDAO;
-import com.uefs.gerenciadorparabibliotecas.dao.usuario.UsuarioDAOList;
-import com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAO;
-import com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAOList;
-import com.uefs.gerenciadorparabibliotecas.dao.livro.LivroDAO;
-import com.uefs.gerenciadorparabibliotecas.dao.livro.LivroDAOList;
+import com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*;
+import com.uefs.gerenciadorparabibliotecas.dao.funcionario.*;
+import com.uefs.gerenciadorparabibliotecas.dao.leitor.*;
+import com.uefs.gerenciadorparabibliotecas.dao.livro.*;
 
 public class MasterDAO {
-    private static PessoaDAO pessoaDAO;
-    private static UsuarioDAO usuarioDAO;
     private static EmprestimoDAO emprestimoDAO;
+    private static FuncionarioDAO funcionarioDAO;
+    private static LeitorDAO leitorDAO;
     private static LivroDAO livroDAO;
-
-    public static PessoaDAO getPessoaDAO() {
-        if (pessoaDAO == null) {
-            pessoaDAO = new PessoaDAOList();
-        }
-        return pessoaDAO;
-    }
 
     public static EmprestimoDAO getEmprestimoDAO() {
         if (emprestimoDAO == null) {
@@ -28,18 +17,22 @@ public class MasterDAO {
         }
         return emprestimoDAO;
     }
-
+    public static FuncionarioDAO getFuncionarioDAO() {
+        if (funcionarioDAO == null) {
+            funcionarioDAO = new FuncionarioDAOList();
+        }
+        return funcionarioDAO;
+    }
+    public static LeitorDAO getLeitorDAO() {
+        if (leitorDAO == null) {
+            leitorDAO = new LeitorDAOList();
+        }
+        return leitorDAO;
+    }
     public static LivroDAO getLivroDAO() {
         if (livroDAO == null) {
             livroDAO = new LivroDAOList();
         }
         return livroDAO;
-    }
-
-    public static UsuarioDAO getUsuarioDAO() {
-        if (usuarioDAO == null) {
-            usuarioDAO = new UsuarioDAOList();
-        }
-        return usuarioDAO;
     }
 }

@@ -1,7 +1,9 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Livro {
     protected String titulo;
@@ -13,7 +15,7 @@ public class Livro {
     protected boolean disponibilidade;
     protected String localizacao;
     protected LocalDate estimativaDeDevolucao;
-    protected Integer livroID;
+    protected int livroID;
     protected List<Emprestimo> historicoDeEmprestimos;
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
                   LocalDate novoAnoDePublicacao, CategoriaLivro novaCategoria, String novaLocalizacao) {
@@ -25,8 +27,6 @@ public class Livro {
         this.categoria = novaCategoria;
         this.disponibilidade = true;
         this.localizacao = novaLocalizacao;
-        this.estimativaDeDevolucao = LocalDate.now();
-        this.historicoDeEmprestimos = new ArrayList<>();
     }
 
     public String getTitulo () {
@@ -56,7 +56,7 @@ public class Livro {
     public LocalDate getEstimativaDeDevolucao () {
         return this.estimativaDeDevolucao;
     }
-    public Integer getLivroID () {
+    public int getLivroID () {
         return this.livroID;
     }
     public List<Emprestimo> getHistorico () {
@@ -90,16 +90,20 @@ public class Livro {
     public void setEstimativaDeDevolucao (LocalDate novaDataDeDevolucao) {
         this.estimativaDeDevolucao = novaDataDeDevolucao;
     }
-    public void setLivroID(Integer livroID) {
+    public void setLivroID(int livroID) {
         this.livroID = livroID;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Livro livro)) return false;
-        return Objects.equals(getLivroID(), livro.getLivroID());
+    public boolean equals(Livro l) {
+        if ((l == null)|| getClass() != l.getClass()) {
+            return false;
+        }
+        if (this == l) {
+            return true;
+        }
+        return false;
     }
+
 
     @Override
     public String toString() {

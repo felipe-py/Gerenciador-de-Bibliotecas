@@ -1,7 +1,5 @@
 package com.uefs.gerenciadorparabibliotecas.dao;
 
-import java.util.List;
-
 public interface CRUD<T> {
     /**
      * Cria novo objeto

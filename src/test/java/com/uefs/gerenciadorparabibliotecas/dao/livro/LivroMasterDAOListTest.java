@@ -12,14 +12,14 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LivroDAOListTest {
+class LivroMasterDAOListTest {
     private Livro livro;
 
     @BeforeEach
     void beforeAll() {
         LocalDate data = LocalDate.of(1998, 1, 1);
 
-        this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",data, CategoriaLivro.OUTRA,"ala c");
+        this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",data,CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(this.livro);
 
     }

@@ -60,7 +60,7 @@ public class LivroDAOList implements LivroDAO{
     @Override
     public List<Livro> procurarPorISBN(String ISBN){
         List<Livro> livrosISBN = livros.stream()
-        .filter(a -> a.getISBN().equals(ISBN))
+                .filter(a -> a.getISBN().equals(ISBN))
                 .collect(Collectors.toList());
         return  livrosISBN;
     }

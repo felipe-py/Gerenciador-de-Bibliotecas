@@ -2,8 +2,6 @@ package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 
 import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
 
-import java.util.List;
-
 public class EmprestimoDAOList implements EmprestimoDAO{
     @Override
     public Emprestimo criar(Emprestimo obj) {
