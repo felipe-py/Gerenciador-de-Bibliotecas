@@ -42,11 +42,11 @@ data de devolução esperada e a identificação do usuário que realizou o empr
 
 ## Diagrama de classes 
 
-- Clique [aqui](https://github.com/felipe-py/Gerenciador-de-biblioteca/blob/main/docs/Diagrama_de_classes.png) para acessar o diagrama de classe.
+- Clique [aqui](https://github.com/felipe-py/Gerenciador-de-Bibliotecas/blob/master/docs/Diagrama_de_classes.png) para acessar o diagrama de classe.
 
 ## Diagrama de casos de uso 
 
-- Clique [aqui](https://github.com/felipe-py/Gerenciador-de-biblioteca/blob/main/docs/Diagrama_de_casos_de_uso-1.png) para acessar o diagrama de casos de uso.
+- Clique [aqui](https://github.com/felipe-py/Gerenciador-de-Bibliotecas/blob/master/docs/Diagrama_de_casos_de_uso-1.png) para acessar o diagrama de casos de uso.
 
 ## Padrão de commits utilizado no projeto
 
