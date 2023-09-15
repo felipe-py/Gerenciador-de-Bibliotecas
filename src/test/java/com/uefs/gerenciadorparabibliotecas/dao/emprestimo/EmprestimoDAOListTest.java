@@ -13,13 +13,13 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class EmprestimoDAOListTest {
+ class EmprestimoDAOListTest {
 
     private Emprestimo emprestimo;
     private Livro livro;
     private Leitor leitor;
     @BeforeEach
-    void beforeAll() {
+     void beforeAll() {
         LocalDate data = LocalDate.of(1998, 1, 1);
         LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
         LocalDate dataDevolucao = LocalDate.of(2023,9,21);
@@ -32,12 +32,12 @@ class EmprestimoDAOListTest {
     }
 
     @AfterEach
-    void tearDown() {
+     void tearDown() {
         MasterDAO.getEmprestimoDAO().resetar();
     }
 
     @Test
-    void criar() {
+     void criar() {
         LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
         LocalDate dataDevolucaoAux = LocalDate.of(2023,9,21);
         assertEquals(dataEmprestimoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataEmprestimo());
@@ -47,7 +47,7 @@ class EmprestimoDAOListTest {
     }
 
     @Test
-    void deletar() {
+     void deletar() {
         LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
         LocalDate dataDevolucao = LocalDate.of(2023,9,21);
         Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
@@ -58,13 +58,13 @@ class EmprestimoDAOListTest {
     }
 
     @Test
-    void resetar() {
+     void resetar() {
         MasterDAO.getEmprestimoDAO().resetar();
         assertNull(MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()));
     }
 
     @Test
-    void procurarPorID() {
+     void procurarPorID() {
         assertEquals(emprestimo, MasterDAO.getEmprestimoDAO().procurarPorID(0));
     }
 }
