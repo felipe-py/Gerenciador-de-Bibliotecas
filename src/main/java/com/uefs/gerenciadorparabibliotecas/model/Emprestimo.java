@@ -13,9 +13,8 @@ public class Emprestimo {
     protected boolean naoDevolvido;
 
 
-    public Emprestimo (int novoEmprestimoID, LocalDate novaDataEmprestimo, LocalDate novaDataDeDevolucao,
+    public Emprestimo (LocalDate novaDataEmprestimo, LocalDate novaDataDeDevolucao,
                        Livro novoLivroEmprestado, Leitor novoMutuario) {
-        this.emprestimoID = novoEmprestimoID;
         this.dataEmprestimo = novaDataEmprestimo;
         this.dataDevolucao = novaDataDeDevolucao;
         this.atraso = 0;
