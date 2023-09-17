@@ -39,10 +39,7 @@ public class LeitorDAOList implements LeitorDAO {
         this.leitores = new ArrayList<>();
     }
 
-    @Override
-    public Leitor atualizar(Leitor obj) {
-        return null;
-    }
+
 
     @Override
     public Leitor procurarPorID(int id) {

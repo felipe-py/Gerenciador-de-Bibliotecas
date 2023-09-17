@@ -40,10 +40,7 @@ public class FuncionarioDAOList implements FuncionarioDAO{
         this.funcionarios = new ArrayList<>();
     }
 
-    @Override
-    public Funcionario atualizar(Funcionario obj) {
-        return null;
-    }
+
 
     @Override
     public Funcionario procurarPorID(int id) {

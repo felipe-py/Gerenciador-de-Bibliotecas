@@ -42,10 +42,7 @@ public class EmprestimoDAOList implements EmprestimoDAO{
         this.novoID = 0;
     }
 
-    @Override
-    public Emprestimo atualizar(Emprestimo obj) {
-        return null;
-    }
+
 
 
     @Override
