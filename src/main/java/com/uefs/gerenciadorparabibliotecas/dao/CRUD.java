@@ -1,5 +1,9 @@
 package com.uefs.gerenciadorparabibliotecas.dao;
 
+import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
+
+import java.time.LocalDate;
+
 public interface CRUD<T> {
     /**
      * Cria novo objeto
@@ -25,10 +29,9 @@ public interface CRUD<T> {
     /**
      * Atualiza um objeto
      *
-     * @param obj
+     * @param
      * @return
      */
-    public T atualizar(T obj);
 
     /**
      * Ler toda a lista de dados
