@@ -19,7 +19,8 @@ public class LivroMasterDAOListTest {
     void beforeAll() {
         LocalDate data = LocalDate.of(1998, 1, 1);
 
-        this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",data,CategoriaLivro.OUTRA,"ala c");
+        this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",
+                data,CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(this.livro);
 
     }
@@ -109,5 +110,22 @@ public class LivroMasterDAOListTest {
         MasterDAO.getLivroDAO().resetar();
         assertNull(MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()));
         assertNull(MasterDAO.getLivroDAO().procurarPorID(livroAux.getLivroID()));
+    }
+
+    @Test
+    void atualizar(){
+        LocalDate data = LocalDate.of(2005, 1, 1);
+        Livro livroAux2 = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999",data,
+                CategoriaLivro.FANTASIA,"ala f");
+        MasterDAO.getLivroDAO().criar(livroAux2);
+        MasterDAO.getLivroDAO().atualizar(1,"Senhor dos Anéis","JR","Warner Pictures",
+                "4455889",data,CategoriaLivro.FANTASIA,"ala r");
+        assertEquals("Senhor dos Anéis", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getTitulo());
+        assertEquals("JR", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getautor());
+        assertEquals("Warner Pictures", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getEditora());
+        assertEquals("4455889", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getISBN());
+        assertEquals(data, MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getAnoDePublicacao());
+        assertEquals(CategoriaLivro.FANTASIA, MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getCategoria());
+        assertEquals("ala r", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getLocalizacao());
     }
 }
