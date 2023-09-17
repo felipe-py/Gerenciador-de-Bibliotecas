@@ -13,7 +13,7 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
- class EmprestimoDAOListTest {
+ public class EmprestimoDAOListTest {
 
     private Emprestimo emprestimo;
     private Livro livro;

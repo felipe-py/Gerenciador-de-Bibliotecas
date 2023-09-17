@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
- class FuncionarioDAOListTest {
+ public class FuncionarioDAOListTest {
 
     private Funcionario funcionarioAdm;
     private Funcionario funcionarioBiblio;
