@@ -1,5 +1,6 @@
 package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 
+import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
 
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ public class EmprestimoDAOList implements EmprestimoDAO{
         emprestimo.setEmprestimoID(this.novoID);
         this.novoID++;
         this.emprestimos.add(emprestimo);
+        emprestimo.getMutuario().adicionarEmprestimo(emprestimo);
+        emprestimo.getLivroEmprestado().setDisponibilidade(false);
         return emprestimo;
     }
 
@@ -41,9 +44,6 @@ public class EmprestimoDAOList implements EmprestimoDAO{
         this.emprestimos = new ArrayList<>();
         this.novoID = 0;
     }
-
-
-
 
     @Override
     public Emprestimo procurarPorID(int id) {
