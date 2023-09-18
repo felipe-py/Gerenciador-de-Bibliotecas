@@ -20,10 +20,9 @@ import static org.junit.jupiter.api.Assertions.*;
     private Leitor leitor;
     @BeforeEach
      void beforeAll() {
-        LocalDate data = LocalDate.of(1998, 1, 1);
         LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
         LocalDate dataDevolucao = LocalDate.of(2023,9,21);
-        this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",data,
+        this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
                 CategoriaLivro.OUTRA,"ala c");
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 4477);
@@ -66,5 +65,18 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
      void procurarPorID() {
         assertEquals(emprestimo, MasterDAO.getEmprestimoDAO().procurarPorID(0));
+    }
+
+    @Test
+    void disponibilidadeLivroEmprestado() {
+       Livro livroAux = new Livro("Cálculo II","James","EUA","1144558","1998",
+               CategoriaLivro.DIDATICO,"ala d");
+       assertTrue(livroAux.getDisponibilidade());
+       assertFalse(this.livro.getDisponibilidade());
+    }
+
+    @Test
+    void adicionarListaemprestimosLeitor(){
+       System.out.println(this.emprestimo.getMutuario().getEmprestimos());
     }
 }
