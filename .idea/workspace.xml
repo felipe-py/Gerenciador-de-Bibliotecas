@@ -204,7 +204,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1694988207818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1695074250991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.uefs.gerenciadorparabibliotecas.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$LeitorDAOListTest.ic" NAME="LeitorDAOListTest Coverage Results" MODIFIED="1694735226984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
