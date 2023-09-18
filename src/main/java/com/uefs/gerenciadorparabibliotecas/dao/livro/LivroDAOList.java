@@ -3,7 +3,6 @@ package com.uefs.gerenciadorparabibliotecas.dao.livro;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -45,7 +44,7 @@ public class LivroDAOList implements LivroDAO{
     }
     @Override
     public void atualizar(Integer id, String novoTitulo, String novoAutor, String novaEditora, String novoISBN,
-                          LocalDate novaData, CategoriaLivro novaCategoria, String novaLocalizacao) {
+                          String novaData, CategoriaLivro novaCategoria, String novaLocalizacao) {
 
         for(Livro livro: this.livros){
             if(livro.getLivroID() == id){

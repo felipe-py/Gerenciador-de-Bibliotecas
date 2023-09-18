@@ -10,7 +10,7 @@ public class Livro {
     protected String autor;
     protected String editora;
     protected String isbn;
-    protected LocalDate anoDePublicacao;
+    protected String anoDePublicacao;
     protected CategoriaLivro categoria;
     protected boolean disponibilidade;
     protected String localizacao;
@@ -18,7 +18,7 @@ public class Livro {
     protected int livroID;
     protected List<Emprestimo> historicoDeEmprestimos;
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
-                  LocalDate novoAnoDePublicacao, CategoriaLivro novaCategoria, String novaLocalizacao) {
+                  String novoAnoDePublicacao, CategoriaLivro novaCategoria, String novaLocalizacao) {
         this.titulo = novoTitulo;
         this.autor = novoAutor;
         this.editora = novaEditora;
@@ -41,7 +41,7 @@ public class Livro {
     public String getISBN () {
         return this.isbn;
     }
-    public LocalDate getAnoDePublicacao () {
+    public String getAnoDePublicacao () {
         return this.anoDePublicacao;
     }
     public CategoriaLivro getCategoria () {
@@ -78,8 +78,8 @@ public class Livro {
     public void setCategoria (CategoriaLivro novaCategoria) {
         this.categoria = novaCategoria;
     }
-    public void setAnoDePublicacao (LocalDate novoAnoDePublicacao) {
-        this.anoDePublicacao = novoAnoDePublicacao;
+    public void setAnoDePublicacao (String anoDePublicacao) {
+        this.anoDePublicacao = anoDePublicacao;
     }
     public void setDisponibilidade (boolean novaDisponibilidade) {
         this.disponibilidade = novaDisponibilidade;

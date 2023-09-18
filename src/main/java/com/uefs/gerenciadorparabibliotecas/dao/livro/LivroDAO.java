@@ -15,5 +15,5 @@ public interface LivroDAO extends CRUD<Livro> {
     List<Livro> procurarPorCategoria(CategoriaLivro categoriaLivro);
     List<Livro> getLivros();
     void atualizar(Integer id, String novoTitulo, String novoAutor, String novaEditora, String novoISBN,
-                   LocalDate novaData, CategoriaLivro novaCategoria, String novaLocalizacao);
+                   String novaData, CategoriaLivro novaCategoria, String novaLocalizacao);
 }

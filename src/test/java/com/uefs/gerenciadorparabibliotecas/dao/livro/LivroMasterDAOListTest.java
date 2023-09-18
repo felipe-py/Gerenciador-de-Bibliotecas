@@ -17,10 +17,8 @@ public class LivroMasterDAOListTest {
 
     @BeforeEach
     void beforeAll() {
-        LocalDate data = LocalDate.of(1998, 1, 1);
-
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",
-                data,CategoriaLivro.OUTRA,"ala c");
+                "2013",CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(this.livro);
 
     }
@@ -32,12 +30,11 @@ public class LivroMasterDAOListTest {
 
     @Test
     void criar() {
-        LocalDate data = LocalDate.of(1998, 1, 1);
         assertEquals("Diário de um banana", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getTitulo());
         assertEquals("Zezinho", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getautor());
         assertEquals("Cultura", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getEditora());
         assertEquals("4455883", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getISBN());
-        assertEquals(data, MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getAnoDePublicacao());
+        assertEquals("2013", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getAnoDePublicacao());
         assertEquals(CategoriaLivro.OUTRA, MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getCategoria());
         assertEquals("ala c", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getLocalizacao());
     }
@@ -48,8 +45,8 @@ public class LivroMasterDAOListTest {
     }
     @Test
     void buscarPorISBN(){
-        LocalDate data = LocalDate.of(1998, 1, 1);
-        Livro livroAux2 = new Livro("Diário de um banana","Zezinho","Cultura","4455783",data, CategoriaLivro.OUTRA,"ala c");
+        Livro livroAux2 = new Livro("Diário de um banana","Zezinho","Cultura",
+                "4455783","2013", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux2);
         List<Livro> testeAux1 = MasterDAO.getLivroDAO().getLivros();
         List<Livro> testeAux2 = MasterDAO.getLivroDAO().procurarPorISBN("4455883");
@@ -58,8 +55,8 @@ public class LivroMasterDAOListTest {
 
     @Test
     void buscarPorAutor(){
-        LocalDate data = LocalDate.of(1998, 1, 1);
-        Livro livroAux3 = new Livro("Diário de um banana 2","Zezinho","Cultura","4455999",data, CategoriaLivro.OUTRA,"ala c");
+        Livro livroAux3 = new Livro("Diário de um banana 2","Zezinho","Cultura",
+                "4455999","2014", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux3);
         List<Livro> testeAux1 = MasterDAO.getLivroDAO().getLivros();
         List<Livro> testeAux2 = MasterDAO.getLivroDAO().procurarPorAutor("Zezinho");
@@ -68,8 +65,8 @@ public class LivroMasterDAOListTest {
 
     @Test
     void buscarPorTitulo(){
-        LocalDate data = LocalDate.of(1998, 1, 1);
-        Livro livroAux4 = new Livro("Diário de um banana 2","Zezinho","Cultura","4455999",data, CategoriaLivro.OUTRA,"ala c");
+        Livro livroAux4 = new Livro("Diário de um banana 2","Zezinho","Cultura",
+                "4455999","2014", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux4);
         List<Livro> testeAux1 = MasterDAO.getLivroDAO().getLivros();
         List<Livro> testeAux2 = MasterDAO.getLivroDAO().procurarPorTitulo("Diário de um banana");
@@ -78,8 +75,8 @@ public class LivroMasterDAOListTest {
 
     @Test
     void buscarPorCategoria(){
-        LocalDate data = LocalDate.of(1998, 1, 1);
-        Livro livroAux5 = new Livro("Diário de um banana 2","Zezinho","Cultura","4455999",data, CategoriaLivro.OUTRA,"ala c");
+        Livro livroAux5 = new Livro("Diário de um banana 2","Zezinho","Cultura",
+                "4455999","2014", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux5);
         List<Livro> testeAux1 = MasterDAO.getLivroDAO().getLivros();
         List<Livro> testeAux2 = MasterDAO.getLivroDAO().procurarPorCategoria(CategoriaLivro.OUTRA);
@@ -89,8 +86,8 @@ public class LivroMasterDAOListTest {
 
     @Test
     void deletar() {
-        LocalDate data = LocalDate.of(2000, 1, 1);
-        Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452",data,
+        Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452"
+                ,"2001",
                 CategoriaLivro.FANTASIA,"ala d");
         MasterDAO.getLivroDAO().criar(livroAux);
 
@@ -102,8 +99,7 @@ public class LivroMasterDAOListTest {
 
     @Test
     void resetar(){
-        LocalDate data = LocalDate.of(2000, 1, 1);
-        Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452",data,
+        Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452","2001",
                 CategoriaLivro.FANTASIA,"ala d");
         MasterDAO.getLivroDAO().criar(livroAux);
 
@@ -114,17 +110,16 @@ public class LivroMasterDAOListTest {
 
     @Test
     void atualizar(){
-        LocalDate data = LocalDate.of(2005, 1, 1);
-        Livro livroAux2 = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999",data,
+        Livro livroAux2 = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999","2008",
                 CategoriaLivro.FANTASIA,"ala f");
         MasterDAO.getLivroDAO().criar(livroAux2);
         MasterDAO.getLivroDAO().atualizar(1,"Senhor dos Anéis","JR","Warner Pictures",
-                "4455889",data,CategoriaLivro.FANTASIA,"ala r");
+                "4455889","2006",CategoriaLivro.FANTASIA,"ala r");
         assertEquals("Senhor dos Anéis", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getTitulo());
         assertEquals("JR", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getautor());
         assertEquals("Warner Pictures", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getEditora());
         assertEquals("4455889", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getISBN());
-        assertEquals(data, MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getAnoDePublicacao());
+        assertEquals("2006", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getAnoDePublicacao());
         assertEquals(CategoriaLivro.FANTASIA, MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getCategoria());
         assertEquals("ala r", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getLocalizacao());
     }
