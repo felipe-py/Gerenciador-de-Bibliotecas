@@ -7,6 +7,10 @@ public class Leitor extends Pessoa {
     public int diasDeMulta;
     private List<Emprestimo> emprestimos;
 
+    public void adicionarEmprestimo(Emprestimo emprestimo){
+        this.emprestimos.add(emprestimo);
+    }
+
     public Leitor(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, int novoUserID) {
         super(novoNome, novoEndereco, novaSenha, novoNumeroDeTelefone, novoUserID);
         this.diasDeMulta = 0;
