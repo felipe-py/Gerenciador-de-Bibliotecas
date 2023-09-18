@@ -22,7 +22,6 @@ public class Emprestimo {
         this.mutuario = novoMutuario;
         this.numeroDeRenovacoes = 0;
         this.naoDevolvido = true;
-
     }
 
     public int getEmprestimoID() {

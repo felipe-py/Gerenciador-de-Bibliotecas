@@ -23,8 +23,6 @@ public class LeitorDAOList implements LeitorDAO {
         return leitor;
     }
 
-
-
     @Override
     public void deletar(int id) {
         for(Leitor leitor: this.leitores){
