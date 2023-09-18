@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" afterDir="false" />
