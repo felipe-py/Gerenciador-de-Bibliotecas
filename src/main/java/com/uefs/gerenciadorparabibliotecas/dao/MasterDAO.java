@@ -4,12 +4,23 @@ import com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*;
 import com.uefs.gerenciadorparabibliotecas.dao.funcionario.*;
 import com.uefs.gerenciadorparabibliotecas.dao.leitor.*;
 import com.uefs.gerenciadorparabibliotecas.dao.livro.*;
+import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAO;
+import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOList;
 
 public class MasterDAO {
     private static EmprestimoDAO emprestimoDAO;
     private static FuncionarioDAO funcionarioDAO;
     private static LeitorDAO leitorDAO;
     private static LivroDAO livroDAO;
+
+    private static ReservaDAO reservaDAO;
+
+    public static ReservaDAO getReservaDAO(){
+        if(reservaDAO == null){
+            reservaDAO = new ReservaDAOList();
+        }
+        return reservaDAO;
+    }
 
     public static EmprestimoDAO getEmprestimoDAO() {
         if (emprestimoDAO == null) {
