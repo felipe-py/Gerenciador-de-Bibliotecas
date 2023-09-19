@@ -12,10 +12,11 @@ public class Livro {
     protected String isbn;
     protected String anoDePublicacao;
     protected CategoriaLivro categoria;
-    protected boolean disponibilidade;
+    protected boolean disponibilidade = true;
     protected String localizacao;
     protected LocalDate estimativaDeDevolucao;
     protected int livroID;
+    private boolean statusReserva = false;
     protected List<Emprestimo> historicoDeEmprestimos;
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
                   String novoAnoDePublicacao, CategoriaLivro novaCategoria, String novaLocalizacao) {
@@ -25,8 +26,15 @@ public class Livro {
         this.isbn = novoIsbn;
         this.anoDePublicacao = novoAnoDePublicacao;
         this.categoria = novaCategoria;
-        this.disponibilidade = true;
         this.localizacao = novaLocalizacao;
+    }
+
+    public boolean isStatusReserva() {
+        return statusReserva;
+    }
+
+    public void setStatusReserva(boolean statusReserva) {
+        this.statusReserva = statusReserva;
     }
 
     public String getTitulo () {
@@ -108,6 +116,7 @@ public class Livro {
     @Override
     public String toString() {
         return "Livro{" +
+                "LivroID=" + livroID + '\''+
                 "titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
                 ", editora='" + editora + '\'' +
