@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Reserva.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorIDinvalido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroIDInvalido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/MasterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/MasterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Livro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/TestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/usuarioExeptions/UsuarioInvalido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,65 +88,64 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestSuite">
-    <configuration name="FuncionarioDAOListTest.deletar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmprestimoDAOListTest.deletar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciador_de_Bibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.funcionario.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.funcionario" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.funcionario.FuncionarioDAOListTest" />
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAOListTest" />
       <option name="METHOD_NAME" value="deletar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservaDAOListTest.deletar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LeitorDAOListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciador_de_Bibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.reserva.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.leitor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.reserva" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOListTest" />
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.leitor" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.leitor.LeitorDAOListTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeitorDAOListTest.criar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Gerenciador_de_Bibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.leitor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.leitor" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.leitor.LeitorDAOListTest" />
+      <option name="METHOD_NAME" value="criar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeitorDAOListTest.deletar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Gerenciador_de_Bibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.leitor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.leitor" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.leitor.LeitorDAOListTest" />
       <option name="METHOD_NAME" value="deletar" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReservaDAOListTest.procurarPorID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciador_de_Bibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.reserva.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.reserva" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOListTest" />
-      <option name="METHOD_NAME" value="procurarPorID" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReservaDAOListTest.resetar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciador_de_Bibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.reserva.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.reserva" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOListTest" />
-      <option name="METHOD_NAME" value="resetar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,10 +182,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestSuite" />
-        <item itemvalue="JUnit.ReservaDAOListTest.resetar" />
-        <item itemvalue="JUnit.ReservaDAOListTest.deletar" />
-        <item itemvalue="JUnit.ReservaDAOListTest.procurarPorID" />
-        <item itemvalue="JUnit.FuncionarioDAOListTest.deletar" />
+        <item itemvalue="JUnit.LeitorDAOListTest.deletar" />
+        <item itemvalue="JUnit.EmprestimoDAOListTest.deletar" />
+        <item itemvalue="JUnit.LeitorDAOListTest.criar" />
+        <item itemvalue="JUnit.LeitorDAOListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +212,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1695087855737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1695172173238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.uefs.gerenciadorparabibliotecas.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$LeitorDAOListTest.ic" NAME="LeitorDAOListTest Coverage Results" MODIFIED="1694735226984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
