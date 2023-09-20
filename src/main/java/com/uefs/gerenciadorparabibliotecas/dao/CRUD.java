@@ -1,9 +1,5 @@
 package com.uefs.gerenciadorparabibliotecas.dao;
 
-import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
-
-import java.time.LocalDate;
-
 public interface CRUD<T> {
     /**
      * Cria novo objeto
@@ -16,10 +12,10 @@ public interface CRUD<T> {
     /**
      * Deleta um objeto
      *
-     * @param id id
+     * @param
      * @return
      */
-    public void deletar(int id);
+    public void deletar(T obj);
 
     /**
      * Detela todos os dados
@@ -39,5 +35,5 @@ public interface CRUD<T> {
      * @return
      */
 
-    public T procurarPorID(int id);
+    public T procurarPorID(Integer id);
 }

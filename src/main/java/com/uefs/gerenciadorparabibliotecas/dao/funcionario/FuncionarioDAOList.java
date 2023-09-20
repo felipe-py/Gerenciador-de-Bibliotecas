@@ -27,12 +27,8 @@ public class FuncionarioDAOList implements FuncionarioDAO{
     }
 
     @Override
-    public void deletar(int id) {
-        for(Funcionario funcionario: this.funcionarios){
-            if(funcionario.getUserID() == id){
-                funcionarios.remove(funcionario);
-            }
-        }
+    public void deletar(Funcionario funcionario) {
+        boolean remove = this.funcionarios.remove(funcionario);
     }
 
     @Override
@@ -43,9 +39,9 @@ public class FuncionarioDAOList implements FuncionarioDAO{
 
 
     @Override
-    public Funcionario procurarPorID(int id) {
+    public Funcionario procurarPorID(Integer id) {
         for(Funcionario funcionario: this.funcionarios){
-            if(funcionario.getUserID() == id){
+            if(funcionario.getUserID().equals(id)){
                 return funcionario;
             }
         }

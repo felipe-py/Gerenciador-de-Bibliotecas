@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
     private Livro livro;
     private Leitor leitor;
     @BeforeEach
-     void beforeAll() {
+     void beforeAll() throws Exception {
         LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
         LocalDate dataDevolucao = LocalDate.of(2023,9,21);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
@@ -51,7 +51,7 @@ import static org.junit.jupiter.api.Assertions.*;
         LocalDate dataDevolucao = LocalDate.of(2023,9,21);
         Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
         MasterDAO.getEmprestimoDAO().criar(emprestimoAux);
-        MasterDAO.getEmprestimoDAO().deletar(this.emprestimo.getEmprestimoID());
+        MasterDAO.getEmprestimoDAO().deletar(this.emprestimo);
         assertNull(MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()));
         assertNotNull(MasterDAO.getEmprestimoDAO().procurarPorID(emprestimoAux.getEmprestimoID()));
     }

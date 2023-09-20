@@ -18,18 +18,14 @@ public class LeitorDAOList implements LeitorDAO {
     }
 
     @Override
-    public Leitor criar(Leitor leitor) {
+    public Leitor criar(Leitor leitor){
         this.leitores.add(leitor);
         return leitor;
     }
 
     @Override
-    public void deletar(int id) {
-        for(Leitor leitor: this.leitores){
-            if(leitor.getUserID() == id){
-                this.leitores.remove(leitor);
-            }
-        }
+    public void deletar(Leitor leitor) {
+        boolean remove = this.leitores.remove(leitor);
     }
 
     @Override
@@ -37,12 +33,10 @@ public class LeitorDAOList implements LeitorDAO {
         this.leitores = new ArrayList<>();
     }
 
-
-
     @Override
-    public Leitor procurarPorID(int id) {
+    public Leitor procurarPorID(Integer id) {
         for (Leitor leitor : this.leitores) {
-            if (leitor.getUserID() == id) {
+            if (leitor.getUserID().equals(id)) {
                 return leitor;
             }
         }

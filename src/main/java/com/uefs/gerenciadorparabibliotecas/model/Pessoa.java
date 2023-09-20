@@ -6,13 +6,13 @@ public abstract class Pessoa {
     protected   String    endereco;
     protected   String    senha;
     protected   String    numeroDeTelefone;
-    protected   int   userID;
+    protected   Integer   userID;
 
 
 
     //constructor
     public Pessoa (String novoNome, String novoEndereco, String novaSenha,
-                   String novoNumeroDeTelefone, int novoUserID) {
+                   String novoNumeroDeTelefone, Integer novoUserID) {
         this.nome               = novoNome;
         this.endereco           = novoEndereco;
         this.senha              = novaSenha;
@@ -27,14 +27,14 @@ public abstract class Pessoa {
     public String getEndereco () { return endereco; }
     public String getSenha () { return senha; }
     public String getNumeroDeTelefone () { return numeroDeTelefone; }
-    public int getUserID () { return userID; }
+    public Integer getUserID () { return userID; }
 
     //setters
     public void setNome (String novoNome) { this.nome = novoNome; }
     public void setEndereco (String novoEndereco) { this.endereco = novoEndereco; }
     public void setSenha (String novaSenha) { this.senha = novaSenha; }
     public void setNumeroDeTelefone(String numeroDeTelefone) { this.numeroDeTelefone = numeroDeTelefone; }
-    public void setUserID(int userID) { this.userID = userID; }
+    public void setUserID(Integer userID) { this.userID = userID; }
 
 
     @Override

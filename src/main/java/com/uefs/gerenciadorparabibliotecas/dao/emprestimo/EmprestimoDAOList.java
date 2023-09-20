@@ -32,12 +32,8 @@ public class EmprestimoDAOList implements EmprestimoDAO{
     }
 
     @Override
-    public void deletar(int id) {
-        for(Emprestimo livro: this.emprestimos){
-            if(livro.getEmprestimoID() == id){
-                this.emprestimos.remove(livro);
-            }
-        }
+    public void deletar(Emprestimo emprestimo) {
+        boolean remove = this.emprestimos.remove(emprestimo);
     }
     @Override
     public void resetar() {
@@ -46,7 +42,7 @@ public class EmprestimoDAOList implements EmprestimoDAO{
     }
 
     @Override
-    public Emprestimo procurarPorID(int id) {
+    public Emprestimo procurarPorID(Integer id) {
         for (Emprestimo emprestimo : this.emprestimos) {
             if (emprestimo.getEmprestimoID() == id) {
                 return emprestimo;

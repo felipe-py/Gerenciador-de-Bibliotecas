@@ -29,12 +29,8 @@ public class LivroDAOList implements LivroDAO{
     }
 
     @Override
-    public void deletar(int id) {
-        for(Livro livro: this.livros){
-            if(livro.getLivroID() == id){
-                this.livros.remove(livro);
-            }
-        }
+    public void deletar(Livro livro) {
+        boolean remove = this.livros.remove(livro);
     }
 
     @Override
@@ -62,7 +58,7 @@ public class LivroDAOList implements LivroDAO{
     }
 
     @Override
-    public Livro procurarPorID(int id) {
+    public Livro procurarPorID(Integer id) {
         for (Livro livro : this.livros) {
             if (livro.getLivroID() == id) {
                 return livro;

@@ -6,15 +6,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LeitorDAOListTest {
 
     private Leitor leitor;
     @BeforeEach
-    void beforeAll() {
+    void beforeAll(){
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 4477);
         MasterDAO.getLeitorDAO().criar(this.leitor);
@@ -26,7 +24,7 @@ public class LeitorDAOListTest {
     }
 
     @Test
-    void criar() {
+    void criar(){
         assertEquals("Lucas",MasterDAO.getLeitorDAO().procurarPorID(4477).getNome());
         assertEquals("Feira VI",MasterDAO.getLeitorDAO().procurarPorID(4477).getEndereco());
         assertEquals("senha123",MasterDAO.getLeitorDAO().procurarPorID(4477).getSenha());
@@ -40,7 +38,7 @@ public class LeitorDAOListTest {
                 8899);
         MasterDAO.getLeitorDAO().criar(leitorAux);
 
-        MasterDAO.getLeitorDAO().deletar(4477);
+        MasterDAO.getLeitorDAO().deletar(this.leitor);
         assertNull(MasterDAO.getLeitorDAO().procurarPorID(this.leitor.getUserID()));
         assertNotNull(MasterDAO.getLeitorDAO().procurarPorID(leitorAux.getUserID()));
     }

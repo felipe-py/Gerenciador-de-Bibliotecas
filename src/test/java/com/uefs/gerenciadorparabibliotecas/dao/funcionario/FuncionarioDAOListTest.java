@@ -46,7 +46,7 @@ import static org.junit.jupiter.api.Assertions.*;
         Funcionario funcionarioAdm2 = new Administrador("Bora Bill","BA","4321",
                 "7782560864",3568);
         MasterDAO.getFuncionarioDAO().criar(funcionarioAdm2);
-        MasterDAO.getFuncionarioDAO().deletar(7777);
+        MasterDAO.getFuncionarioDAO().deletar(this.funcionarioBiblio);
         assertNotNull(MasterDAO.getFuncionarioDAO().procurarPorID(3568));
         assertNull(MasterDAO.getFuncionarioDAO().procurarPorID(7777));
     }

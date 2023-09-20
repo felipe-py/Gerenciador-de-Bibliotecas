@@ -26,14 +26,8 @@ public class ReservaDAOList implements ReservaDAO{
     }
 
     @Override
-    public void deletar(int id) {
-        Iterator<Reserva> iterator = reservas.iterator();
-        while (iterator.hasNext()) {
-            Reserva reserva = iterator.next();
-            if (reserva.getReservaID() == id) {
-                iterator.remove();
-            }
-        }
+    public void deletar(Reserva reserva) {
+        boolean remove = this.reservas.remove(reserva);
     }
 
     @Override
@@ -43,7 +37,7 @@ public class ReservaDAOList implements ReservaDAO{
     }
 
     @Override
-    public Reserva procurarPorID(int id) {
+    public Reserva procurarPorID(Integer id) {
         for (Reserva reserva : this.reservas) {
             if (reserva.getReservaID() == id) {
                 return reserva;

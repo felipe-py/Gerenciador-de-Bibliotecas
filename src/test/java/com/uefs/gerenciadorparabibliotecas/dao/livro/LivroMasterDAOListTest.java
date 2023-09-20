@@ -90,7 +90,7 @@ public class LivroMasterDAOListTest {
                 CategoriaLivro.FANTASIA,"ala d");
         MasterDAO.getLivroDAO().criar(livroAux);
 
-        MasterDAO.getLivroDAO().deletar(this.livro.getLivroID());
+        MasterDAO.getLivroDAO().deletar(this.livro);
 
         assertNull(MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()));
         assertNotNull(MasterDAO.getLivroDAO().procurarPorID(livroAux.getLivroID()));
