@@ -1,5 +1,7 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import java.util.Objects;
+
 public class Reserva {
 
     protected Integer reservaID;
@@ -45,4 +47,12 @@ public class Reserva {
                 ", leitorReservador=" + leitorReservador +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Reserva reserva)) return false;
+        return Objects.equals(getReservaID(), reserva.getReservaID());
+    }
+
 }

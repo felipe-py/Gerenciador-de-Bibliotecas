@@ -46,7 +46,7 @@ public class ReservaDAOListTest {
 
         Reserva reservaAux = new Reserva(leitorAux, livroAux);
         MasterDAO.getReservaDAO().criar(reservaAux);
-        MasterDAO.getReservaDAO().deletar(reservaAux.getReservaID());
+        MasterDAO.getReservaDAO().deletar(reservaAux);
         System.out.println(MasterDAO.getReservaDAO().getReservas());
         assertNotNull(MasterDAO.getReservaDAO().procurarPorID(this.reserva.getReservaID()));
         assertNull(MasterDAO.getReservaDAO().procurarPorID(reservaAux.getReservaID()));
