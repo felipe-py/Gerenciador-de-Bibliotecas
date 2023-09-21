@@ -1,13 +1,14 @@
 package com.uefs.gerenciadorparabibliotecas.dao.livro;
 
 import com.uefs.gerenciadorparabibliotecas.dao.CRUD;
+import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public interface LivroDAO extends CRUD<Livro> {
+public interface LivroDAO extends CRUD<Livro, LivroException> {
 
     List<Livro> procurarPorISBN(String ISBN);
     List<Livro> procurarPorAutor(String autor);
