@@ -1,5 +1,6 @@
 package com.uefs.gerenciadorparabibliotecas.dao.funcionario;
 
+import com.uefs.gerenciadorparabibliotecas.exeptions.funcionarioExceptions.FuncionarioException;
 import com.uefs.gerenciadorparabibliotecas.model.Administrador;
 import com.uefs.gerenciadorparabibliotecas.model.Bibliotecario;
 import com.uefs.gerenciadorparabibliotecas.model.Funcionario;
@@ -27,8 +28,11 @@ public class FuncionarioDAOList implements FuncionarioDAO{
     }
 
     @Override
-    public void deletar(Funcionario funcionario) {
+    public void deletar(Funcionario funcionario) throws FuncionarioException {
         boolean remove = this.funcionarios.remove(funcionario);
+        if (!remove) {
+            throw new FuncionarioException(FuncionarioException.DELETE, funcionario);
+        }
     }
 
     @Override

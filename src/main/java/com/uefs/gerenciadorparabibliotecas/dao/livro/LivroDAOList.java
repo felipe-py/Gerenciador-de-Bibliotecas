@@ -1,5 +1,6 @@
 package com.uefs.gerenciadorparabibliotecas.dao.livro;
 
+import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
@@ -29,8 +30,11 @@ public class LivroDAOList implements LivroDAO{
     }
 
     @Override
-    public void deletar(Livro livro) {
+    public void deletar(Livro livro) throws LivroException {
         boolean remove = this.livros.remove(livro);
+        if (!remove) {
+            throw new LivroException(LivroException.DELETE, livro);
+        }
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.uefs.gerenciadorparabibliotecas.dao.leitor;
 
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
 
 import java.util.ArrayList;
@@ -24,8 +25,11 @@ public class LeitorDAOList implements LeitorDAO {
     }
 
     @Override
-    public void deletar(Leitor leitor) {
+    public void deletar(Leitor leitor) throws LeitorException {
         boolean remove = this.leitores.remove(leitor);
+        if (!remove) {
+            throw new LeitorException(LeitorException.DELETE, leitor);
+        }
     }
 
     @Override

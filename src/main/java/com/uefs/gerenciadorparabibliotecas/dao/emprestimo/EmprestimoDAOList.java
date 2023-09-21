@@ -1,6 +1,7 @@
 package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
 import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
 
 import java.util.ArrayList;
@@ -32,8 +33,11 @@ public class EmprestimoDAOList implements EmprestimoDAO{
     }
 
     @Override
-    public void deletar(Emprestimo emprestimo) {
+    public void deletar(Emprestimo emprestimo) throws EmprestimoException {
         boolean remove = this.emprestimos.remove(emprestimo);
+        if (!remove) {
+            throw new EmprestimoException(EmprestimoException.DELETE, emprestimo);
+        }
     }
     @Override
     public void resetar() {

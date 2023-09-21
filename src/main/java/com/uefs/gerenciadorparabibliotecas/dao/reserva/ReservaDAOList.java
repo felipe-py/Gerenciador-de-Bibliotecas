@@ -1,5 +1,6 @@
 package com.uefs.gerenciadorparabibliotecas.dao.reserva;
 
+import com.uefs.gerenciadorparabibliotecas.exeptions.reservaExcetions.ReservaException;
 import com.uefs.gerenciadorparabibliotecas.model.Reserva;
 
 import java.util.ArrayList;
@@ -26,8 +27,11 @@ public class ReservaDAOList implements ReservaDAO{
     }
 
     @Override
-    public void deletar(Reserva reserva) {
+    public void deletar(Reserva reserva) throws ReservaException {
         boolean remove = this.reservas.remove(reserva);
+        if (!remove) {
+            throw new ReservaException(ReservaException.DELETE, reserva);
+        }
     }
 
     @Override
