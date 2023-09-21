@@ -1,6 +1,6 @@
 package com.uefs.gerenciadorparabibliotecas.dao;
 
-public interface CRUD<T> {
+public interface CRUD<T, E extends Exception> {
     /**
      * Cria novo objeto
      *
@@ -15,7 +15,7 @@ public interface CRUD<T> {
      * @param
      * @return
      */
-    public void deletar(T obj);
+    public void deletar(T obj) throws E;
 
     /**
      * Detela todos os dados
