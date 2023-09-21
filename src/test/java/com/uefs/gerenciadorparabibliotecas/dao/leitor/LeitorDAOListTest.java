@@ -1,6 +1,8 @@
 package com.uefs.gerenciadorparabibliotecas.dao.leitor;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
+
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +14,7 @@ public class LeitorDAOListTest {
 
     private Leitor leitor;
     @BeforeEach
-    void beforeAll(){
+    void setUp(){
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 4477);
         MasterDAO.getLeitorDAO().criar(this.leitor);
@@ -33,7 +35,7 @@ public class LeitorDAOListTest {
     }
 
     @Test
-    void deletar() {
+    void deletar() throws LeitorException {
         Leitor leitorAux = new Leitor("Felipe","UEFS","senha321","40045001",
                 8899);
         MasterDAO.getLeitorDAO().criar(leitorAux);
@@ -52,5 +54,17 @@ public class LeitorDAOListTest {
     @Test
     void procurarPorID() {
         assertEquals(leitor, MasterDAO.getLeitorDAO().procurarPorID(4477));
+    }
+
+    @Test
+    void failDelete() {
+        try {
+            MasterDAO.getLeitorDAO().deletar(new Leitor("Felipe", "Parque Ipê", "4477"
+                    ,"85474783",4122));
+            fail("Uma exceção deveria ser gerada!!");
+        } catch (LeitorException e) {
+            assertEquals(LeitorException.DELETE, e.getMessage());
+        }
+
     }
 }

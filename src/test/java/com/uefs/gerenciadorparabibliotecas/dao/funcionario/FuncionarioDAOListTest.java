@@ -1,9 +1,8 @@
 package com.uefs.gerenciadorparabibliotecas.dao.funcionario;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
-import com.uefs.gerenciadorparabibliotecas.model.Administrador;
-import com.uefs.gerenciadorparabibliotecas.model.Bibliotecario;
-import com.uefs.gerenciadorparabibliotecas.model.Funcionario;
+import com.uefs.gerenciadorparabibliotecas.exeptions.funcionarioExceptions.FuncionarioException;
+import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
     private Funcionario funcionarioAdm;
     private Funcionario funcionarioBiblio;
     @BeforeEach
-     void beforeAll() {
+     void setUp() {
         this.funcionarioBiblio = new Bibliotecario("Luva de pedreiro","BA","1234",
                 "77998765012",7777);
         this.funcionarioAdm = new Administrador("Bora Bill","BA","4321",
@@ -42,7 +41,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-     void deletar() {
+     void deletar() throws FuncionarioException {
         Funcionario funcionarioAdm2 = new Administrador("Bora Bill","BA","4321",
                 "7782560864",3568);
         MasterDAO.getFuncionarioDAO().criar(funcionarioAdm2);
@@ -66,5 +65,17 @@ import static org.junit.jupiter.api.Assertions.*;
      void procurarPorID() {
         assertEquals(this.funcionarioAdm,MasterDAO.getFuncionarioDAO().procurarPorID(3567));
         assertEquals(this.funcionarioBiblio, MasterDAO.getFuncionarioDAO().procurarPorID(7777));
+    }
+
+    @Test
+    void failDelete() {
+       try {
+          MasterDAO.getFuncionarioDAO().deletar(new Bibliotecario("Robertin", "UEFS", "441112", "4789652",
+                  2010));
+          fail("Uma exceção deveria ser gerada!!");
+       } catch (FuncionarioException e) {
+          assertEquals(FuncionarioException.DELETE, e.getMessage());
+       }
+
     }
 }

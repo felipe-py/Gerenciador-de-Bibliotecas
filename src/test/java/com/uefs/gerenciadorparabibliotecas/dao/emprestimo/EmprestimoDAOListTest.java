@@ -1,6 +1,8 @@
 package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
+import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
@@ -19,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
     private Livro livro;
     private Leitor leitor;
     @BeforeEach
-     void beforeAll() throws Exception {
+     void setUp(){
         LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
         LocalDate dataDevolucao = LocalDate.of(2023,9,21);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
@@ -46,7 +48,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-     void deletar() {
+     void deletar() throws EmprestimoException {
         LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
         LocalDate dataDevolucao = LocalDate.of(2023,9,21);
         Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
@@ -78,5 +80,20 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
     void adicionarListaemprestimosLeitor(){
        System.out.println(this.emprestimo.getMutuario().getEmprestimos());
+    }
+
+    @Test
+    void failDelete() {
+       LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
+       LocalDate dataDevolucaoAux = LocalDate.of(2023,9,21);
+       try {
+          MasterDAO.getEmprestimoDAO().deletar(new Emprestimo(dataEmprestimoAux, dataDevolucaoAux,
+                  new Livro("2001", "Fulano", "HBO","4789652", "2010",CategoriaLivro.HISTORIA,"ala d")
+                  ,new Leitor("Tosta","UEFS","4477",
+                  "75998765487",4125)));
+          fail("Uma exceção deveria ser gerada!!");
+       } catch (EmprestimoException e) {
+          assertEquals(EmprestimoException.DELETE, e.getMessage());
+       }
     }
 }

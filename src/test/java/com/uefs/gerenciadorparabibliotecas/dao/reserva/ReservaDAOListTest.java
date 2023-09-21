@@ -1,6 +1,8 @@
 package com.uefs.gerenciadorparabibliotecas.dao.reserva;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
+import com.uefs.gerenciadorparabibliotecas.exeptions.reservaExcetions.ReservaException;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
@@ -17,7 +19,7 @@ public class ReservaDAOListTest {
     private Leitor leitor;
 
     @BeforeEach
-    void beforeAll(){
+    void setUp(){
         this.livro = new Livro("Asassin's Creed","Não sei","HBO","4455223",
                 "1999", CategoriaLivro.FANTASIA,"ala a");
         this.leitor = new Leitor("Carlos","Asa Branca","4455","75982560864",
@@ -38,7 +40,7 @@ public class ReservaDAOListTest {
     }
 
     @Test
-    void deletar() {
+    void deletar() throws ReservaException {
         Leitor leitorAux = new Leitor("Pedrin","Novo Horizonte","5566","77985241369",
                 7825);
         Livro livroAux = new Livro("Asassin's Creed","Não sei","HBO","4455223",
@@ -70,5 +72,18 @@ public class ReservaDAOListTest {
     @Test
     void procurarPorID() {
         assertEquals(this.reserva, MasterDAO.getReservaDAO().procurarPorID(0));
+    }
+
+    @Test
+    void failDelete() {
+        try {
+            MasterDAO.getReservaDAO().deletar(new Reserva(new Leitor("Tosta","UEFS","4477",
+                    "75998765487",4125), new Livro("Dados","Roberto",
+                    "UEFS","4563217","2005",CategoriaLivro.DIDATICO, "ala e")));
+            fail("Uma exceção deveria ser gerada!!");
+        } catch (ReservaException e) {
+            assertEquals(ReservaException.DELETE, e.getMessage());
+        }
+
     }
 }

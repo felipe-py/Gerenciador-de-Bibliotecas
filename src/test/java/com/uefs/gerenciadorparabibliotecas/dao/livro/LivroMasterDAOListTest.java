@@ -1,6 +1,7 @@
 package com.uefs.gerenciadorparabibliotecas.dao.livro;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
 import org.junit.jupiter.api.AfterEach;
@@ -15,7 +16,7 @@ public class LivroMasterDAOListTest {
     private Livro livro;
 
     @BeforeEach
-    void beforeAll() {
+    void setUp() {
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",
                 "2013",CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(this.livro);
@@ -84,7 +85,7 @@ public class LivroMasterDAOListTest {
 
 
     @Test
-    void deletar() {
+    void deletar() throws LivroException {
         Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452"
                 ,"2001",
                 CategoriaLivro.FANTASIA,"ala d");
@@ -121,5 +122,16 @@ public class LivroMasterDAOListTest {
         assertEquals("2006", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getAnoDePublicacao());
         assertEquals(CategoriaLivro.FANTASIA, MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getCategoria());
         assertEquals("ala r", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getLocalizacao());
+    }
+
+    @Test
+    void failDelete() {
+        try {
+            MasterDAO.getLivroDAO().deletar(new Livro("2001", "Fulano", "HBO","4789652",
+                    "2010",CategoriaLivro.HISTORIA,"ala d"));
+            fail("Uma exceção deveria ser gerada!!");
+        } catch (LivroException e) {
+            assertEquals(LivroException.DELETE, e.getMessage());
+        }
     }
 }
