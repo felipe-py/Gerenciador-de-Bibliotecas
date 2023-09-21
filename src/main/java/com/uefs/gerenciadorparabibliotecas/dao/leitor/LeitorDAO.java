@@ -1,10 +1,11 @@
 package com.uefs.gerenciadorparabibliotecas.dao.leitor;
 
 import com.uefs.gerenciadorparabibliotecas.dao.CRUD;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
 
 import java.util.List;
 
-public interface LeitorDAO extends CRUD<Leitor> {
+public interface LeitorDAO extends CRUD<Leitor, LeitorException> {
     List<Leitor> getLeitores();
 }
