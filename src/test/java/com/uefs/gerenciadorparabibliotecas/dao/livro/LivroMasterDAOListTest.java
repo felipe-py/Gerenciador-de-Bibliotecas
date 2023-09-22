@@ -29,7 +29,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void criar() {
+    void criar() throws LivroException{
         assertEquals("Diário de um banana", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getTitulo());
         assertEquals("Zezinho", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getautor());
         assertEquals("Cultura", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getEditora());
@@ -40,7 +40,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void buscarPorID(){
+    void buscarPorID() throws LivroException{
         assertEquals(livro, MasterDAO.getLivroDAO().procurarPorID(0));
     }
     @Test
@@ -98,7 +98,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void resetar(){
+    void resetar() throws LivroException{
         Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452","2001",
                 CategoriaLivro.FANTASIA,"ala d");
         MasterDAO.getLivroDAO().criar(livroAux);
@@ -109,7 +109,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void atualizar(){
+    void atualizar() throws LivroException{
         Livro livroAux2 = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999","2008",
                 CategoriaLivro.FANTASIA,"ala f");
         MasterDAO.getLivroDAO().criar(livroAux2);
@@ -132,6 +132,15 @@ public class LivroMasterDAOListTest {
             fail("Uma exceção deveria ser gerada!!");
         } catch (LivroException e) {
             assertEquals(LivroException.DELETE, e.getMessage());
+        }
+    }
+
+    @Test
+    void failBusca(){
+        try {
+            MasterDAO.getLivroDAO().procurarPorID(9999);
+        } catch (LivroException e) {
+            assertEquals(LivroException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
         }
     }
 }

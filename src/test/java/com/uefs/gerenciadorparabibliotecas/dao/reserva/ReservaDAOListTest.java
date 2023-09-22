@@ -1,7 +1,6 @@
 package com.uefs.gerenciadorparabibliotecas.dao.reserva;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
-import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 import com.uefs.gerenciadorparabibliotecas.exeptions.reservaExcetions.ReservaException;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
@@ -34,7 +33,7 @@ public class ReservaDAOListTest {
     }
 
     @Test
-    void criar() {
+    void criar() throws ReservaException{
         assertEquals(this.leitor, MasterDAO.getReservaDAO().procurarPorID(this.reserva.getReservaID()).getLeitorReservador());
         assertEquals(this.livro, MasterDAO.getReservaDAO().procurarPorID(this.reserva.getReservaID()).getLivroReservado());
     }
@@ -49,13 +48,11 @@ public class ReservaDAOListTest {
         Reserva reservaAux = new Reserva(leitorAux, livroAux);
         MasterDAO.getReservaDAO().criar(reservaAux);
         MasterDAO.getReservaDAO().deletar(reservaAux);
-        System.out.println(MasterDAO.getReservaDAO().getReservas());
-        assertNotNull(MasterDAO.getReservaDAO().procurarPorID(this.reserva.getReservaID()));
-        assertNull(MasterDAO.getReservaDAO().procurarPorID(reservaAux.getReservaID()));
+        assertEquals(1, MasterDAO.getReservaDAO().getReservas().size());
     }
 
     @Test
-    void resetar() {
+    void resetar() throws ReservaException{
         Leitor leitorAux = new Leitor("Pedrin","Novo Horizonte","5566","77985241369",
                 7825);
         Livro livroAux = new Livro("Asassin's Creed","Não sei","HBO","4455223",
@@ -64,13 +61,11 @@ public class ReservaDAOListTest {
         Reserva reservaAux = new Reserva(leitorAux, livroAux);
         MasterDAO.getReservaDAO().criar(reservaAux);
         MasterDAO.getReservaDAO().resetar();
-
-        assertNull(MasterDAO.getReservaDAO().procurarPorID(this.reserva.getReservaID()));
-        assertNull(MasterDAO.getReservaDAO().procurarPorID(reservaAux.getReservaID()));
+        assertEquals(0,MasterDAO.getReservaDAO().getReservas().size());
     }
 
     @Test
-    void procurarPorID() {
+    void procurarPorID() throws ReservaException {
         assertEquals(this.reserva, MasterDAO.getReservaDAO().procurarPorID(0));
     }
 
@@ -84,6 +79,14 @@ public class ReservaDAOListTest {
         } catch (ReservaException e) {
             assertEquals(ReservaException.DELETE, e.getMessage());
         }
+    }
 
+    @Test
+    void failBusca(){
+        try {
+            MasterDAO.getReservaDAO().procurarPorID(9999);
+        } catch (ReservaException e) {
+            assertEquals(ReservaException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
+        }
     }
 }

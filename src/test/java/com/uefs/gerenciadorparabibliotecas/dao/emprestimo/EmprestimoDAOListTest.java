@@ -38,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-     void criar() {
+     void criar() throws EmprestimoException{
         LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
         LocalDate dataDevolucaoAux = LocalDate.of(2023,9,21);
         assertEquals(dataEmprestimoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataEmprestimo());
@@ -54,18 +54,17 @@ import static org.junit.jupiter.api.Assertions.*;
         Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
         MasterDAO.getEmprestimoDAO().criar(emprestimoAux);
         MasterDAO.getEmprestimoDAO().deletar(this.emprestimo);
-        assertNull(MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()));
-        assertNotNull(MasterDAO.getEmprestimoDAO().procurarPorID(emprestimoAux.getEmprestimoID()));
+        assertEquals(1, MasterDAO.getEmprestimoDAO().getEmprestimos().size());
     }
 
     @Test
-     void resetar() {
+     void resetar() throws EmprestimoException{
         MasterDAO.getEmprestimoDAO().resetar();
-        assertNull(MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()));
+        assertEquals(0, MasterDAO.getEmprestimoDAO().getEmprestimos().size());
     }
 
     @Test
-     void procurarPorID() {
+     void procurarPorID() throws EmprestimoException {
         assertEquals(emprestimo, MasterDAO.getEmprestimoDAO().procurarPorID(0));
     }
 
@@ -94,6 +93,15 @@ import static org.junit.jupiter.api.Assertions.*;
           fail("Uma exceção deveria ser gerada!!");
        } catch (EmprestimoException e) {
           assertEquals(EmprestimoException.DELETE, e.getMessage());
+       }
+    }
+
+    @Test
+    void failBusca(){
+       try {
+          MasterDAO.getEmprestimoDAO().procurarPorID(9999);
+       } catch (EmprestimoException e) {
+          assertEquals(EmprestimoException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
        }
     }
 }
