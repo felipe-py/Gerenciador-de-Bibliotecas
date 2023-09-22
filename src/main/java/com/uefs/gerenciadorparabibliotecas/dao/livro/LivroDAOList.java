@@ -60,9 +60,8 @@ public class LivroDAOList implements LivroDAO{
             }
         }
     }
-
     @Override
-    public Livro procurarPorID(Integer id) {
+    public Livro procurarPorID(Integer id) throws LivroException{
         for (Livro livro : this.livros) {
             if (livro.getLivroID() == id) {
                 return livro;

@@ -46,12 +46,12 @@ public class EmprestimoDAOList implements EmprestimoDAO{
     }
 
     @Override
-    public Emprestimo procurarPorID(Integer id) {
+    public Emprestimo procurarPorID(Integer id) throws EmprestimoException{
         for (Emprestimo emprestimo : this.emprestimos) {
             if (emprestimo.getEmprestimoID() == id) {
                 return emprestimo;
             }
         }
-        return null;
+        throw new EmprestimoException(EmprestimoException.SEARCH, id);
     }
 }

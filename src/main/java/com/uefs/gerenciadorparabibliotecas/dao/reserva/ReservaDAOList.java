@@ -4,7 +4,6 @@ import com.uefs.gerenciadorparabibliotecas.exeptions.reservaExcetions.ReservaExc
 import com.uefs.gerenciadorparabibliotecas.model.Reserva;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ReservaDAOList implements ReservaDAO{
@@ -41,13 +40,13 @@ public class ReservaDAOList implements ReservaDAO{
     }
 
     @Override
-    public Reserva procurarPorID(Integer id) {
+    public Reserva procurarPorID(Integer id) throws ReservaException{
         for (Reserva reserva : this.reservas) {
             if (reserva.getReservaID() == id) {
                 return reserva;
             }
         }
-        return null;
+        throw new ReservaException(ReservaException.SEARCH, id);
     }
 
     @Override
