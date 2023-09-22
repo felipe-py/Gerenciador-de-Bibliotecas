@@ -35,5 +35,5 @@ public interface CRUD<T, E extends Exception> {
      * @return
      */
 
-    public T procurarPorID(Integer id);
+    public T procurarPorID(Integer id) throws E;
 }
