@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface FuncionarioDAO extends CRUD<Funcionario, FuncionarioException> {
     List<Funcionario> getFuncionarios();
+    Funcionario atualizar(Funcionario funcionario);
 }

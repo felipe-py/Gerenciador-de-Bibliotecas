@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface LeitorDAO extends CRUD<Leitor, LeitorException> {
     List<Leitor> getLeitores();
+    Leitor atualizar(Leitor leitor);
 }
