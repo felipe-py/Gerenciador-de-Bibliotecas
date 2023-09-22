@@ -43,17 +43,24 @@ public class FuncionarioDAOList implements FuncionarioDAO{
 
 
     @Override
-    public Funcionario procurarPorID(Integer id) {
+    public Funcionario procurarPorID(Integer id) throws FuncionarioException{
         for(Funcionario funcionario: this.funcionarios){
             if(funcionario.getUserID().equals(id)){
                 return funcionario;
             }
         }
-        return null;
+        throw new FuncionarioException(FuncionarioException.SEARCH, id);
     }
 
     @Override
     public List<Funcionario> getFuncionarios() {
         return this.funcionarios;
+    }
+
+    @Override
+    public Funcionario atualizar(Funcionario obj) {
+        int index = this.funcionarios.indexOf(obj);
+        this.funcionarios.set(index, obj);
+        return obj;
     }
 }

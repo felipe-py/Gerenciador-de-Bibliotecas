@@ -38,12 +38,19 @@ public class LeitorDAOList implements LeitorDAO {
     }
 
     @Override
-    public Leitor procurarPorID(Integer id) {
+    public Leitor procurarPorID(Integer id) throws LeitorException{
         for (Leitor leitor : this.leitores) {
             if (leitor.getUserID().equals(id)) {
                 return leitor;
             }
         }
-        return null;
+        throw new LeitorException(LeitorException.SEARCH, id);
+    }
+
+    @Override
+    public Leitor atualizar(Leitor leitor) {
+        int index = this.leitores.indexOf(leitor);
+        this.leitores.set(index, leitor);
+        return leitor;
     }
 }
