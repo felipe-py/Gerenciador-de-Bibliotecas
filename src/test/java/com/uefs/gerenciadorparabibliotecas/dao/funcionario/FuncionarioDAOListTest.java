@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-     void criar() {
+     void criar() throws FuncionarioException{
         assertEquals("Luva de pedreiro",MasterDAO.getFuncionarioDAO().procurarPorID(7777).getNome());
         assertEquals("Bora Bill",MasterDAO.getFuncionarioDAO().procurarPorID(3567).getNome());
         assertEquals("1234",MasterDAO.getFuncionarioDAO().procurarPorID(7777).getSenha());
@@ -47,22 +47,20 @@ import static org.junit.jupiter.api.Assertions.*;
         MasterDAO.getFuncionarioDAO().criar(funcionarioAdm2);
         MasterDAO.getFuncionarioDAO().deletar(this.funcionarioBiblio);
         assertNotNull(MasterDAO.getFuncionarioDAO().procurarPorID(3568));
-        assertNull(MasterDAO.getFuncionarioDAO().procurarPorID(7777));
+        assertEquals(2, MasterDAO.getFuncionarioDAO().getFuncionarios().size());
     }
 
     @Test
-     void resetar() {
+     void resetar() throws FuncionarioException{
         Funcionario funcionarioBiblio2 = new Bibliotecario("Luva de pedreiro","BA","1234",
                 "77998765012",9988);
         MasterDAO.getFuncionarioDAO().criar(funcionarioBiblio2);
         MasterDAO.getFuncionarioDAO().resetar();
-        assertNull(MasterDAO.getFuncionarioDAO().procurarPorID(7777));
-        assertNull(MasterDAO.getFuncionarioDAO().procurarPorID(3567));
-        assertNull(MasterDAO.getFuncionarioDAO().procurarPorID(9988));
+        assertEquals(0, MasterDAO.getFuncionarioDAO().getFuncionarios().size());
     }
 
     @Test
-     void procurarPorID() {
+     void procurarPorID() throws FuncionarioException {
         assertEquals(this.funcionarioAdm,MasterDAO.getFuncionarioDAO().procurarPorID(3567));
         assertEquals(this.funcionarioBiblio, MasterDAO.getFuncionarioDAO().procurarPorID(7777));
     }
@@ -76,6 +74,26 @@ import static org.junit.jupiter.api.Assertions.*;
        } catch (FuncionarioException e) {
           assertEquals(FuncionarioException.DELETE, e.getMessage());
        }
-
     }
+
+    @Test
+    void atualizar() {
+       this.funcionarioBiblio.setEndereco("Feira X");
+       this.funcionarioBiblio.setNome("Carlos");
+       this.funcionarioBiblio.setSenha("5896");
+       this.funcionarioBiblio.setUserID(1200);
+       this.funcionarioBiblio.setNumeroDeTelefone("77777777777");
+       Funcionario atual = MasterDAO.getFuncionarioDAO().atualizar(this.funcionarioBiblio);
+       assertEquals(this.funcionarioBiblio, atual);
+    }
+
+    @Test
+    void failBusca(){
+       try {
+          MasterDAO.getFuncionarioDAO().procurarPorID(9999);
+       } catch (FuncionarioException e) {
+          assertEquals(FuncionarioException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
+       }
+    }
+
 }
