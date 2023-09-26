@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/FuncionarioException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/FuncionarioException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/ReservaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/ReservaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/CategoriaFuncionario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
