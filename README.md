@@ -42,7 +42,7 @@ data de devolução esperada e a identificação do usuário que realizou o empr
 
 ## Diagrama de classes 
 
-- Clique [aqui](https://github.com/felipe-py/Gerenciador-de-Bibliotecas/blob/master/docs/Diagrama_de_classes.png) para acessar o diagrama de classe.
+- Clique [aqui](https://github.com/felipe-py/Gerenciador-de-Bibliotecas/blob/master/docs/DiagramaDeClasses.png) para acessar o diagrama de classe.
 
 ## Diagrama de casos de uso 
 
