@@ -4,10 +4,8 @@ abstract class Pessoa{
     -nome: String
     -endereco: String
     -telefone: String
-    -id: String
+    -id: Integer
     -senha: String
-    -CARGO1: String = bibliotecario (final)
-    -CARGO2: String =  administrador (final)
     +logar(objeto: Pessoa) : Pessoa
     +mudarNome(objeto: Pessoa) : Pessoa
     +mudarEndereco(objeto: Pessoa) : Pessoa
@@ -15,8 +13,10 @@ abstract class Pessoa{
     +pesquisarLivro(objeto: Livro) : Livro
 }
 
-class Convidado {
+class Leitor {
     -statusConta: Boolean
+    -diasdeMulta: int
+    -historicoEmprestimos: List<Emprestimo>
     +reservarLivro(objeto: Livro) : boolean
     +renovarEmprestimo(objeto: Livro, objeto: Emprestimo) : boolean
 }
@@ -37,16 +37,22 @@ class Administrador{
     +relatorioDeUsuarios(objeto: Usuario) : void
 }
 
+abstract class Funcionario{
+
+}
+
 class Livro{
     -título: String
     -autor: String
     -editora: String
     -isbn: String
     -anoDePublicação: String
-    -categoria: Categoria
+    -categoria: CategoriaLivro
     -editora: String
     -localização: String
-    -statusLivro: Boolean
+    -statusReserva: Boolean
+    -livroID: int
+    -disponibilidade: boolean
     +mudarNome(objeto: Livro) : Livro
     +mudarAutor(objeto: Livro) : Livro
     +mudarCategoria(objeto: Livro) : Livro
@@ -56,38 +62,36 @@ class Livro{
 }
 
 class Emprestimo{
-    -dataEmprestimo: String
-    -dataDevolucao: String
+    -dataEmprestimo: LocalDate
+    -dataDevolucao: LocalDate
     -infoUsuario: Usuario
     -infoLivro: Livro
+    -atraso: int
+    -naoDevolvido: boolean
     -NUMERO_RENOVACOES: int = 2 (final)
     +renovarEmprestimo(objeto: Livro, objeto: Emprestimo) : void
     +devolucaoEmprestimo(objeto: Livro, objeto: Emprestimo) : void
 }
 
-class Categoria {
-    -CATEGORIA1: String = didatico (final)
-    -CATEGORIA2: String = romance (final)
-    -CATEGORIA3: String = comedia (final)
-    -CATEGORIA4: String = ficcaoCientifica (final)
-    -CATEGORIA5: String = fantasia (final)
-    -CATEGORIA6: String = infantoJuvenil(final)
-    -CATEGORIA7: String = biografia (final)
-    -CATEGORIA8: String = misterio (final)
-    -CATEGORIA9: String = outros(as) (final)
+class Reserva{
+    -reservaID: Integer
+    -livroReservado: Livro
+    -Leitor: Leitor
 }
 
 Emprestimo --> Livro : usa
-Emprestimo --> Convidado : usa
+Emprestimo --> Leitor : usa
+Reserva --> Livro : usa
+Reserva --> Leitor : usa
 Administrador --> Emprestimo : usa
 Bibliotecario --> Emprestimo : usa
 
-Categoria "1..*"--"1..*" Livro : possui
-Emprestimo "1"--"1" Convidado
+Emprestimo "1"--"1" Leitor
+Reserva "1"--"1" Leitor
 
-Pessoa <|-- Bibliotecario : é um
-Pessoa <|-- Administrador : é um
-Pessoa <|-- Convidado : é um
-Adminsitrador <|-- Bibliotecario : é um
+Funcionario <|-- Bibliotecario : é um
+Funcionario <|-- Administrador : é um
+Funcionario <|-- Pessoa
+Pessoa <|-- Leitor : é um
 
 @enduml
