@@ -3,6 +3,7 @@ package com.uefs.gerenciadorparabibliotecas.dao.livro;
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
+import com.uefs.gerenciadorparabibliotecas.model.Funcionario;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +17,7 @@ public class LivroMasterDAOListTest {
     private Livro livro;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws LivroException{
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",
                 "2013",CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(this.livro);
@@ -44,7 +45,7 @@ public class LivroMasterDAOListTest {
         assertEquals(livro, MasterDAO.getLivroDAO().procurarPorID(0));
     }
     @Test
-    void buscarPorISBN(){
+    void buscarPorISBN() throws LivroException{
         Livro livroAux2 = new Livro("Diário de um banana","Zezinho","Cultura",
                 "4455783","2013", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux2);
@@ -54,7 +55,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void buscarPorAutor(){
+    void buscarPorAutor() throws LivroException{
         Livro livroAux3 = new Livro("Diário de um banana 2","Zezinho","Cultura",
                 "4455999","2014", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux3);
@@ -64,7 +65,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void buscarPorTitulo(){
+    void buscarPorTitulo() throws LivroException{
         Livro livroAux4 = new Livro("Diário de um banana 2","Zezinho","Cultura",
                 "4455999","2014", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux4);
@@ -74,7 +75,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void buscarPorCategoria(){
+    void buscarPorCategoria() throws LivroException{
         Livro livroAux5 = new Livro("Diário de um banana 2","Zezinho","Cultura",
                 "4455999","2014", CategoriaLivro.OUTRA,"ala c");
         MasterDAO.getLivroDAO().criar(livroAux5);
@@ -102,7 +103,6 @@ public class LivroMasterDAOListTest {
         Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452","2001",
                 CategoriaLivro.FANTASIA,"ala d");
         MasterDAO.getLivroDAO().criar(livroAux);
-
         MasterDAO.getLivroDAO().resetar();
         assertNull(MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()));
         assertNull(MasterDAO.getLivroDAO().procurarPorID(livroAux.getLivroID()));
@@ -113,15 +113,15 @@ public class LivroMasterDAOListTest {
         Livro livroAux2 = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999","2008",
                 CategoriaLivro.FANTASIA,"ala f");
         MasterDAO.getLivroDAO().criar(livroAux2);
-        MasterDAO.getLivroDAO().atualizar(1,"Senhor dos Anéis","JR","Warner Pictures",
-                "4455889","2006",CategoriaLivro.FANTASIA,"ala r");
-        assertEquals("Senhor dos Anéis", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getTitulo());
-        assertEquals("JR", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getautor());
-        assertEquals("Warner Pictures", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getEditora());
-        assertEquals("4455889", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getISBN());
-        assertEquals("2006", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getAnoDePublicacao());
-        assertEquals(CategoriaLivro.FANTASIA, MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getCategoria());
-        assertEquals("ala r", MasterDAO.getLivroDAO().procurarPorID(livroAux2.getLivroID()).getLocalizacao());
+        this.livro.setTitulo("Casinha");
+        this.livro.setIsbn("444444444");
+        this.livro.setLocalizacao("ala c");
+        this.livro.setAutor("pedrinho");
+        this.livro.setEditora("casa");
+        this.livro.setAnoDePublicacao("1345");
+        this.livro.setCategoria(CategoriaLivro.HISTORIA);
+        Livro atual = MasterDAO.getLivroDAO().atualizar(this.livro);
+        assertEquals(this.livro, atual);
     }
 
     @Test
