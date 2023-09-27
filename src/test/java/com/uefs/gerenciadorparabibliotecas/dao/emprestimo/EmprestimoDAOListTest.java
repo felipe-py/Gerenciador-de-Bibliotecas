@@ -22,8 +22,8 @@ import static org.junit.jupiter.api.Assertions.*;
     private Leitor leitor;
     @BeforeEach
      void setUp(){
-        LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
-        LocalDate dataDevolucao = LocalDate.of(2023,9,21);
+        LocalDate dataEmprestimo = LocalDate.now();
+        LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
                 CategoriaLivro.OUTRA,"ala c");
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
@@ -39,8 +39,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
     @Test
      void criar() throws EmprestimoException{
-        LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
-        LocalDate dataDevolucaoAux = LocalDate.of(2023,9,21);
+        LocalDate dataEmprestimoAux = LocalDate.now();
+        LocalDate dataDevolucaoAux = dataEmprestimoAux.plusDays(7);
         assertEquals(dataEmprestimoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataEmprestimo());
         assertEquals(dataDevolucaoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataDevolucao());
         assertEquals(this.livro, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getLivroEmprestado());
@@ -48,9 +48,9 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-     void deletar() throws EmprestimoException {
-        LocalDate dataEmprestimo = LocalDate.of(2023,9,14);
-        LocalDate dataDevolucao = LocalDate.of(2023,9,21);
+     void deletar() throws EmprestimoException, LivroException {
+        LocalDate dataEmprestimo = LocalDate.now();
+        LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
         Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
         MasterDAO.getEmprestimoDAO().criar(emprestimoAux);
         MasterDAO.getEmprestimoDAO().deletar(this.emprestimo);
