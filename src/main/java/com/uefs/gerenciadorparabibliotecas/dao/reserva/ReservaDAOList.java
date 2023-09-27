@@ -18,6 +18,10 @@ public class ReservaDAOList implements ReservaDAO{
 
     @Override
     public Reserva criar(Reserva reserva) {
+
+        if(reserva.getLeitorReservador().getDiasDeMulta() != 0){
+            return null;
+        }
         reserva.setReservaID(this.novoID);
         this.novoID++;
         this.reservas.add(reserva);
