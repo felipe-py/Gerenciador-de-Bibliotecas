@@ -2,11 +2,11 @@ package com.uefs.gerenciadorparabibliotecas.model;
 
 
 public abstract class Pessoa {
-    protected   String    nome;
-    protected   String    endereco;
-    protected   String    senha;
-    protected   String    numeroDeTelefone;
-    protected   Integer   userID;
+    private   String    nome;
+    private   String    endereco;
+    private   String    senha;
+    private   String    numeroDeTelefone;
+    private   Integer   userID;
 
 
 

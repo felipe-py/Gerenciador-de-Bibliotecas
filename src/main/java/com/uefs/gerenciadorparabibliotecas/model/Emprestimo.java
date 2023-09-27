@@ -1,16 +1,17 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Emprestimo {
-    protected int emprestimoID;
-    protected LocalDate dataEmprestimo; // deve ser adicionada no momento em que o objeto for criado
-    protected LocalDate dataDevolucao; // deve ser adicionada no momento em que o objeto for criado
-    protected int atraso;
-    protected Livro livroEmprestado;
-    protected Leitor mutuario;
-    protected Integer numeroDeRenovacoes;
-    protected boolean naoDevolvido;
+    private int emprestimoID;
+    private LocalDate dataEmprestimo; // deve ser adicionada no momento em que o objeto for criado
+    private LocalDate dataDevolucao; // deve ser adicionada no momento em que o objeto for criado
+    private int atraso;
+    private Livro livroEmprestado;
+    private Leitor mutuario;
+    private Integer numeroDeRenovacoes;
+    private boolean naoDevolvido;
 
 
     public Emprestimo (LocalDate novaDataEmprestimo, LocalDate novaDataDeDevolucao,
@@ -55,6 +56,25 @@ public class Emprestimo {
     public void setMutuario(Leitor mutuario) { this.mutuario = mutuario; }
     public void setNumeroDeRenovacoes(int numeroDeRenovacoes) { this.numeroDeRenovacoes = numeroDeRenovacoes; }
     public void setNaoDevolvido(boolean naoDevolvido) { this.naoDevolvido = naoDevolvido; }
+
+    private void estenderEmprestimo () {
+        if (this.numeroDeRenovacoes < 1) {
+            numeroDeRenovacoes++;
+            this.dataDevolucao = dataDevolucao.plus(7, ChronoUnit.DAYS);
+        }
+        else {
+            System.out.print("O prazo ja foi estendido até o limite.\n");
+        }
+    }
+
+    private void calcularAtraso () {
+        int diferenca = (int) ChronoUnit.DAYS.between(LocalDate.now(), dataDevolucao);
+        if (diferenca > 0) {
+            this.atraso = diferenca;
+        } else {
+            this.atraso = 0;
+        }
+    }
 
     @Override
     public String toString() {

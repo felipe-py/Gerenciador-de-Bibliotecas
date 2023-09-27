@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Reserva {
 
-    protected Integer reservaID;
+    private Integer reservaID;
     private Livro livroReservado;
 
     private Leitor leitorReservador;

@@ -6,18 +6,18 @@ import java.util.List;
 import java.util.Objects;
 
 public class Livro {
-    protected String titulo;
-    protected String autor;
-    protected String editora;
-    protected String isbn;
-    protected String anoDePublicacao;
-    protected CategoriaLivro categoria;
-    protected boolean disponibilidade = true;
-    protected String localizacao;
-    protected LocalDate estimativaDeDevolucao;
-    protected int livroID;
+    private String titulo;
+    private String autor;
+    private String editora;
+    private String isbn;
+    private String anoDePublicacao;
+    private CategoriaLivro categoria;
+    private boolean disponibilidade = true;
+    private String localizacao;
+    private LocalDate estimativaDeDevolucao;
+    private int livroID;
     private boolean statusReserva = false;
-    protected List<Emprestimo> historicoDeEmprestimos;
+    private List<Emprestimo> historicoDeEmprestimos;
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
                   String novoAnoDePublicacao, CategoriaLivro novaCategoria, String novaLocalizacao) {
         this.titulo = novoTitulo;
