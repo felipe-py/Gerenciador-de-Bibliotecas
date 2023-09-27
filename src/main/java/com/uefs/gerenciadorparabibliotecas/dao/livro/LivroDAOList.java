@@ -43,22 +43,17 @@ public class LivroDAOList implements LivroDAO{
         this.novoID = 0;
     }
     @Override
-    public void atualizar(Integer id, String novoTitulo, String novoAutor, String novaEditora, String novoISBN,
-                          String novaData, CategoriaLivro novaCategoria, String novaLocalizacao) {
+    public Livro atualizar(Livro livro){
+        int livroID = livro.getLivroID();
 
-        for(Livro livro: this.livros){
-            if(livro.getLivroID() == id){
-                livro.setAutor(novoAutor);
-                livro.setCategoria(novaCategoria);
-                livro.setEditora(novaEditora);
-                livro.setLocalizacao(novaLocalizacao);
-                livro.setAnoDePublicacao(novaData);
-                livro.setIsbn(novoISBN);
-                livro.setTitulo(novoTitulo);
-            } else {
-                System.out.println("...");
+        for (int i = 0; i < livros.size(); i++) {
+            Livro livroNaLista = livros.get(i);
+            if (livroNaLista.getLivroID() == livroID) {
+                livros.set(i, livro);
+                return livro;
             }
         }
+        return null;
     }
     @Override
     public Livro procurarPorID(Integer id) throws LivroException{

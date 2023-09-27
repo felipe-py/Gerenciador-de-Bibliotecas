@@ -10,11 +10,11 @@ import java.util.List;
 
 public interface LivroDAO extends CRUD<Livro, LivroException> {
 
+    Livro atualizar(Livro livro);
+
     List<Livro> procurarPorISBN(String ISBN);
     List<Livro> procurarPorAutor(String autor);
     List<Livro> procurarPorTitulo(String titulo);
     List<Livro> procurarPorCategoria(CategoriaLivro categoriaLivro);
     List<Livro> getLivros();
-    void atualizar(Integer id, String novoTitulo, String novoAutor, String novaEditora, String novoISBN,
-                   String novaData, CategoriaLivro novaCategoria, String novaLocalizacao);
 }
