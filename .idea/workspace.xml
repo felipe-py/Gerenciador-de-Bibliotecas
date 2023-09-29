@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/model/emprestimo/EmprestimoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Emprestimo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/TestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +32,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -66,72 +78,73 @@
       <recent name="com.uefs.gerenciadorparabibliotecas" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.uefs.gerenciadorparabibliotecas.model" />
       <recent name="com.uefs.gerenciadorparabibliotecas.dao.reserva" />
       <recent name="com.uefs.gerenciadorparabibliotecas.dao.funcionario" />
       <recent name="com.uefs.gerenciadorparabibliotecas.dao.emprestimo" />
       <recent name="com.uefs.gerenciadorparabibliotecas.dao.leitor" />
-      <recent name="com.uefs.gerenciadorparabibliotecas.dao.livro" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestSuite">
-    <configuration name="EmprestimoDAOListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmprestimoTest.estenderEmprestimoFalhaRenovacoes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciador_de_Bibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAOListTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmprestimoDAOListTest.criar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciador_de_Bibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAOListTest" />
-      <option name="METHOD_NAME" value="criar" />
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.EmprestimoTest" />
+      <option name="METHOD_NAME" value="estenderEmprestimoFalhaRenovacoes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmprestimoDAOListTest.disponibilidadeLivroEmprestado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmprestimoTest.estenderEmprestimoFalhaRenovacoes01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciador_de_Bibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAOListTest" />
-      <option name="METHOD_NAME" value="disponibilidadeLivroEmprestado" />
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.EmprestimoTest" />
+      <option name="METHOD_NAME" value="estenderEmprestimoFalhaRenovacoes01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LivroMasterDAOListTest.atualizar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmprestimoTest.estenderEmprestimoFalhaRenovacoes02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciador_de_Bibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.livro.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro.LivroMasterDAOListTest" />
-      <option name="METHOD_NAME" value="atualizar" />
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.EmprestimoTest" />
+      <option name="METHOD_NAME" value="estenderEmprestimoFalhaRenovacoes02" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmprestimoTest.estenderEmprestimoRenovacoes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Gerenciador_de_Bibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.EmprestimoTest" />
+      <option name="METHOD_NAME" value="estenderEmprestimoRenovacoes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,10 +181,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestSuite" />
-        <item itemvalue="JUnit.EmprestimoDAOListTest.criar" />
-        <item itemvalue="JUnit.EmprestimoDAOListTest" />
-        <item itemvalue="JUnit.EmprestimoDAOListTest.disponibilidadeLivroEmprestado" />
-        <item itemvalue="JUnit.LivroMasterDAOListTest.atualizar" />
+        <item itemvalue="JUnit.EmprestimoTest.estenderEmprestimoFalhaRenovacoes01" />
+        <item itemvalue="JUnit.EmprestimoTest.estenderEmprestimoFalhaRenovacoes02" />
+        <item itemvalue="JUnit.EmprestimoTest.estenderEmprestimoFalhaRenovacoes" />
+        <item itemvalue="JUnit.EmprestimoTest.estenderEmprestimoRenovacoes" />
       </list>
     </recent_temporary>
   </component>
