@@ -22,6 +22,8 @@ public interface CRUD<T, E extends Exception> {
      */
     public void resetar();
 
+    public T atualizar(T obj);
+
     /**
      * Atualiza um objeto
      *

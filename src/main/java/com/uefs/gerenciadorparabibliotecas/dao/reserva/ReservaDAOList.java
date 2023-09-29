@@ -18,10 +18,6 @@ public class ReservaDAOList implements ReservaDAO{
 
     @Override
     public Reserva criar(Reserva reserva) {
-
-        if(reserva.getLeitorReservador().getDiasDeMulta() != 0){
-            return null;
-        }
         reserva.setReservaID(this.novoID);
         this.novoID++;
         this.reservas.add(reserva);
@@ -41,6 +37,11 @@ public class ReservaDAOList implements ReservaDAO{
     public void resetar() {
         this.reservas = new ArrayList<>();
         this.novoID = 0;
+    }
+
+    @Override
+    public Reserva atualizar(Reserva obj) {
+        return null;
     }
 
     @Override
