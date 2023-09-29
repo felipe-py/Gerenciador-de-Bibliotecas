@@ -2,6 +2,7 @@ package com.uefs.gerenciadorparabibliotecas.dao.leitor;
 
 import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
+import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +50,15 @@ public class LeitorDAOList implements LeitorDAO {
 
     @Override
     public Leitor atualizar(Leitor leitor) {
-        int index = this.leitores.indexOf(leitor);
-        this.leitores.set(index, leitor);
-        return leitor;
+        int leitorID = leitor.getUserID();
+
+        for (int i = 0; i < leitores.size(); i++) {
+            Leitor leitorNaLista = leitores.get(i);
+            if (leitorNaLista.getUserID() == leitorID) {
+                leitores.set(i, leitor);
+                return leitor;
+            }
+        }
+        return null;
     }
 }

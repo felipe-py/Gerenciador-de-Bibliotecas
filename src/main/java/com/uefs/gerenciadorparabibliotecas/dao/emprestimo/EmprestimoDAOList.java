@@ -3,6 +3,7 @@ package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
 import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
+import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,12 +25,16 @@ public class EmprestimoDAOList implements EmprestimoDAO{
 
     @Override
     public Emprestimo criar(Emprestimo emprestimo) {
+        if(emprestimo.getMutuario().getDiasDeMulta() != 0){
+            return null;
+        }
         emprestimo.setEmprestimoID(this.novoID);
         this.novoID++;
         this.emprestimos.add(emprestimo);
         emprestimo.getMutuario().adicionarEmprestimo(emprestimo);
         emprestimo.getLivroEmprestado().setDisponibilidade(false);
         MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
+        MasterDAO.getLeitorDAO().atualizar(emprestimo.getMutuario());
         return emprestimo;
     }
 
@@ -44,6 +49,20 @@ public class EmprestimoDAOList implements EmprestimoDAO{
     public void resetar() {
         this.emprestimos = new ArrayList<>();
         this.novoID = 0;
+    }
+
+    @Override
+    public Emprestimo atualizar(Emprestimo emprestimo) {
+        int emprestimoID = emprestimo.getEmprestimoID();
+
+        for (int i = 0; i < emprestimos.size(); i++) {
+            Emprestimo livroNaLista = emprestimos.get(i);
+            if (livroNaLista.getEmprestimoID() == emprestimoID) {
+                emprestimos.set(i, emprestimo);
+                return emprestimo;
+            }
+        }
+        return null;
     }
 
     @Override
