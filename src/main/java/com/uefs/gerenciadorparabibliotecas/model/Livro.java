@@ -13,13 +13,13 @@ public class Livro {
     private String anoDePublicacao;
     private CategoriaLivro categoria;
     private boolean disponibilidade = true;
-    private String localizacao;
+    private LocalizacaoLivro localizacao;
     private LocalDate estimativaDeDevolucao;
     private int livroID;
     private boolean statusReserva = false;
     private List<Emprestimo> historicoDeEmprestimos;
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
-                  String novoAnoDePublicacao, CategoriaLivro novaCategoria, String novaLocalizacao) {
+                  String novoAnoDePublicacao, CategoriaLivro novaCategoria, LocalizacaoLivro novaLocalizacao) {
         this.titulo = novoTitulo;
         this.autor = novoAutor;
         this.editora = novaEditora;
@@ -29,8 +29,11 @@ public class Livro {
         this.localizacao = novaLocalizacao;
     }
 
-    public boolean isStatusReserva() {
+    public boolean estaReservado() {
         return statusReserva;
+    }
+    public boolean naoEstaReservado() {
+        return !statusReserva;
     }
 
     public void setStatusReserva(boolean statusReserva) {
@@ -58,7 +61,7 @@ public class Livro {
     public boolean getDisponibilidade () {
         return this.disponibilidade;
     }
-    public String getLocalizacao () {
+    public LocalizacaoLivro getLocalizacao () {
         return this.localizacao;
     }
     public LocalDate getEstimativaDeDevolucao () {
@@ -92,7 +95,7 @@ public class Livro {
     public void setDisponibilidade (boolean novaDisponibilidade) {
         this.disponibilidade = novaDisponibilidade;
     }
-    public void setLocalizacao (String novaLocalizacao) {
+    public void setLocalizacao (LocalizacaoLivro novaLocalizacao) {
         this.localizacao = novaLocalizacao;
     }
     public void setEstimativaDeDevolucao (LocalDate novaDataDeDevolucao) {

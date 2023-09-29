@@ -2,10 +2,7 @@ package com.uefs.gerenciadorparabibliotecas.dao.reserva;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.reservaExcetions.ReservaException;
-import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
-import com.uefs.gerenciadorparabibliotecas.model.Leitor;
-import com.uefs.gerenciadorparabibliotecas.model.Livro;
-import com.uefs.gerenciadorparabibliotecas.model.Reserva;
+import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +17,7 @@ public class ReservaDAOListTest {
     @BeforeEach
     void setUp(){
         this.livro = new Livro("Asassin's Creed","Não sei","HBO","4455223",
-                "1999", CategoriaLivro.FANTASIA,"ala a");
+                "1999", CategoriaLivro.FANTASIA, LocalizacaoLivro.alaD);
         this.leitor = new Leitor("Carlos","Asa Branca","4455","75982560864",
                 7896);
         this.reserva = new Reserva(this.leitor, this.livro);
@@ -43,7 +40,7 @@ public class ReservaDAOListTest {
         Leitor leitorAux = new Leitor("Pedrin","Novo Horizonte","5566","77985241369",
                 7825);
         Livro livroAux = new Livro("Asassin's Creed","Não sei","HBO","4455223",
-                "1999", CategoriaLivro.FANTASIA,"ala a");
+                "1999", CategoriaLivro.FANTASIA,LocalizacaoLivro.alaA);
 
         Reserva reservaAux = new Reserva(leitorAux, livroAux);
         MasterDAO.getReservaDAO().criar(reservaAux);
@@ -56,7 +53,7 @@ public class ReservaDAOListTest {
         Leitor leitorAux = new Leitor("Pedrin","Novo Horizonte","5566","77985241369",
                 7825);
         Livro livroAux = new Livro("Asassin's Creed","Não sei","HBO","4455223",
-                "1999", CategoriaLivro.FANTASIA,"ala a");
+                "1999", CategoriaLivro.FANTASIA,LocalizacaoLivro.alaA);
 
         Reserva reservaAux = new Reserva(leitorAux, livroAux);
         MasterDAO.getReservaDAO().criar(reservaAux);
@@ -74,7 +71,7 @@ public class ReservaDAOListTest {
         try {
             MasterDAO.getReservaDAO().deletar(new Reserva(new Leitor("Tosta","UEFS","4477",
                     "75998765487",4125), new Livro("Dados","Roberto",
-                    "UEFS","4563217","2005",CategoriaLivro.DIDATICO, "ala e")));
+                    "UEFS","4563217","2005",CategoriaLivro.DIDATICO, LocalizacaoLivro.alaE)));
             fail("Uma exceção deveria ser gerada!!");
         } catch (ReservaException e) {
             assertEquals(ReservaException.DELETE, e.getMessage());
