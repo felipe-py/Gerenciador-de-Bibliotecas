@@ -3,10 +3,7 @@ package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
 import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
-import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
-import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
-import com.uefs.gerenciadorparabibliotecas.model.Leitor;
-import com.uefs.gerenciadorparabibliotecas.model.Livro;
+import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
         LocalDate dataEmprestimo = LocalDate.now();
         LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
-                CategoriaLivro.OUTRA,"ala c");
+                CategoriaLivro.OUTRA, LocalizacaoLivro.alaC);
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 4477);
         this.emprestimo = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
@@ -48,7 +45,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-     void deletar() throws EmprestimoException, LivroException {
+     void deletar() throws EmprestimoException{
         LocalDate dataEmprestimo = LocalDate.now();
         LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
         Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
@@ -71,7 +68,7 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
     void disponibilidadeLivroEmprestado() {
        Livro livroAux = new Livro("Cálculo II","James","EUA","1144558","1998",
-               CategoriaLivro.DIDATICO,"ala d");
+               CategoriaLivro.DIDATICO,LocalizacaoLivro.alaD);
        assertTrue(livroAux.getDisponibilidade());
        assertFalse(this.livro.getDisponibilidade());
     }
@@ -87,7 +84,7 @@ import static org.junit.jupiter.api.Assertions.*;
        LocalDate dataDevolucaoAux = LocalDate.of(2023,9,21);
        try {
           MasterDAO.getEmprestimoDAO().deletar(new Emprestimo(dataEmprestimoAux, dataDevolucaoAux,
-                  new Livro("2001", "Fulano", "HBO","4789652", "2010",CategoriaLivro.HISTORIA,"ala d")
+                  new Livro("2001", "Fulano", "HBO","4789652", "2010",CategoriaLivro.HISTORIA,LocalizacaoLivro.alaD)
                   ,new Leitor("Tosta","UEFS","4477",
                   "75998765487",4125)));
           fail("Uma exceção deveria ser gerada!!");
