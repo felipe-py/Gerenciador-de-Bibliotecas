@@ -1,5 +1,8 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -57,23 +60,25 @@ public class Emprestimo {
     public void setNumeroDeRenovacoes(int numeroDeRenovacoes) { this.numeroDeRenovacoes = numeroDeRenovacoes; }
     public void setNaoDevolvido(boolean naoDevolvido) { this.naoDevolvido = naoDevolvido; }
 
-    private void estenderEmprestimo () {
-        if (this.numeroDeRenovacoes < 1) {
+    public void estenderEmprestimo (Emprestimo emprestimo) throws EmprestimoException {
+        if (emprestimo.numeroDeRenovacoes < 1 && emprestimo.getLivroEmprestado().naoEstaReservado()) {
             numeroDeRenovacoes++;
-            this.dataDevolucao = dataDevolucao.plus(7, ChronoUnit.DAYS);
+            emprestimo.dataDevolucao = dataDevolucao.plus(7, ChronoUnit.DAYS);
+            MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
         }
         else {
-            System.out.print("O prazo ja foi estendido até o limite.\n");
+            throw new EmprestimoException(EmprestimoException.RENEW, emprestimo);
         }
     }
 
-    private void calcularAtraso () {
-        int diferenca = (int) ChronoUnit.DAYS.between(LocalDate.now(), dataDevolucao);
+    public void calcularAtraso (Emprestimo emprestimo) {
+        int diferenca = (int) ChronoUnit.DAYS.between(LocalDate.now(), emprestimo.dataDevolucao);
         if (diferenca > 0) {
-            this.atraso = diferenca;
+            emprestimo.atraso = diferenca;
         } else {
-            this.atraso = 0;
+            emprestimo.atraso = 0;
         }
+        MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
     }
 
     @Override
