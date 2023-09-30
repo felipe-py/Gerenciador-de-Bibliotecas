@@ -28,6 +28,9 @@ public class Emprestimo {
         this.naoDevolvido = true;
     }
 
+    public Emprestimo(Emprestimo emprestimo) {
+    }
+
     public int getEmprestimoID() {
         return emprestimoID;
     }
@@ -77,8 +80,8 @@ public class Emprestimo {
             emprestimo.atraso = 0;
         } else {
             emprestimo.atraso = diferenca;
+            emprestimo.getMutuario().setDiasDeMulta(diferenca * 2);
         }
-        MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
     }
 
     @Override

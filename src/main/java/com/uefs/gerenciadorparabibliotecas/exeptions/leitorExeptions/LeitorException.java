@@ -15,6 +15,5 @@ public class LeitorException extends Exception{
 
     public LeitorException(String create, Integer id) {
         super(create + "ID inválido:" + id);
-        this.leitor = leitor;
     }
 }
