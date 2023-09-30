@@ -63,7 +63,7 @@ class Livro{
 
 class Emprestimo{
     -dataEmprestimo: LocalDate
-    -dataDevolucao: LocalDate
+    -dataDevolucaoEsperada: LocalDate
     -infoUsuario: Usuario
     -infoLivro: Livro
     -atraso: int

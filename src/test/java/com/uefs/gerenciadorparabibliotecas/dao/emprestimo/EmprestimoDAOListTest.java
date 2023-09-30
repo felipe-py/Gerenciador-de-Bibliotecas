@@ -20,12 +20,12 @@ import static org.junit.jupiter.api.Assertions.*;
     @BeforeEach
      void setUp(){
         LocalDate dataEmprestimo = LocalDate.now();
-        LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
+        LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
                 CategoriaLivro.OUTRA, LocalizacaoLivro.alaC);
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 4477);
-        this.emprestimo = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
+        this.emprestimo = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
         MasterDAO.getEmprestimoDAO().criar(emprestimo);
     }
 
@@ -37,9 +37,9 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
      void criar() throws EmprestimoException{
         LocalDate dataEmprestimoAux = LocalDate.now();
-        LocalDate dataDevolucaoAux = dataEmprestimoAux.plusDays(7);
+        LocalDate dataDevolucaoEsperadaAux = dataEmprestimoAux.plusDays(7);
         assertEquals(dataEmprestimoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataEmprestimo());
-        assertEquals(dataDevolucaoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataDevolucao());
+        assertEquals(dataDevolucaoEsperadaAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getdataDevolucaoEsperada());
         assertEquals(this.livro, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getLivroEmprestado());
         assertEquals(this.leitor, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getMutuario());
     }
@@ -47,8 +47,8 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
      void deletar() throws EmprestimoException{
         LocalDate dataEmprestimo = LocalDate.now();
-        LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
-        Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
+        LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
+        Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
         MasterDAO.getEmprestimoDAO().criar(emprestimoAux);
         MasterDAO.getEmprestimoDAO().deletar(this.emprestimo);
         assertEquals(1, MasterDAO.getEmprestimoDAO().getEmprestimos().size());
@@ -81,9 +81,9 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
     void failDelete() {
        LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
-       LocalDate dataDevolucaoAux = LocalDate.of(2023,9,21);
+       LocalDate dataDevolucaoEsperadaAux = LocalDate.of(2023,9,21);
        try {
-          MasterDAO.getEmprestimoDAO().deletar(new Emprestimo(dataEmprestimoAux, dataDevolucaoAux,
+          MasterDAO.getEmprestimoDAO().deletar(new Emprestimo(dataEmprestimoAux, dataDevolucaoEsperadaAux,
                   new Livro("2001", "Fulano", "HBO","4789652", "2010",CategoriaLivro.HISTORIA,LocalizacaoLivro.alaD)
                   ,new Leitor("Tosta","UEFS","4477",
                   "75998765487",4125)));
