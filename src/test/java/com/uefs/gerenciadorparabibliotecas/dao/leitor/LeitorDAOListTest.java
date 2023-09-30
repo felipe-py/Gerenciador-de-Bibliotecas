@@ -78,7 +78,7 @@ public class LeitorDAOListTest {
     }
 
     @Test
-    void failBusca(){
+    void failBusca() throws LeitorException{
         try {
             MasterDAO.getLeitorDAO().procurarPorID(9999);
         } catch (LeitorException e) {

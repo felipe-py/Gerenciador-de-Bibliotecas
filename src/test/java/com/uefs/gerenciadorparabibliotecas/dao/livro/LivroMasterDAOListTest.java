@@ -136,11 +136,47 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void failBusca(){
+    void failBuscaID(){
         try {
             MasterDAO.getLivroDAO().procurarPorID(9999);
         } catch (LivroException e) {
-            assertEquals(LivroException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
+            assertEquals(LivroException.SEARCH + "9999" + "inválido(a)", e.getMessage());
+        }
+    }
+
+    @Test
+    void failBuscaAutor(){
+        try{
+            MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorAutor("Zezinho"));
+        } catch (LivroException e) {
+            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+        }
+    }
+
+    @Test
+    void failBuscaISBN(){
+        try{
+            MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorISBN("00000000"));
+        } catch (LivroException e) {
+            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+        }
+    }
+
+    @Test
+    void failBuscaTitulo(){
+        try{
+            MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorTitulo("00000000"));
+        } catch (LivroException e) {
+            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+        }
+    }
+
+    @Test
+    void failBuscaCategoria(){
+        try{
+            MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorCategoria(CategoriaLivro.POESIA));
+        } catch (LivroException e) {
+            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
         }
     }
 }
