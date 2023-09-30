@@ -19,12 +19,12 @@ public class EmprestimoTest {
     void setUp() {
         // DATA DEFINIDA MANUALMENTE PARA FACILITAR CALCULO DO ATRASO
         LocalDate dataEmprestimo = LocalDate.of(2023,10,1);
-        LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
+        LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
                 CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 4477);
-        this.emprestimo = new Emprestimo(dataEmprestimo,dataDevolucao,this.livro,this.leitor);
+        this.emprestimo = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
         MasterDAO.getEmprestimoDAO().criar(emprestimo);
     }
 
@@ -67,11 +67,18 @@ public class EmprestimoTest {
     }
 
     @Test
-    void calculoatraso(){
-        this.emprestimo.calcularAtraso(this.emprestimo, LocalDate.of(2023,10,7));
-        assertEquals(0,this.emprestimo.getAtraso(), "Teste sem atraso definido");
+    void finalizarEmprestimoAtrasado(){
+        this.emprestimo.finalizarEmprestimo(this.emprestimo, LocalDate.of(2023,10,10));
+        assertEquals(-2,this.emprestimo.getAtraso(),"Dias do atraso em préstimo (NEGATIVADO)");
+        assertEquals(4,this.emprestimo.getMutuario().getDiasDeMulta(), "Dias de multa do leitor, o dobro do atraso");
+    }
 
-        this.emprestimo.calcularAtraso(this.emprestimo, LocalDate.of(2023,10,9));
-        assertEquals(-1,this.emprestimo.getAtraso(), "Teste com atraso definido");
+    @Test
+    void finalizarEmprestimoEmDia(){
+        this.emprestimo.finalizarEmprestimo(this.emprestimo, LocalDate.of(2023,10,7));
+        assertEquals(0,this.emprestimo.getAtraso());
+        assertEquals(0,this.emprestimo.getMutuario().getDiasDeMulta());
+        assertTrue(this.emprestimo.getLivroEmprestado().getDisponibilidade());
+        System.out.println(this.emprestimo.getDataDevolvidoFinal());
     }
 }
