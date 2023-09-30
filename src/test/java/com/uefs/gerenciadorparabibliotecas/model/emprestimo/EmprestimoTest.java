@@ -17,7 +17,8 @@ public class EmprestimoTest {
     private Leitor leitor;
     @BeforeEach
     void setUp() {
-        LocalDate dataEmprestimo = LocalDate.now();
+        // DATA DEFINIDA MANUALMENTE PARA FACILITAR CALCULO DO ATRASO
+        LocalDate dataEmprestimo = LocalDate.of(2023,10,1);
         LocalDate dataDevolucao = dataEmprestimo.plusDays(7);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
                 CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
@@ -52,7 +53,7 @@ public class EmprestimoTest {
 
     @Test
     void estenderEmprestimoFalhaRenovacoes02() throws EmprestimoException {
-        // TESTE CASO UM LEITOR TENTE RENOVAR UM EMPRÁTIMO COM LIVRO RESERVADO
+        // TESTE CASO UM LEITOR TENTE RENOVAR UM EMPRÉSTIMO COM LIVRO RESERVADO
         Leitor leitorAux = new Leitor("Lucas","Feira VI","senha123","40028922",
                 44710);
         Reserva reserva = new Reserva(leitorAux, this.livro);
@@ -63,5 +64,14 @@ public class EmprestimoTest {
         } catch (EmprestimoException e) {
             assertEquals(EmprestimoException.RENEW, e.getMessage());
         }
+    }
+
+    @Test
+    void calculoatraso(){
+        this.emprestimo.calcularAtraso(this.emprestimo, LocalDate.of(2023,10,7));
+        assertEquals(0,this.emprestimo.getAtraso(), "Teste sem atraso definido");
+
+        this.emprestimo.calcularAtraso(this.emprestimo, LocalDate.of(2023,10,9));
+        assertEquals(-1,this.emprestimo.getAtraso(), "Teste com atraso definido");
     }
 }
