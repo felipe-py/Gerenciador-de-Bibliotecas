@@ -5,6 +5,16 @@ import java.util.ArrayList;
 
 public class Leitor extends Pessoa {
     private int diasDeMulta;
+
+    public boolean isLeitorBanido() {
+        return leitorBanido;
+    }
+
+    public void setLeitorBanido(boolean leitorBanido) {
+        this.leitorBanido = leitorBanido;
+    }
+
+    private boolean leitorBanido = false;
     private List<Emprestimo> historicoEmprestimos;
 
     public void adicionarEmprestimo(Emprestimo emprestimo){

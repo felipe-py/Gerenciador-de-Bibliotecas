@@ -24,8 +24,8 @@ public class EmprestimoDAOList implements EmprestimoDAO{
     }
 
     @Override
-    public Emprestimo criar(Emprestimo emprestimo) {
-        if(emprestimo.getMutuario().getDiasDeMulta() != 0){
+    public Emprestimo criar(Emprestimo emprestimo){
+        if(emprestimo.getMutuario().getDiasDeMulta() != 0 || emprestimo.getMutuario().isLeitorBanido()){
             return null;
         }
         emprestimo.setEmprestimoID(this.novoID);
@@ -40,7 +40,6 @@ public class EmprestimoDAOList implements EmprestimoDAO{
 
     @Override
     public void deletar(Emprestimo emprestimo) throws EmprestimoException {
-        emprestimo.calcularAtraso(emprestimo,LocalDate.now());
         boolean remove = this.emprestimos.remove(emprestimo);
         if (!remove) {
             throw new EmprestimoException(EmprestimoException.DELETE, emprestimo);
