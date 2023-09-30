@@ -71,12 +71,12 @@ public class Emprestimo {
         }
     }
 
-    public void calcularAtraso (Emprestimo emprestimo) {
-        int diferenca = (int) ChronoUnit.DAYS.between(LocalDate.now(), emprestimo.dataDevolucao);
+    public void calcularAtraso (Emprestimo emprestimo, LocalDate data) {
+        int diferenca = (int) ChronoUnit.DAYS.between(data, emprestimo.dataDevolucao);
         if (diferenca > 0) {
-            emprestimo.atraso = diferenca;
-        } else {
             emprestimo.atraso = 0;
+        } else {
+            emprestimo.atraso = diferenca;
         }
         MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
     }
