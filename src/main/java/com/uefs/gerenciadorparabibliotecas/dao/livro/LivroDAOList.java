@@ -92,4 +92,13 @@ public class LivroDAOList implements LivroDAO{
                 .collect(Collectors.toList());
         return  livrosCategoria;
     }
+
+    @Override
+    public List<Livro> livrosEncontrados(List<Livro> livrosAchados) throws LivroException{
+        if (livrosAchados.isEmpty()) {
+            throw new LivroException(LivroException.SEARCH);
+        } else {
+            return livrosAchados;
+        }
+    }
 }

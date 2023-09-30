@@ -12,4 +12,8 @@ public class LivroException extends Exception{
         super(create);
         this.livro = livro;
     }
+
+    public LivroException(String create) {
+        super(create + "Informação enviada inválida.");
+    }
 }
