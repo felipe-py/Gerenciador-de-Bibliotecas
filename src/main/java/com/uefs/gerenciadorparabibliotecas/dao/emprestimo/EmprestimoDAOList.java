@@ -3,8 +3,8 @@ package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
 import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
-import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +40,7 @@ public class EmprestimoDAOList implements EmprestimoDAO{
 
     @Override
     public void deletar(Emprestimo emprestimo) throws EmprestimoException {
+        emprestimo.calcularAtraso(emprestimo,LocalDate.now());
         boolean remove = this.emprestimos.remove(emprestimo);
         if (!remove) {
             throw new EmprestimoException(EmprestimoException.DELETE, emprestimo);
