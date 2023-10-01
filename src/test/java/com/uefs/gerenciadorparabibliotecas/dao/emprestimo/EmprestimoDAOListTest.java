@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
     private Leitor leitor;
     @BeforeEach
      void setUp(){
-        LocalDate dataEmprestimo = LocalDate.now();
+        LocalDate dataEmprestimo = LocalDate.of(2023,10,1);
         LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
                 CategoriaLivro.OUTRA, LocalizacaoLivro.alaC);
@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
     @Test
      void criar() throws EmprestimoException{
-        LocalDate dataEmprestimoAux = LocalDate.now();
+        LocalDate dataEmprestimoAux = LocalDate.of(2023,10,1);
         LocalDate dataDevolucaoEsperadaAux = dataEmprestimoAux.plusDays(7);
         assertEquals(dataEmprestimoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataEmprestimo());
         assertEquals(dataDevolucaoEsperadaAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getdataDevolucaoEsperada());
@@ -76,7 +76,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
     @Test
     void adicionarListaemprestimosLeitor(){
-       System.out.println(this.emprestimo.getMutuario().getEmprestimos());
+       assertEquals(this.emprestimo.getMutuario().getEmprestimos().get(0).getEmprestimoID(), this.emprestimo.getEmprestimoID());
     }
 
     @Test
@@ -116,7 +116,12 @@ import static org.junit.jupiter.api.Assertions.*;
        MasterDAO.getLeitorDAO().criar(leitorTeste);
        MasterDAO.getEmprestimoDAO().criar(emprestimoTeste);
 
-       // RODANDO COM TESTESUITE VALOR ESPERADO = 8, CASO CONTRÁRIO VALOR = 2
-       assertEquals(8, MasterDAO.getLivroDAO().nLivrosEmprestados());
+       // RODANDO COM TESTESUITE VALOR ESPERADO = 9, CASO CONTRÁRIO VALOR = 2
+       assertEquals(9, MasterDAO.getLivroDAO().nLivrosEmprestados());
     }
+    @Test
+    void numeroLivrosAtrasados(){
+       assertEquals(1, MasterDAO.getEmprestimoDAO().nLivrosatrasados(LocalDate.of(2023,10,10)));
+    }
+
 }
