@@ -2,7 +2,6 @@ package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
-import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +25,9 @@ import static org.junit.jupiter.api.Assertions.*;
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 4477);
         this.emprestimo = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
-        MasterDAO.getEmprestimoDAO().criar(emprestimo);
+       MasterDAO.getLivroDAO().criar(this.livro);
+       MasterDAO.getLeitorDAO().criar(this.leitor);
+       MasterDAO.getEmprestimoDAO().criar(emprestimo);
     }
 
     @AfterEach
@@ -100,5 +101,22 @@ import static org.junit.jupiter.api.Assertions.*;
        } catch (EmprestimoException e) {
           assertEquals(EmprestimoException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
        }
+    }
+
+    @Test
+    void numeroLivrosEmprestados(){
+       LocalDate dataEmprestimo = LocalDate.now();
+       LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
+       Livro livroTeste = new Livro("Diário de um banana 44","Zezinho","Cultura","4455883","2013",
+               CategoriaLivro.OUTRA, LocalizacaoLivro.alaC);
+       Leitor leitorTeste = new Leitor("Mateus","Feira VI","senha123","40028922",
+               4477);
+       Emprestimo emprestimoTeste = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,livroTeste,leitorTeste);
+       MasterDAO.getLivroDAO().criar(livroTeste);
+       MasterDAO.getLeitorDAO().criar(leitorTeste);
+       MasterDAO.getEmprestimoDAO().criar(emprestimoTeste);
+
+       // RODANDO COM TESTESUITE VALOR ESPERADO = 8, CASO CONTRÁRIO VALOR = 2
+       assertEquals(8, MasterDAO.getLivroDAO().nLivrosEmprestados());
     }
 }
