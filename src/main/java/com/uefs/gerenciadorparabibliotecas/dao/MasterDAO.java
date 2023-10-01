@@ -7,6 +7,11 @@ import com.uefs.gerenciadorparabibliotecas.dao.livro.*;
 import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAO;
 import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOList;
 
+/**
+ * Padrão singleton para que exista um única instância para todos os objetos do DAO
+ * @return objeto DAO criado (reserva, livro, leitor, funcionário e empréstimo)
+ */
+
 public class MasterDAO {
     private static EmprestimoDAO emprestimoDAO;
     private static FuncionarioDAO funcionarioDAO;
@@ -21,7 +26,6 @@ public class MasterDAO {
         }
         return reservaDAO;
     }
-
     public static EmprestimoDAO getEmprestimoDAO() {
         if (emprestimoDAO == null) {
             emprestimoDAO = new EmprestimoDAOList();

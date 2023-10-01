@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
     private Funcionario funcionarioAdm;
     private Funcionario funcionarioBiblio;
+
     @BeforeEach
      void setUp() {
         this.funcionarioBiblio = new Bibliotecario("Luva de pedreiro","BA","1234",

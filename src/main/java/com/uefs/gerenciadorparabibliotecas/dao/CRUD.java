@@ -1,19 +1,24 @@
 package com.uefs.gerenciadorparabibliotecas.dao;
 
+/**
+ * CRUD genérico que será utilizado por todos os DAOs
+ * @param <T>
+ * @param <E>
+ */
 public interface CRUD<T, E extends Exception> {
     /**
      * Cria novo objeto
      *
      * @param obj
-     * @return
+     * @return objeto criado
      */
     public T criar(T obj);
 
     /**
      * Deleta um objeto
      *
-     * @param
-     * @return
+     * @param obj
+     * @return void
      */
     public void deletar(T obj) throws E;
 
@@ -22,20 +27,19 @@ public interface CRUD<T, E extends Exception> {
      */
     public void resetar();
 
-    public T atualizar(T obj);
-
     /**
      * Atualiza um objeto
      *
-     * @param
+     * @param  obj
      * @return
      */
+    public T atualizar(T obj);
 
     /**
-     * Ler toda a lista de dados
-     *
-     * @return
+     * Procura objeto utilizando seu ID
+     * @param id
+     * @return objeto encontrado
+     * @throws E caso não encontre nenhum objeto com o ID informado
      */
-
     public T procurarPorID(Integer id) throws E;
 }

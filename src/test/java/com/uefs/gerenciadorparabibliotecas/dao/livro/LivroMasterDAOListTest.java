@@ -45,7 +45,7 @@ public class LivroMasterDAOListTest {
         assertEquals(livro, MasterDAO.getLivroDAO().procurarPorID(0));
     }
     @Test
-    void buscarPorISBN() throws LivroException{
+    void buscarPorISBN() {
         Livro livroAux2 = new Livro("Diário de um banana","Zezinho","Cultura",
                 "4455783","2013", CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
         MasterDAO.getLivroDAO().criar(livroAux2);
@@ -53,7 +53,6 @@ public class LivroMasterDAOListTest {
         List<Livro> testeAux2 = MasterDAO.getLivroDAO().procurarPorISBN("4455883");
         assertNotEquals(testeAux1,testeAux2);
     }
-
     @Test
     void buscarPorAutor() throws LivroException{
         Livro livroAux3 = new Livro("Diário de um banana 2","Zezinho","Cultura",
@@ -65,7 +64,7 @@ public class LivroMasterDAOListTest {
     }
 
     @Test
-    void buscarPorTitulo() throws LivroException{
+    void buscarPorTitulo() {
         Livro livroAux4 = new Livro("Diário de um banana 2","Zezinho","Cultura",
                 "4455999","2014", CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
         MasterDAO.getLivroDAO().criar(livroAux4);

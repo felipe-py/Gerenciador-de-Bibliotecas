@@ -34,6 +34,11 @@ public class Reserva {
         this.leitorReservador = leitorReservador;
     }
 
+    /**
+     * Contrutor da reserva para usuário reservador e livro
+     * @param leitorReservador
+     * @param livroReservado
+     */
     public Reserva(Leitor leitorReservador, Livro livroReservado) {
         this.leitorReservador = leitorReservador;
         this.livroReservado = livroReservado;

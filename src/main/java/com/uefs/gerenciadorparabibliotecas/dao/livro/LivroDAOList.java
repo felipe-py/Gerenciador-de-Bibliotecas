@@ -16,6 +16,10 @@ public class LivroDAOList implements LivroDAO{
         this.livros = livros;
         this.novoID = novoID;
     }
+    /**
+     * Retorna todas os livros cadastradas no sistema
+     * @return lista com livros
+     */
     @Override
     public List<Livro> getLivros() {
         return livros;
@@ -63,6 +67,12 @@ public class LivroDAOList implements LivroDAO{
         }
         return null;
     }
+
+    /**
+     *Método para buscar livros de um ISBN
+     * @param ISBN
+     * @return lista de todos os livros que possuem o ISBN informado
+     */
     @Override
     public List<Livro> procurarPorISBN(String ISBN){
         List<Livro> livrosISBN = livros.stream()
@@ -70,6 +80,12 @@ public class LivroDAOList implements LivroDAO{
                 .collect(Collectors.toList());
         return  livrosISBN;
     }
+
+    /**
+     *Método para buscar livros de um autor
+     * @param autor
+     * @return lista de todos os livros que possuem o autor informado no seu campo Autor
+     */
     @Override
     public List<Livro> procurarPorAutor(String autor){
         List<Livro> livrosAutor = livros.stream()
@@ -77,6 +93,12 @@ public class LivroDAOList implements LivroDAO{
                 .collect(Collectors.toList());
         return  livrosAutor;
     }
+
+    /**
+     *Método para buscar livros de um título
+     * @param titulo
+     * @return lista de todos os livros com o título informado
+     */
     @Override
     public List<Livro> procurarPorTitulo(String titulo){
         List<Livro> livrosTitulo = livros.stream()
@@ -84,6 +106,12 @@ public class LivroDAOList implements LivroDAO{
                 .collect(Collectors.toList());
         return  livrosTitulo;
     }
+
+    /**
+     * Método para buscar livros de uma categoria
+     * @param categoriaLivro
+     * @return lista com todos os livros que se enqudram na categoria informada
+     */
     @Override
     public List<Livro> procurarPorCategoria(CategoriaLivro categoriaLivro){
         List<Livro> livrosCategoria = livros.stream()
@@ -92,6 +120,13 @@ public class LivroDAOList implements LivroDAO{
         return  livrosCategoria;
     }
 
+    /**
+     * Método que que verifica se a lista de livros encontrados em busca por autor, título, isbn ou categoria
+     * está preenchida ou vazia
+     * @param livrosAchados
+     * @return livros encontrados em algum dos métodos de busca que não envolvem o ID do livro
+     * @throws LivroException caso a lista retornada esteja vazia (Nenhum livro com o atributo informado foi encontrado)
+     */
     @Override
     public List<Livro> livrosEncontrados(List<Livro> livrosAchados) throws LivroException{
         if (livrosAchados.isEmpty()) {
@@ -101,6 +136,10 @@ public class LivroDAOList implements LivroDAO{
         }
     }
 
+    /**
+     * Método que realiza o somatório de todos os livros que estão emprestados no sistema
+     * @return o somatório de todos os livros que estão emprestados, utiliza o atributo disponibilidade do livro
+     */
     @Override
     public int nLivrosEmprestados() {
         int soma = 0;
@@ -112,6 +151,10 @@ public class LivroDAOList implements LivroDAO{
         return soma;
     }
 
+    /**
+     *Método que realiza o somatório de todos os livros reservados no sistema
+     * @return o somatório com o número de livros que estão reservados
+     */
     @Override
     public Integer nLivrosReservados() {
         Integer soma = 0;
@@ -123,6 +166,11 @@ public class LivroDAOList implements LivroDAO{
         return soma;
     }
 
+    /**
+     * Responsável por agrupar os livros pelo seu ISBN em uma estrutura chave-valor. Isso facilita a forma
+     * como é calculado os livros mais populares
+     * @return map que possui como chave o ISBN e valor uma lista com todos os livros que possuem aquele ISBN
+     */
     @Override
     public Map<String, List<Livro>> agruparLivrosPorISBN() {
         Map<String, List<Livro>> livrosAgrupados = new HashMap<>();
@@ -136,6 +184,12 @@ public class LivroDAOList implements LivroDAO{
         }
         return livrosAgrupados;
     }
+
+    /**
+     *Método para calcular os livros mais emprestados da biblioteca
+     * @param livrosPorIsbn map com os livros agrupados por ISBN
+     * @return map dos livros mais emprestados e o seu número de empréstimo, em ordem decrescente
+     */
     @Override
     public Map<Integer, List<String>> livrosPopulares(Map<String, List<Livro>> livrosPorIsbn) {
         Map<Integer, List<Livro>> livrosPorEmprestimos = new TreeMap<>(Collections.reverseOrder());

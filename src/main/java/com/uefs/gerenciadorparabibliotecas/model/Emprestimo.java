@@ -18,7 +18,13 @@ public class Emprestimo {
     private boolean naoDevolvido;
     private LocalDate dataDevolvidoFinal;
 
-
+    /**
+     * Construtor para a classe empréstimo e seus atributos de criação
+     * @param novaDataEmprestimo data em que o empréstimo é criado
+     * @param novaDataDeDevolucao data em que se espera que o empréstimo seja finalizado
+     * @param novoLivroEmprestado livro que serpa emprestado
+     * @param novoMutuario leitor responsável pelo empréstimo
+     */
     public Emprestimo (LocalDate novaDataEmprestimo, LocalDate novaDataDeDevolucao,
                        Livro novoLivroEmprestado, Leitor novoMutuario) {
         this.dataEmprestimo = novaDataEmprestimo;
@@ -73,9 +79,16 @@ public class Emprestimo {
     public void setNumeroDeRenovacoes(int numeroDeRenovacoes) { this.numeroDeRenovacoes = numeroDeRenovacoes; }
     public void setNaoDevolvido(boolean naoDevolvido) { this.naoDevolvido = naoDevolvido; }
 
+    /**
+     * Método para renovar empéstimo, verificaçoes são feitas para garantir integridade da ação. Objeto empréstimo
+     * é atualizado no mesmo momento pelo seu DAO.
+     * @param emprestimo
+     * @throws EmprestimoException caso o número de renovações tenha sido atingido ou o livro emprestado esteja reservado
+     */
     public void estenderEmprestimo (Emprestimo emprestimo) throws EmprestimoException {
+        // NÚMERO DE RENOVAÇÕES E NOVA DATA ESPERADA DE DEVOLUÇÃO SÃO ALTERADAS CASO CONDIÇÃO SEJA ACEITA
         if (emprestimo.numeroDeRenovacoes < 1 && emprestimo.getLivroEmprestado().naoEstaReservado()) {
-            numeroDeRenovacoes++;
+            emprestimo.numeroDeRenovacoes++;
             emprestimo.dataDevolucaoEsperada = dataDevolucaoEsperada.plus(7, ChronoUnit.DAYS);
             MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
         }
@@ -84,6 +97,12 @@ public class Emprestimo {
         }
     }
 
+    /**
+     * Método para calcular a diferença de dias entrea a dta de devolução esperada e a de entrega do empréstimo
+     * @param emprestimo
+     * @param data que deve ser utilizada como parâmetro para calculo do atraso
+     * @return diferença entre a data passada como parâmetro e a data em que esperava a finalização do empréstimo
+     */
     public int calcularAtraso (Emprestimo emprestimo, LocalDate data) {
         int diferenca = (int) ChronoUnit.DAYS.between(data, emprestimo.dataDevolucaoEsperada);
         if (diferenca >0) {
@@ -92,11 +111,26 @@ public class Emprestimo {
             return diferenca;
         }
     }
+
+    /**
+     * Método para calcular a multa que um usuário deve receber caso atrase um empréstimo,
+     * o dobro de dias em atraso multiplicado por -1, devido a diferença negativa de dias
+     * @param emprestimo que será usado como base do cálculo
+     * @param data para calcular o atraso
+     * @return quantidade de dias que o usuário ficará impossibilitado de realizar um empréstimo
+     */
     public int calcularMulta (Emprestimo emprestimo, LocalDate data) {
         int atraso = this.calcularAtraso(emprestimo, data);
         int multa  = (2*atraso)*-1;
         return multa;
     }
+
+    /**
+     * Método para aplicar a multa a um usuário, definindo quando ele poderá novamente realizar um empréstimo
+     * Método usado para decidir quando a multa aplicada ao leitor irá acabar, utiliza o calcularMulta e calcularAtraso
+     * @param emprestimo
+     * @param data
+     */
     public void aplicarMulta (Emprestimo emprestimo, LocalDate data) {
         int multa = this.calcularMulta(emprestimo, data);
         if (multa > 0) {
@@ -108,6 +142,15 @@ public class Emprestimo {
             }
         }
     }
+
+    /**
+     * Método que reúne as ferramentas de aplicarMulta, calcularMulta e calcularAtraso para
+     * finalizar um empréstimo
+     * @param emprestimo que será finalizado
+     * @param data de devolução do empréstimo
+     * Após todos os cálculos os DAOs de leitor, livro e empréstimo são utilizados para
+     * atualizar os atributos modificados
+     */
     public void finalizarEmprestimo (Emprestimo emprestimo, LocalDate data) {
         emprestimo.aplicarMulta(emprestimo, data);
         emprestimo.livroEmprestado.setDisponibilidade(true);
@@ -115,9 +158,17 @@ public class Emprestimo {
         emprestimo.setAtraso(emprestimo.calcularAtraso(emprestimo, data));
         MasterDAO.getLeitorDAO().atualizar(emprestimo.getMutuario());
         MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
+        MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
     }
 
-    //Método para verificar se o emprestimo pode ser feito
+    /**
+     * Método que reúne as verificações que devem ser feitas na criação de um empréstimo
+     * @param emprestimo a ser criado
+     * @return booleano caso passe em todas as condições
+     * @throws Exception caso livro esteja reservado, usuário esteja banido ou multado
+     * Método ainda não utilizado no sistema, vericação está sendo feita de forma manual no método
+     * criar do DAO empréstimo
+     */
     public boolean verificacao (Emprestimo emprestimo) throws Exception {
         if (!emprestimo.getLivroEmprestado().estaReservado()) {
             throw new EmprestimoException(EmprestimoException.RENEW, emprestimo);           //criar exception para livro não disponivel

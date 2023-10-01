@@ -44,7 +44,6 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(this.livro, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getLivroEmprestado());
         assertEquals(this.leitor, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getMutuario());
     }
-
     @Test
      void deletar() throws EmprestimoException{
         LocalDate dataEmprestimo = LocalDate.now();
@@ -54,9 +53,8 @@ import static org.junit.jupiter.api.Assertions.*;
         MasterDAO.getEmprestimoDAO().deletar(this.emprestimo);
         assertEquals(1, MasterDAO.getEmprestimoDAO().getEmprestimos().size());
     }
-
     @Test
-     void resetar() throws EmprestimoException{
+     void resetar(){
         MasterDAO.getEmprestimoDAO().resetar();
         assertEquals(0, MasterDAO.getEmprestimoDAO().getEmprestimos().size());
     }
@@ -73,12 +71,10 @@ import static org.junit.jupiter.api.Assertions.*;
        assertTrue(livroAux.getDisponibilidade());
        assertFalse(this.livro.getDisponibilidade());
     }
-
     @Test
     void adicionarListaemprestimosLeitor(){
        assertEquals(this.emprestimo.getMutuario().getEmprestimos().get(0).getEmprestimoID(), this.emprestimo.getEmprestimoID());
     }
-
     @Test
     void failDelete() {
        LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
@@ -93,7 +89,6 @@ import static org.junit.jupiter.api.Assertions.*;
           assertEquals(EmprestimoException.DELETE, e.getMessage());
        }
     }
-
     @Test
     void failBusca(){
        try {
@@ -119,9 +114,20 @@ import static org.junit.jupiter.api.Assertions.*;
        // RODANDO COM TESTESUITE VALOR ESPERADO = 9, CASO CONTRÁRIO VALOR = 2
        assertEquals(9, MasterDAO.getLivroDAO().nLivrosEmprestados());
     }
+
     @Test
     void numeroLivrosAtrasados(){
        assertEquals(1, MasterDAO.getEmprestimoDAO().nLivrosatrasados(LocalDate.of(2023,10,10)));
+    }
+
+    @Test
+    void failCreate(){
+       // TESTE PARA NÃO PERMITIR CRIAÇÃO DE EMPRÉSTIMO CASO USUÁRIO ESTEJA EM PERÍODO DE MULTA
+       LocalDate dataEmprestimo = LocalDate.of(2023,10,12);
+       LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
+       this.emprestimo.finalizarEmprestimo(this.emprestimo,LocalDate.of(2023,10,10));
+       Emprestimo emprestimoTeste = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
+       assertNull(MasterDAO.getEmprestimoDAO().criar(emprestimoTeste));
     }
 
 }

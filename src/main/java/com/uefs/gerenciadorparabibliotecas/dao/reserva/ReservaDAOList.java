@@ -21,7 +21,7 @@ public class ReservaDAOList implements ReservaDAO{
         reserva.setReservaID(this.novoID);
         this.novoID++;
         this.reservas.add(reserva);
-        reserva.getLivroReservado().setStatusReserva(true);
+        reserva.getLivroReservado().setStatusReserva(true);  // Altera o status de reserva do livro
         return reserva;
     }
 
@@ -54,6 +54,10 @@ public class ReservaDAOList implements ReservaDAO{
         throw new ReservaException(ReservaException.SEARCH, id);
     }
 
+    /**
+     * Retorna todas as reservas cadastradas no sistema
+     * @return lista com reservas
+     */
     @Override
     public List<Reserva> getReservas() {
         return reservas;

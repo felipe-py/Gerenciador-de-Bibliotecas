@@ -1,6 +1,16 @@
 package com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions;
-
+/**
+ * GERENCIADOR DE BIBLIOTECA
+ * @author Luis Felipe Cunha Silva
+ * @author Lucas Lima Rodrigues
+ * @version 1.0
+ */
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
+
+/**
+ * Classe que reúne todas as exceções possíveis do leitor
+ * deletar, atualizar, buscar, multado ou banido
+ */
 
 public class LeitorException extends Exception{
     public static final String DELETE = "Operação de EXCLUSÃO não realizada.";
@@ -8,7 +18,6 @@ public class LeitorException extends Exception{
     public static final String UPDATE = "Operação de ATUALIZAÇÃO não realizada.";
     public static final String USERFINED = "Usuário multado";
     public static final String BAN = "Usuario bloqueado";
-    public static final String CREATE = "Informação inválida";
     private Leitor leitor;
 
     public LeitorException(String create, Leitor leitor) {

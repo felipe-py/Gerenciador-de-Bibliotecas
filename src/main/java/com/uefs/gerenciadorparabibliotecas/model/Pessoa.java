@@ -1,9 +1,5 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
-
-import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
-import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
-
 public abstract class Pessoa {
     private   String    nome;
     private   String    endereco;
@@ -11,9 +7,14 @@ public abstract class Pessoa {
     private   String    numeroDeTelefone;
     private   Integer   userID;
 
-
-
-    //constructor
+    /**
+     * Construtor de Pessoa, utilizado para leitores e funcionários que serão cadastrados no sistema
+     * @param novoNome
+     * @param novoEndereco
+     * @param novaSenha
+     * @param novoNumeroDeTelefone
+     * @param novoUserID
+     */
     public Pessoa (String novoNome, String novoEndereco, String novaSenha,
                    String novoNumeroDeTelefone, Integer novoUserID) {
         this.nome               = novoNome;

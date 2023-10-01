@@ -18,6 +18,10 @@ public class EmprestimoDAOList implements EmprestimoDAO{
         this.novoID = novoID;
     }
 
+    /**
+     * Retorna todas os empréstimos cadastradas no sistema
+     * @return lista com empréstimos
+     */
     @Override
     public List<Emprestimo> getEmprestimos(){
         return emprestimos;
@@ -25,17 +29,17 @@ public class EmprestimoDAOList implements EmprestimoDAO{
 
     @Override
     public Emprestimo criar(Emprestimo emprestimo){
-        if(emprestimo.getMutuario().getDiasDeMulta() != 0 || emprestimo.getMutuario().isLeitorBanido()){
+        if(emprestimo.getMutuario().getDataDoFimDaMulta().isAfter(emprestimo.getDataEmprestimo())){
             return null;
         }
         emprestimo.setEmprestimoID(this.novoID);
         this.novoID++;
         this.emprestimos.add(emprestimo);
 
-        emprestimo.getMutuario().adicionarEmprestimo(emprestimo);
-        emprestimo.getLivroEmprestado().setDisponibilidade(false);
+        emprestimo.getMutuario().adicionarEmprestimo(emprestimo);  // Adiciona empréstimo a histórico do leitor
+        emprestimo.getLivroEmprestado().setDisponibilidade(false); // Atualiza disponibilidade do livro
 
-        emprestimo.getLivroEmprestado().setNumeroEmprestimos();
+        emprestimo.getLivroEmprestado().setNumeroEmprestimos();  // Atualiza a quantidade empréstimos do livro
 
         MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
         MasterDAO.getLeitorDAO().atualizar(emprestimo.getMutuario());
@@ -79,6 +83,11 @@ public class EmprestimoDAOList implements EmprestimoDAO{
         throw new EmprestimoException(EmprestimoException.SEARCH, id);
     }
 
+    /**
+     * Método para calcular todos os livros que estão em atraso no sistema
+     * @param data para cálcular empréstimos atrasados
+     * @return soma dos livros que estão em atraso no empréstimo
+     */
     @Override
     public Integer nLivrosatrasados(LocalDate data) {
         Integer soma = 0;

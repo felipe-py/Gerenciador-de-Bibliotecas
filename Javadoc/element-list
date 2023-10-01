@@ -1,0 +1,15 @@
+com.uefs
+com.uefs.gerenciadorparabibliotecas
+com.uefs.gerenciadorparabibliotecas.dao
+com.uefs.gerenciadorparabibliotecas.dao.emprestimo
+com.uefs.gerenciadorparabibliotecas.dao.funcionario
+com.uefs.gerenciadorparabibliotecas.dao.leitor
+com.uefs.gerenciadorparabibliotecas.dao.livro
+com.uefs.gerenciadorparabibliotecas.dao.reserva
+com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions
+com.uefs.gerenciadorparabibliotecas.exeptions.funcionarioExceptions
+com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions
+com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions
+com.uefs.gerenciadorparabibliotecas.exeptions.reservaExcetions
+com.uefs.gerenciadorparabibliotecas.model
+com.uefs.gerenciadorparabibliotecas.model.emprestimo

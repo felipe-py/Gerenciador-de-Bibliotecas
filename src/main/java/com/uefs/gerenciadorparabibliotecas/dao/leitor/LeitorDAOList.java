@@ -2,7 +2,6 @@ package com.uefs.gerenciadorparabibliotecas.dao.leitor;
 
 import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
-import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +14,10 @@ public class LeitorDAOList implements LeitorDAO {
         this.leitores = leitores;
     }
 
+    /**
+     * Retorna todas os leitores cadastradas no sistema
+     * @return lista com leitores
+     */
     public List<Leitor> getLeitores() {
         return leitores;
     }

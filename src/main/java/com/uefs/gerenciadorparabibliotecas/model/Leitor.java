@@ -23,6 +23,15 @@ public class Leitor extends Pessoa {
         this.historicoEmprestimos.add(emprestimo);
     }
 
+    /**
+     * Construtor do leitor que reutiliza a classe Pessoa, sua superclasse, os atributos relacionados a multa e
+     * histórico de empréstimo são adicionados
+     * @param novoNome
+     * @param novoEndereco
+     * @param novaSenha
+     * @param novoNumeroDeTelefone
+     * @param novoUserID
+     */
     public Leitor(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, int novoUserID) {
         super(novoNome, novoEndereco, novaSenha, novoNumeroDeTelefone, novoUserID);
         this.diasDeMulta = 0;
@@ -52,8 +61,6 @@ public class Leitor extends Pessoa {
     public void setEmprestimos(List<Emprestimo> emprestimos) {
         this.historicoEmprestimos = emprestimos;
     }
-
-
 
     @Override
     public String toString() {

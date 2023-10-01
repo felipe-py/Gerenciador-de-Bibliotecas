@@ -10,5 +10,4 @@ import java.util.List;
 public interface EmprestimoDAO extends CRUD<Emprestimo, EmprestimoException> {
     List<Emprestimo> getEmprestimos();
     Integer nLivrosatrasados(LocalDate data);
-
 }

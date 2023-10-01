@@ -18,6 +18,17 @@ public class Livro {
     private int livroID;
     private boolean statusReserva = false;
     private Integer numeroEmprestimos = 0;
+
+    /**
+     * Construtor do livro carregando seus principais atributos de criação
+     * @param novoTitulo
+     * @param novoAutor
+     * @param novaEditora
+     * @param novoIsbn
+     * @param novoAnoDePublicacao
+     * @param novaCategoria
+     * @param novaLocalizacao
+     */
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
                   String novoAnoDePublicacao, CategoriaLivro novaCategoria, LocalizacaoLivro novaLocalizacao) {
         this.titulo = novoTitulo;

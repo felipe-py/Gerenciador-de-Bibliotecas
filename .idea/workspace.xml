@@ -5,14 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/CRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/MasterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/MasterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/FuncionarioException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/FuncionarioException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/ReservaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/ReservaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Bibliotecario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Bibliotecario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/CategoriaLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/CategoriaLivro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Emprestimo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Leitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Leitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/model/Reserva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +118,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EmprestimoDAOListTest.failCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Gerenciador_de_Bibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAOListTest" />
+      <option name="METHOD_NAME" value="failCreate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EmprestimoDAOListTest.numeroLivrosAtrasados" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciador_de_Bibliotecas" />
       <extension name="coverage">
@@ -124,22 +161,6 @@
       <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo" />
       <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.model.emprestimo.EmprestimoTest" />
       <option name="METHOD_NAME" value="finalizarEmprestimoAtrasado" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LivroMasterDAOListTest.livrosPopulares" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciador_de_Bibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.livro.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro.LivroMasterDAOListTest" />
-      <option name="METHOD_NAME" value="livrosPopulares" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -176,10 +197,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestSuite" />
-        <item itemvalue="JUnit.EmprestimoDAOListTest.numeroLivrosAtrasados" />
+        <item itemvalue="JUnit.EmprestimoDAOListTest.failCreate" />
         <item itemvalue="JUnit.EmprestimoTest.finalizarEmprestimoAtrasado" />
+        <item itemvalue="JUnit.EmprestimoDAOListTest.numeroLivrosAtrasados" />
         <item itemvalue="JUnit.EmprestimoDAOListTest.adicionarListaemprestimosLeitor" />
-        <item itemvalue="JUnit.LivroMasterDAOListTest.livrosPopulares" />
       </list>
     </recent_temporary>
   </component>
@@ -194,17 +215,6 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/uefs/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1696101877513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.uefs.gerenciadorparabibliotecas.*</FILTER>
@@ -214,6 +224,12 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$LivroMasterDAOListTest.ic" NAME="LivroMasterDAOListTest Coverage Results" MODIFIED="1694735682870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.uefs.gerenciadorparabibliotecas.dao.livro.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/workspace_xml$TestSuite.ic" NAME="TestSuite Coverage Results" MODIFIED="1696183078706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.uefs.gerenciadorparabibliotecas.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/workspace_xml$EmprestimoDAOListTest_failCreate.ic" NAME="EmprestimoDAOListTest.failCreate Coverage Results" MODIFIED="1696185581705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Gerenciador_de_Bibliotecas$EmprestimoDAOListTest.ic" NAME="EmprestimoDAOListTest Coverage Results" MODIFIED="1694740277053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.uefs.gerenciadorparabibliotecas.dao.emprestimo.*</FILTER>

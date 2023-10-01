@@ -40,8 +40,6 @@ public class FuncionarioDAOList implements FuncionarioDAO{
         this.funcionarios = new ArrayList<>();
     }
 
-
-
     @Override
     public Funcionario procurarPorID(Integer id) throws FuncionarioException{
         for(Funcionario funcionario: this.funcionarios){
@@ -52,6 +50,10 @@ public class FuncionarioDAOList implements FuncionarioDAO{
         throw new FuncionarioException(FuncionarioException.SEARCH, id);
     }
 
+    /**
+     * Retorna todas os funcionários cadastradas no sistema
+     * @return lista com funcionários
+     */
     @Override
     public List<Funcionario> getFuncionarios() {
         return this.funcionarios;
