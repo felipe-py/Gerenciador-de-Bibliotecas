@@ -1,6 +1,9 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
 
+import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
+
 public abstract class Pessoa {
     private   String    nome;
     private   String    endereco;
@@ -20,7 +23,6 @@ public abstract class Pessoa {
         this.userID             = novoUserID;
 
     }
-
 
     //getters
     public String getNome () { return nome; }
@@ -51,6 +53,4 @@ public abstract class Pessoa {
     public boolean equals(Pessoa pessoa) {
         return super.equals(pessoa);
     }
-
-
 }

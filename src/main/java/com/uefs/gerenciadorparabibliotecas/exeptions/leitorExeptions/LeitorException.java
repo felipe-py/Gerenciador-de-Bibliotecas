@@ -8,6 +8,7 @@ public class LeitorException extends Exception{
     public static final String UPDATE = "Operação de ATUALIZAÇÃO não realizada.";
     public static final String USERFINED = "Usuário multado";
     public static final String BAN = "Usuario bloqueado";
+    public static final String CREATE = "Informação inválida";
     private Leitor leitor;
 
     public LeitorException(String create, Leitor leitor) {
@@ -17,5 +18,9 @@ public class LeitorException extends Exception{
 
     public LeitorException(String create, Integer id) {
         super(create + "ID inválido:" + id);
+    }
+
+    public LeitorException(String create, String atributo) {
+        super(create + atributo + "INVÁLIDO/EXISTENTE");
     }
 }
