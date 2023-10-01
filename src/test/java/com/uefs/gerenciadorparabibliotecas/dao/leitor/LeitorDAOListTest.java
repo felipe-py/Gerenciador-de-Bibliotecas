@@ -16,7 +16,7 @@ public class LeitorDAOListTest {
     @BeforeEach
     void setUp(){
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
-                4477);
+                0001);
         MasterDAO.getLeitorDAO().criar(this.leitor);
     }
 
@@ -27,11 +27,11 @@ public class LeitorDAOListTest {
 
     @Test
     void criar() throws LeitorException{
-        assertEquals("Lucas",MasterDAO.getLeitorDAO().procurarPorID(4477).getNome());
-        assertEquals("Feira VI",MasterDAO.getLeitorDAO().procurarPorID(4477).getEndereco());
-        assertEquals("senha123",MasterDAO.getLeitorDAO().procurarPorID(4477).getSenha());
-        assertEquals("40028922",MasterDAO.getLeitorDAO().procurarPorID(4477).getNumeroDeTelefone());
-        assertEquals(4477,MasterDAO.getLeitorDAO().procurarPorID(4477).getUserID());
+        assertEquals("Lucas",MasterDAO.getLeitorDAO().procurarPorID(0001).getNome());
+        assertEquals("Feira VI",MasterDAO.getLeitorDAO().procurarPorID(0001).getEndereco());
+        assertEquals("senha123",MasterDAO.getLeitorDAO().procurarPorID(0001).getSenha());
+        assertEquals("40028922",MasterDAO.getLeitorDAO().procurarPorID(0001).getNumeroDeTelefone());
+        assertEquals(0001,MasterDAO.getLeitorDAO().procurarPorID(0001).getUserID());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class LeitorDAOListTest {
 
     @Test
     void procurarPorID() throws LeitorException {
-        assertEquals(leitor, MasterDAO.getLeitorDAO().procurarPorID(4477));
+        assertEquals(leitor, MasterDAO.getLeitorDAO().procurarPorID(0001));
     }
 
     @Test
