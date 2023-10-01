@@ -31,8 +31,14 @@ public class EmprestimoDAOList implements EmprestimoDAO{
         emprestimo.setEmprestimoID(this.novoID);
         this.novoID++;
         this.emprestimos.add(emprestimo);
+
         emprestimo.getMutuario().adicionarEmprestimo(emprestimo);
         emprestimo.getLivroEmprestado().setDisponibilidade(false);
+
+        Integer temp = emprestimo.getLivroEmprestado().getNumeroEmprestimos();
+        temp += 1;
+        emprestimo.getLivroEmprestado().setNumeroEmprestimos(temp);
+
         MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
         MasterDAO.getLeitorDAO().atualizar(emprestimo.getMutuario());
         return emprestimo;
@@ -73,5 +79,17 @@ public class EmprestimoDAOList implements EmprestimoDAO{
             }
         }
         throw new EmprestimoException(EmprestimoException.SEARCH, id);
+    }
+
+    @Override
+    public Integer nLivrosatrasados(LocalDate data) {
+        Integer soma = 0;
+        List<Emprestimo> emprestimosRealizados = MasterDAO.getEmprestimoDAO().getEmprestimos();
+        for(Emprestimo emprestimo: emprestimosRealizados){
+            if(emprestimo.calcularAtraso(emprestimo, data) < 0){
+                soma += 1;
+            }
+        }
+        return soma;
     }
 }
