@@ -18,4 +18,9 @@ public interface LivroDAO extends CRUD<Livro, LivroException> {
     List<Livro> procurarPorCategoria(CategoriaLivro categoriaLivro);
     List<Livro> getLivros();
     List<Livro> livrosEncontrados(List<Livro> livrosAchados) throws LivroException;
+    int nLivrosEmprestados();
+    Integer nLivrosReservados();
+    List<Livro> livrosPopulares();
+
+
 }

@@ -5,7 +5,9 @@ import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class LivroDAOList implements LivroDAO{
@@ -100,5 +102,45 @@ public class LivroDAOList implements LivroDAO{
         } else {
             return livrosAchados;
         }
+    }
+
+    @Override
+    public int nLivrosEmprestados() {
+        int soma = 0;
+        for(Livro livro: this.livros){
+            if(!livro.getDisponibilidade()){
+                soma ++;
+            }
+        }
+        return soma;
+    }
+
+    @Override
+    public Integer nLivrosReservados() {
+        Integer soma = 0;
+        for(Livro livro: this.livros){
+            if(livro.estaReservado()){
+                soma += 1;
+            }
+        }
+        return soma;
+    }
+
+    @Override
+    public List<Livro> livrosPopulares() {
+        // Agrupando os livros por ISBN
+        Map<String, List<Livro>> livrosPorISBN = livros.stream()
+                .collect(Collectors.groupingBy(Livro::getISBN));
+
+        // Obtendo uma lista com os livros mais emprestados
+        List<Livro> livrosMaisEmprestados = new ArrayList<>();
+        livrosMaisEmprestados.addAll(livrosPorISBN.values().stream()
+                .flatMap(List::stream)
+                .collect(Collectors.toList()));
+
+        // Classificando os livros em ordem decrescente de número de empréstimos
+        livrosMaisEmprestados.sort(Comparator.comparingInt(Livro::getNumeroEmprestimos).reversed());
+
+        return livrosMaisEmprestados;
     }
 }
