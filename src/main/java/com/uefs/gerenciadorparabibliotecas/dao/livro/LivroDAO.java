@@ -7,6 +7,7 @@ import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 public interface LivroDAO extends CRUD<Livro, LivroException> {
 
@@ -20,7 +21,6 @@ public interface LivroDAO extends CRUD<Livro, LivroException> {
     List<Livro> livrosEncontrados(List<Livro> livrosAchados) throws LivroException;
     int nLivrosEmprestados();
     Integer nLivrosReservados();
-    List<Livro> livrosPopulares();
-
-
+    Map<String, List<Livro>> agruparLivrosPorISBN();
+    Map<Integer, List<String>> livrosPopulares(Map<String, List<Livro>> livrosPorIsbn);
 }

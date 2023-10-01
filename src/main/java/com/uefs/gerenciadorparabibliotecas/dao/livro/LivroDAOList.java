@@ -4,10 +4,7 @@ import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroExcept
 import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
 import com.uefs.gerenciadorparabibliotecas.model.Livro;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class LivroDAOList implements LivroDAO{
@@ -127,20 +124,42 @@ public class LivroDAOList implements LivroDAO{
     }
 
     @Override
-    public List<Livro> livrosPopulares() {
-        // Agrupando os livros por ISBN
-        Map<String, List<Livro>> livrosPorISBN = livros.stream()
-                .collect(Collectors.groupingBy(Livro::getISBN));
+    public Map<String, List<Livro>> agruparLivrosPorISBN() {
+        Map<String, List<Livro>> livrosAgrupados = new HashMap<>();
 
-        // Obtendo uma lista com os livros mais emprestados
-        List<Livro> livrosMaisEmprestados = new ArrayList<>();
-        livrosMaisEmprestados.addAll(livrosPorISBN.values().stream()
-                .flatMap(List::stream)
-                .collect(Collectors.toList()));
+        for (Livro livro : livros) {
+            String isbn = livro.getISBN();
+            if (!livrosAgrupados.containsKey(isbn)) {
+                livrosAgrupados.put(isbn, new ArrayList<>());
+            }
+            livrosAgrupados.get(isbn).add(livro);
+        }
+        return livrosAgrupados;
+    }
+    @Override
+    public Map<Integer, List<String>> livrosPopulares(Map<String, List<Livro>> livrosPorIsbn) {
+        Map<Integer, List<Livro>> livrosPorEmprestimos = new TreeMap<>(Collections.reverseOrder());
+        Map<Integer, List<String>> resultado = new TreeMap<>(Collections.reverseOrder());
 
-        // Classificando os livros em ordem decrescente de número de empréstimos
-        livrosMaisEmprestados.sort(Comparator.comparingInt(Livro::getNumeroEmprestimos).reversed());
+        // Percorre o map original e adiciona os livros ao novo map
+        for (Map.Entry<String, List<Livro>> entry : livrosPorIsbn.entrySet()) {
+            int totalEmprestimos = 0;
+            for (Livro livro : entry.getValue()) {
+                totalEmprestimos += livro.getNumeroEmprestimos();
+            }
+            livrosPorEmprestimos.put(totalEmprestimos, entry.getValue());
+        }
 
-        return livrosMaisEmprestados;
+        // Monta os dados para retorno
+        for (Map.Entry<Integer, List<Livro>> entry : livrosPorEmprestimos.entrySet()) {
+            List<Livro> livros = entry.getValue();
+            if (!livros.isEmpty()) {
+                String titulo = livros.get(0).getTitulo();
+                List<String> emprestimos = resultado.getOrDefault(entry.getKey(), new ArrayList<>());
+                emprestimos.add(titulo);
+                resultado.put(entry.getKey(), emprestimos);
+            }
+        }
+        return resultado;
     }
 }
