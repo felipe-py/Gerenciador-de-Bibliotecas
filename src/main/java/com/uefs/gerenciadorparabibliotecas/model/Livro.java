@@ -17,7 +17,7 @@ public class Livro {
     private LocalDate estimativaDeDevolucao;
     private int livroID;
     private boolean statusReserva = false;
-    private List<Emprestimo> historicoDeEmprestimos;
+    private Integer numeroEmprestimos = 0;
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
                   String novoAnoDePublicacao, CategoriaLivro novaCategoria, LocalizacaoLivro novaLocalizacao) {
         this.titulo = novoTitulo;
@@ -43,6 +43,15 @@ public class Livro {
     public String getTitulo () {
         return this.titulo;
     }
+
+    public Integer getNumeroEmprestimos() {
+        return numeroEmprestimos;
+    }
+
+    public void setNumeroEmprestimos(Integer numeroEmprestimos) {
+        this.numeroEmprestimos = numeroEmprestimos;
+    }
+
     public String getautor () {
         return this.autor;
     }
@@ -69,9 +78,6 @@ public class Livro {
     }
     public int getLivroID () {
         return this.livroID;
-    }
-    public List<Emprestimo> getHistorico () {
-        return this.historicoDeEmprestimos;
     }
 
     public void setTitulo (String novoTitulo) {
