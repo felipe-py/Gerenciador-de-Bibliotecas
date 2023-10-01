@@ -35,9 +35,7 @@ public class EmprestimoDAOList implements EmprestimoDAO{
         emprestimo.getMutuario().adicionarEmprestimo(emprestimo);
         emprestimo.getLivroEmprestado().setDisponibilidade(false);
 
-        Integer temp = emprestimo.getLivroEmprestado().getNumeroEmprestimos();
-        temp += 1;
-        emprestimo.getLivroEmprestado().setNumeroEmprestimos(temp);
+        emprestimo.getLivroEmprestado().setNumeroEmprestimos();
 
         MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
         MasterDAO.getLeitorDAO().atualizar(emprestimo.getMutuario());

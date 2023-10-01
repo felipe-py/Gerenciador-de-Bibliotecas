@@ -48,8 +48,8 @@ public class Livro {
         return numeroEmprestimos;
     }
 
-    public void setNumeroEmprestimos(Integer numeroEmprestimos) {
-        this.numeroEmprestimos = numeroEmprestimos;
+    public void setNumeroEmprestimos() {
+        this.numeroEmprestimos += 1;
     }
 
     public String getautor () {
