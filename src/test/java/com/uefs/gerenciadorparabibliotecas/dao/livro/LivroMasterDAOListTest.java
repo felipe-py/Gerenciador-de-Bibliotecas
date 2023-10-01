@@ -2,14 +2,14 @@ package com.uefs.gerenciadorparabibliotecas.dao.livro;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
-import com.uefs.gerenciadorparabibliotecas.model.CategoriaLivro;
-import com.uefs.gerenciadorparabibliotecas.model.Livro;
-import com.uefs.gerenciadorparabibliotecas.model.LocalizacaoLivro;
+import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -177,6 +177,54 @@ public class LivroMasterDAOListTest {
             MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorCategoria(CategoriaLivro.POESIA));
         } catch (LivroException e) {
             assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+        }
+    }
+
+    @Test
+    void livrosPopulares(){
+
+        LocalDate dataEmprestimo = LocalDate.now();
+        LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
+
+        Livro livro01 = new Livro("Harry Potter e a Pedra Filosofal","Zezinho","Cultura","12345678","2013",
+                CategoriaLivro.OUTRA, LocalizacaoLivro.alaC);
+        Leitor leitor01 = new Leitor("Lucas","Feira VI","senha123","40028922",
+                1010);
+        Emprestimo emprestimo01 = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,livro01,leitor01);
+
+        Livro livro02 = new Livro("Harry Potter e a Pedra Filosofal","Zezinho","Cultura","12345678","2013",
+                CategoriaLivro.OUTRA, LocalizacaoLivro.alaC);
+        Leitor leitor02 = new Leitor("Felipe","Feira VI","senha123","40028922",
+                1011);
+        Emprestimo emprestimo02 = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,livro02,leitor02);
+
+        Livro livro04 = new Livro("Diário de um banana 2","Zezinho","Cultura","4455884","2013",
+                CategoriaLivro.OUTRA, LocalizacaoLivro.alaC);
+        Leitor leitor04 = new Leitor("Lucas","Feira VI","senha123","40028922",
+                1013);
+        Emprestimo emprestimo04 = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,livro04,leitor04);
+
+        MasterDAO.getLivroDAO().criar(livro01);
+        MasterDAO.getLivroDAO().criar(livro02);
+        MasterDAO.getLivroDAO().criar(livro04);
+
+        MasterDAO.getLeitorDAO().criar(leitor01);
+        MasterDAO.getLeitorDAO().criar(leitor02);
+        MasterDAO.getLeitorDAO().criar(leitor04);
+
+        MasterDAO.getEmprestimoDAO().criar(emprestimo01);
+        MasterDAO.getEmprestimoDAO().criar(emprestimo02);
+        MasterDAO.getEmprestimoDAO().criar(emprestimo04);
+        MasterDAO.getEmprestimoDAO().criar(emprestimo04);
+        MasterDAO.getEmprestimoDAO().criar(emprestimo04);
+
+        System.out.println("\n= TESTE DOS LIVROS MAIS POPULARES =\n");
+        System.out.println("OBSERVAÇÕES\n VALORES DIFEREM ENTRE RODAR COM TESTE SUITE E REALIZAR ESTE TESTE UNITARIAMENTE");
+
+        int soma = 1;
+        for (Map.Entry<Integer, List<String>> entry : MasterDAO.getLivroDAO().livrosPopulares(MasterDAO.getLivroDAO().agruparLivrosPorISBN()).entrySet()) {
+            System.out.println(soma + "º: Número de empréstimos => " + entry.getKey() + " || Livro: " + entry.getValue());
+            soma++;
         }
     }
 }
