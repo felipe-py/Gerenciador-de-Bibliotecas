@@ -21,6 +21,8 @@ public class ReservaDAOListTest {
         this.leitor = new Leitor("Carlos","Asa Branca","4455","75982560864",
                 7896);
         this.reserva = new Reserva(this.leitor, this.livro);
+        MasterDAO.getLeitorDAO().criar(this.leitor);
+        MasterDAO.getLivroDAO().criar(this.livro);
         MasterDAO.getReservaDAO().criar(this.reserva);
     }
 
@@ -85,5 +87,20 @@ public class ReservaDAOListTest {
         } catch (ReservaException e) {
             assertEquals(ReservaException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
         }
+    }
+
+    @Test
+    void numeroLivrosReservados(){
+        Livro livroTeste = new Livro("Asassin's Creed","Não sei","HBO","4455223",
+                "1999", CategoriaLivro.FANTASIA, LocalizacaoLivro.alaD);
+        Leitor leitorTeste = new Leitor("Carlos","Asa Branca","4455","75982560864",
+                7896);
+        Reserva reservaTeste = new Reserva(leitorTeste, livroTeste);
+        MasterDAO.getLeitorDAO().criar(leitorTeste);
+        MasterDAO.getLivroDAO().criar(livroTeste);
+        MasterDAO.getReservaDAO().criar(reservaTeste);
+
+        // RODANDO COM TESTESUITE VALOR ESPERADO = 7, CASO CONTRÁRIO VALOR = 2
+        assertEquals(7, MasterDAO.getLivroDAO().nLivrosReservados());
     }
 }
