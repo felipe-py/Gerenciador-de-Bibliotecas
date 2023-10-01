@@ -86,36 +86,35 @@ public class Emprestimo {
 
     public int calcularAtraso (Emprestimo emprestimo, LocalDate data) {
         int diferenca = (int) ChronoUnit.DAYS.between(data, emprestimo.dataDevolucaoEsperada);
-        if (diferenca > 0) {
+        if (diferenca >0) {
             return 0;
         } else {
             return diferenca;
         }
     }
-
-    /*public int calcularMulta (Emprestimo emprestimo, LocalDate data) {
-        int atraso = emprestimo.calcularAtraso(emprestimo, data);
-        int multa  = 2*(atraso);
+    public int calcularMulta (Emprestimo emprestimo, LocalDate data) {
+        int atraso = this.calcularAtraso(emprestimo, data);
+        int multa  = (2*atraso)*-1;
         return multa;
     }
     public void aplicarMulta (Emprestimo emprestimo, LocalDate data) {
         int multa = this.calcularMulta(emprestimo, data);
         if (multa > 0) {
-            this.mutuario.setDiasDeMulta(multa);
+            emprestimo.mutuario.setDiasDeMulta(multa);
+            if ((emprestimo.mutuario.getDataDoFimDaMulta()).isBefore(data)) {
+                emprestimo.mutuario.setDataDoFimDaMulta(data.plusDays(multa));
+            } else {
+                emprestimo.mutuario.setDataDoFimDaMulta((emprestimo.mutuario.getDataDoFimDaMulta()).plusDays(multa));
+            }
         }
-    }*/
-
+    }
     public void finalizarEmprestimo (Emprestimo emprestimo, LocalDate data) {
-        this.livroEmprestado.setDisponibilidade(true);
-        this.setNaoDevolvido(false);
-        this.setAtraso(this.calcularAtraso(emprestimo, data));
-        this.getMutuario().setDiasDeMulta((this.calcularAtraso(emprestimo, data) * 2) * -1);
-        this.setDataDevolvidoFinal(LocalDate.now());
-
-        MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
-        MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
+        emprestimo.aplicarMulta(emprestimo, data);
+        emprestimo.livroEmprestado.setDisponibilidade(true);
+        emprestimo.setNaoDevolvido(false);
+        emprestimo.setAtraso(emprestimo.calcularAtraso(emprestimo, data));
         MasterDAO.getLeitorDAO().atualizar(emprestimo.getMutuario());
-
+        MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
     }
 
     //Método para verificar se o emprestimo pode ser feito

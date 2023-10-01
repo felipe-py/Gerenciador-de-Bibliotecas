@@ -69,8 +69,9 @@ public class EmprestimoTest {
     @Test
     void finalizarEmprestimoAtrasado(){
         this.emprestimo.finalizarEmprestimo(this.emprestimo, LocalDate.of(2023,10,10));
-        assertEquals(-2,this.emprestimo.getAtraso(),"Dias do atraso em préstimo (NEGATIVADO)");
+        assertEquals(-2,this.emprestimo.getAtraso(),"Dias do atraso empréstimo (NEGATIVADO)");
         assertEquals(4,this.emprestimo.getMutuario().getDiasDeMulta(), "Dias de multa do leitor, o dobro do atraso");
+        assertEquals(LocalDate.of(2023,10,14),this.emprestimo.getMutuario().getDataDoFimDaMulta());
     }
 
     @Test
@@ -79,6 +80,5 @@ public class EmprestimoTest {
         assertEquals(0,this.emprestimo.getAtraso());
         assertEquals(0,this.emprestimo.getMutuario().getDiasDeMulta());
         assertTrue(this.emprestimo.getLivroEmprestado().getDisponibilidade());
-        System.out.println(this.emprestimo.getDataDevolvidoFinal());
     }
 }
