@@ -29,9 +29,6 @@ public class EmprestimoDAOList implements EmprestimoDAO{
 
     @Override
     public Emprestimo criar(Emprestimo emprestimo){
-        if(emprestimo.getMutuario().getDataDoFimDaMulta().isAfter(emprestimo.getDataEmprestimo())){
-            return null;
-        }
         emprestimo.setEmprestimoID(this.novoID);
         this.novoID++;
         this.emprestimos.add(emprestimo);

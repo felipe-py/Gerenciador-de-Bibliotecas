@@ -12,7 +12,7 @@ public interface CRUD<T, E extends Exception> {
      * @param obj
      * @return objeto criado
      */
-    public T criar(T obj);
+    public T criar(T obj);  // VERIFICAÇÕES DE CRIAÇÃO SERÃO COLOCADAS POSTERIOMENTE NO PROJETO
 
     /**
      * Deleta um objeto
