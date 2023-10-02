@@ -6,35 +6,21 @@ abstract class Pessoa{
     -telefone: String
     -id: Integer
     -senha: String
-    +logar(objeto: Pessoa) : Pessoa
-    +mudarNome(objeto: Pessoa) : Pessoa
-    +mudarEndereco(objeto: Pessoa) : Pessoa
-    +mudarTelefone(objeto: Pessoa) : Pessoa
-    +pesquisarLivro(objeto: Livro) : Livro
 }
 
 class Leitor {
-    -statusConta: Boolean
+    -leitorBanido: Boolean
     -diasdeMulta: int
+    -dataDoFimDaMulta: LocalDate
     -historicoEmprestimos: List<Emprestimo>
-    +reservarLivro(objeto: Livro) : boolean
-    +renovarEmprestimo(objeto: Livro, objeto: Emprestimo) : boolean
 }
 
 class Bibliotecario{
-    +registrarEmprestimo(objeto: Livro, objeto: Emprestimo) : boolean
-    +registrarDevolucao(objeto: Livro, , objeto: Emprestimo) : boolean
-    +registrarLivro(objeto: Livro) : Livro
+
 }
 
 class Administrador{
-    +removerLivro(objeto: Livro) : Livro
-    +editarLivro(objeto: Livro) : Livro
-    +registrarUsuario(objeto: Usuario) : Usuario
-    +bloquearUsuario(objeto: Usuario) : Usuario
-    +gerarMulta(objeto: Emprestimo)
-    +gerarEstatistica(objeto: Livro) : void
-    +relatorioDeUsuarios(objeto: Usuario) : void
+
 }
 
 abstract class Funcionario{
@@ -48,29 +34,29 @@ class Livro{
     -isbn: String
     -anoDePublicação: String
     -categoria: CategoriaLivro
-    -editora: String
-    -localização: String
+    -localização: LocalizaçãoLivro
     -statusReserva: Boolean
     -livroID: int
     -disponibilidade: boolean
-    +mudarNome(objeto: Livro) : Livro
-    +mudarAutor(objeto: Livro) : Livro
-    +mudarCategoria(objeto: Livro) : Livro
-    +mudarEditora(objeto: Livro) : Livro
-    +mudarAnoDepublicacao(objeto: Livro) : Livro
-    +mudarLocalizacao(objeto: Livro) : Livro
+    -numeroDeEmpréstimos: Integer
 }
 
 class Emprestimo{
+    -emprestimoID: int
     -dataEmprestimo: LocalDate
     -dataDevolucaoEsperada: LocalDate
-    -infoUsuario: Usuario
-    -infoLivro: Livro
+    -mutuario: Usuario
+    -livroEmprestado: Livro
     -atraso: int
     -naoDevolvido: boolean
-    -NUMERO_RENOVACOES: int = 2 (final)
-    +renovarEmprestimo(objeto: Livro, objeto: Emprestimo) : void
-    +devolucaoEmprestimo(objeto: Livro, objeto: Emprestimo) : void
+    -numeroDeRenovações: Integer
+    -dataDevolvidoFinal: LocalDate
+    +estenderEmprestimo(objeto: Emprestimo) : void
+    +calcularAtraso(objeto: Emprestimo, LocalDate data) : int
+    +calcularMulta(Objeto: Empréstimo, LocalDate data) : int
+    +aplicarMulta(Objeto: Empréstimo, LocalDate data) : void
+    +finalizarEmpréstimo(Objeto: Emprestimo, LocalDate data) : void
+    +verificacao(Objeto: Emprestimo): boolean
 }
 
 class Reserva{
@@ -79,19 +65,43 @@ class Reserva{
     -Leitor: Leitor
 }
 
+enum CategoriaLivro{
+    FICCAO
+    DIDATICO
+    ROMANCE
+    MISTERIO
+    FANTASIA
+    BIOGRAFIA
+    HISTORIA
+    AUTOAJUDA
+    POESIA
+    OUTRA
+}
+
+enum LocalizacaoLivro{
+    alaA
+    alaB
+    alaC
+    alaD
+    alaE
+    alaF
+    alaG
+}
+
 Emprestimo --> Livro : usa
 Emprestimo --> Leitor : usa
+
 Reserva --> Livro : usa
 Reserva --> Leitor : usa
-Administrador --> Emprestimo : usa
-Bibliotecario --> Emprestimo : usa
+Livro --> CategoriaLivro : usa
+Livro --> LocalizacaoLivro : usa
 
 Emprestimo "1"--"1" Leitor
 Reserva "1"--"1" Leitor
 
 Funcionario <|-- Bibliotecario : é um
 Funcionario <|-- Administrador : é um
-Funcionario <|-- Pessoa
+Funcionario <|-- Pessoa : é um
 Pessoa <|-- Leitor : é um
 
 @enduml
