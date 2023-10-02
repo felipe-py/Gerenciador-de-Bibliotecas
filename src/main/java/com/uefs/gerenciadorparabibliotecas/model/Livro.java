@@ -14,7 +14,6 @@ public class Livro {
     private CategoriaLivro categoria;
     private boolean disponibilidade = true;
     private LocalizacaoLivro localizacao;
-    private LocalDate estimativaDeDevolucao;
     private int livroID;
     private boolean statusReserva = false;
     private Integer numeroEmprestimos = 0;
@@ -84,9 +83,7 @@ public class Livro {
     public LocalizacaoLivro getLocalizacao () {
         return this.localizacao;
     }
-    public LocalDate getEstimativaDeDevolucao () {
-        return this.estimativaDeDevolucao;
-    }
+
     public int getLivroID () {
         return this.livroID;
     }
@@ -114,9 +111,6 @@ public class Livro {
     }
     public void setLocalizacao (LocalizacaoLivro novaLocalizacao) {
         this.localizacao = novaLocalizacao;
-    }
-    public void setEstimativaDeDevolucao (LocalDate novaDataDeDevolucao) {
-        this.estimativaDeDevolucao = novaDataDeDevolucao;
     }
     public void setLivroID(int livroID) {
         this.livroID = livroID;
