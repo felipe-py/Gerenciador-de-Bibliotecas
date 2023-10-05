@@ -10,12 +10,17 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Testes do DAO Empréstimo
+ */
  public class EmprestimoDAOListTest {
-
+    /**
+     * objetos do tipo empréstimo, leitor e livro são instanciados para serem utilizados ao longo dos testes
+     */
     private Emprestimo emprestimo;
     private Livro livro;
     private Leitor leitor;
+
     @BeforeEach
      void setUp(){
         LocalDate dataEmprestimo = LocalDate.of(2023,10,1);
@@ -35,6 +40,11 @@ import static org.junit.jupiter.api.Assertions.*;
         MasterDAO.getEmprestimoDAO().resetar();
     }
 
+    /**
+     * Teste para confirmar que a criação do objeto empréstimo foi feita da forma correta, todos os atributos usados
+     * no construtor são verificados um por um
+     * @throws EmprestimoException caso a busca pelo ID de um dos objetos falhe
+     */
     @Test
      void criar() throws EmprestimoException{
         LocalDate dataEmprestimoAux = LocalDate.of(2023,10,1);
@@ -44,6 +54,13 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(this.livro, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getLivroEmprestado());
         assertEquals(this.leitor, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getMutuario());
     }
+
+    /**
+     * Teste para confirmar que a ação de deletar um empréstimo está sendo feita da forma correta, um novo
+     * empréstimo auxiliar é criado para que o size da lista de empréstimos seja de 2, após deletar é verificado
+     * se o size foi para 1
+     * @throws EmprestimoException caso o objeto a ser deletado não seja encontrado
+     */
     @Test
      void deletar() throws EmprestimoException{
         LocalDate dataEmprestimo = LocalDate.now();
@@ -53,17 +70,30 @@ import static org.junit.jupiter.api.Assertions.*;
         MasterDAO.getEmprestimoDAO().deletar(this.emprestimo);
         assertEquals(1, MasterDAO.getEmprestimoDAO().getEmprestimos().size());
     }
+
+    /**
+     * Teste para confirmar que após um resete, não exista nenhum empréstimo na lista
+     */
     @Test
      void resetar(){
         MasterDAO.getEmprestimoDAO().resetar();
         assertEquals(0, MasterDAO.getEmprestimoDAO().getEmprestimos().size());
     }
 
+    /**
+     * Teste para confirmar que a busca por ID encontre um empréstimo
+     * @throws EmprestimoException caso o empréstimo não seja encontrado
+     */
     @Test
      void procurarPorID() throws EmprestimoException {
         assertEquals(emprestimo, MasterDAO.getEmprestimoDAO().procurarPorID(0));
     }
 
+    /**
+     * Teste realizado para confirmar que após realizar um empréstimo, a disponibilidade de um livro
+     * automaticamente foi alterada, um livro auxiliar é criado para confirmar que a disponibilidade
+     * deste é true
+     */
     @Test
     void disponibilidadeLivroEmprestado() {
        Livro livroAux = new Livro("Cálculo II","James","EUA","1144558","1998",
@@ -71,10 +101,19 @@ import static org.junit.jupiter.api.Assertions.*;
        assertTrue(livroAux.getDisponibilidade());
        assertFalse(this.livro.getDisponibilidade());
     }
+
+    /**
+     * Teste para confirmar que o empréstimo incluido na lista de empréstimos do leitor é o mesmo que ele realizou
+     */
     @Test
     void adicionarListaemprestimosLeitor(){
        assertEquals(this.emprestimo.getMutuario().getEmprestimos().get(0).getEmprestimoID(), this.emprestimo.getEmprestimoID());
     }
+
+    /**
+     * Teste para verificar uma situação de falha ao deletar um empréstimo, um empréstimo auxiliar que não foi
+     * adicionado a lista de empréstimos é usado é usado para validação
+     */
     @Test
     void failDelete() {
        LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
@@ -89,6 +128,11 @@ import static org.junit.jupiter.api.Assertions.*;
           assertEquals(EmprestimoException.DELETE, e.getMessage());
        }
     }
+
+    /**
+     * Método que verifica uma situação de falha na busca por ID de um empréstimo, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBusca(){
        try {
@@ -98,6 +142,9 @@ import static org.junit.jupiter.api.Assertions.*;
        }
     }
 
+    /**
+     * Teste que confirma a quantidade de livros que foram emprestados em todo o sistema
+     */
     @Test
     void numeroLivrosEmprestados(){
        LocalDate dataEmprestimo = LocalDate.now();
@@ -115,6 +162,9 @@ import static org.junit.jupiter.api.Assertions.*;
        assertEquals(9, MasterDAO.getLivroDAO().nLivrosEmprestados());
     }
 
+    /**
+     * Teste que verifica a quantidade de livros que estão em um empréstimo atrasado por todo o sistema
+     */
     @Test
     void numeroLivrosAtrasados(){
        assertEquals(1, MasterDAO.getEmprestimoDAO().nLivrosatrasados(LocalDate.of(2023,10,10)));

@@ -12,8 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Testes do DAO Livro
+ */
 public class LivroMasterDAOListTest {
+    /**
+     * objeto livro é criado para ser utilizado durante os testes
+     */
     private Livro livro;
 
     @BeforeEach
@@ -29,6 +34,11 @@ public class LivroMasterDAOListTest {
         MasterDAO.getLivroDAO().resetar();
     }
 
+    /**
+     * Teste para confirmar que a criação do objeto livro foi feita da forma correta, todos os atributos usados
+     * no construtor são verificados um por um
+     * @throws LivroException caso a busca pelo ID de um dos objetos falhe
+     */
     @Test
     void criar() throws LivroException{
         assertEquals("Diário de um banana", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getTitulo());
@@ -40,10 +50,19 @@ public class LivroMasterDAOListTest {
         assertEquals(LocalizacaoLivro.alaC, MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getLocalizacao());
     }
 
+    /**
+     * Teste para confirmar que a busca por ID encontre um livro
+     * @throws LivroException caso o livro não seja encontrado
+     */
     @Test
     void buscarPorID() throws LivroException{
         assertEquals(livro, MasterDAO.getLivroDAO().procurarPorID(0));
     }
+
+    /**
+     * Teste para confirmar que a busca por ISBN encontre um ou mais livros
+     * @throws LivroException caso nenhum livro seja encontrado
+     */
     @Test
     void buscarPorISBN() {
         Livro livroAux2 = new Livro("Diário de um banana","Zezinho","Cultura",
@@ -53,6 +72,11 @@ public class LivroMasterDAOListTest {
         List<Livro> testeAux2 = MasterDAO.getLivroDAO().procurarPorISBN("4455883");
         assertNotEquals(testeAux1,testeAux2);
     }
+
+    /**
+     * Teste para confirmar que a busca por autor encontre um ou mais livros em que o autor esteja presente
+     * @throws LivroException caso nenhum livro seja encontrado
+     */
     @Test
     void buscarPorAutor() throws LivroException{
         Livro livroAux3 = new Livro("Diário de um banana 2","Zezinho","Cultura",
@@ -63,6 +87,10 @@ public class LivroMasterDAOListTest {
         assertEquals(testeAux2,testeAux1);
     }
 
+    /**
+     * Teste para confirmar que a busca por título encontre algum livro com o título passado como parâmetro
+     * @throws LivroException caso nenhum livro seja encontrado
+     */
     @Test
     void buscarPorTitulo() {
         Livro livroAux4 = new Livro("Diário de um banana 2","Zezinho","Cultura",
@@ -73,6 +101,10 @@ public class LivroMasterDAOListTest {
         assertNotEquals(testeAux2,testeAux1);
     }
 
+    /**
+     * Teste para confirmar que a busca por categoria encontre os livros da categoria buscada
+     * @throws LivroException caso nenhum livro seja encontrado
+     */
     @Test
     void buscarPorCategoria() throws LivroException{
         Livro livroAux5 = new Livro("Diário de um banana 2","Zezinho","Cultura",
@@ -83,7 +115,12 @@ public class LivroMasterDAOListTest {
         assertEquals(testeAux2,testeAux1);
     }
 
-
+    /**
+     * Teste para confirmar que a ação de deletar um livro está sendo feita da forma correta, um novo
+     * livro auxiliar é criado para confirmar que este não será nulo, um assertNull é dado no livro que
+     * foi apagado
+     * @throws LivroException caso o objeto a ser deletado não seja encontrado
+     */
     @Test
     void deletar() throws LivroException {
         Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452"
@@ -97,6 +134,9 @@ public class LivroMasterDAOListTest {
         assertNotNull(MasterDAO.getLivroDAO().procurarPorID(livroAux.getLivroID()));
     }
 
+    /**
+     * Teste para confirmar que após um resete, não exista nenhum livro não nulo na lista
+     */
     @Test
     void resetar() throws LivroException{
         Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452","2001",
@@ -107,8 +147,14 @@ public class LivroMasterDAOListTest {
         assertNull(MasterDAO.getLivroDAO().procurarPorID(livroAux.getLivroID()));
     }
 
+    /**
+     * Teste para verificar se o método atualizar funciona corretamente, primeiramente os parâmetros do
+     * livro são alterados manualmente, logo após um objeto livro auxiliar é criado, para receber
+     * automaticamente as atualizações do livro alterado. Os dois são comparados para atestar o funcionamento
+     * do método
+     */
     @Test
-    void atualizar() throws LivroException{
+    void atualizar() {
         Livro livroAux2 = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999","2008",
                 CategoriaLivro.FANTASIA,LocalizacaoLivro.alaF);
         MasterDAO.getLivroDAO().criar(livroAux2);
@@ -123,6 +169,10 @@ public class LivroMasterDAOListTest {
         assertEquals(this.livro, atual);
     }
 
+    /**
+     * Teste para verificar uma situação de falha ao deletar um livro, um livro auxiliar que não foi
+     * adicionado a lista de livros é usado para validação
+     */
     @Test
     void failDelete() {
         try {
@@ -134,6 +184,10 @@ public class LivroMasterDAOListTest {
         }
     }
 
+    /**
+     * Método que verifica uma situação de falha na busca por ID de um livro, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBuscaID(){
         try {
@@ -143,6 +197,10 @@ public class LivroMasterDAOListTest {
         }
     }
 
+    /**
+     * Método que verifica uma situação de falha na busca por autor de um livro, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBuscaAutor(){
         try{
@@ -152,6 +210,10 @@ public class LivroMasterDAOListTest {
         }
     }
 
+    /**
+     * Método que verifica uma situação de falha na busca pelo ISBN de um livro, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBuscaISBN(){
         try{
@@ -161,6 +223,10 @@ public class LivroMasterDAOListTest {
         }
     }
 
+    /**
+     * Método que verifica uma situação de falha na busca por título de um livro, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBuscaTitulo(){
         try{
@@ -170,6 +236,10 @@ public class LivroMasterDAOListTest {
         }
     }
 
+    /**
+     * Método que verifica uma situação de falha na busca pela categoria de um livro, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBuscaCategoria(){
         try{
@@ -179,6 +249,10 @@ public class LivroMasterDAOListTest {
         }
     }
 
+    /**
+     * Teste para averiguar se a visualização decrescente dos livros mais populares está sendo feita da forma
+     * correta, empréstimos auxiliares são criados para preencher a lista de empréstimos
+     */
     @Test
     void livrosPopulares(){
 

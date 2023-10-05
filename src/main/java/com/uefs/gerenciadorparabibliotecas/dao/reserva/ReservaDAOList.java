@@ -6,6 +6,9 @@ import com.uefs.gerenciadorparabibliotecas.model.Reserva;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CRUD e acesso aos dados das reservas
+ */
 public class ReservaDAOList implements ReservaDAO{
 
     List<Reserva> reservas = new ArrayList<>();

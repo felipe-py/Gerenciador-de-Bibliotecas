@@ -5,7 +5,9 @@ import com.uefs.gerenciadorparabibliotecas.exeptions.funcionarioExceptions.Funci
 import com.uefs.gerenciadorparabibliotecas.model.Funcionario;
 
 import java.util.List;
-
+/**
+ * Interface para o FuncionárioDAOList
+ */
 public interface FuncionarioDAO extends CRUD<Funcionario, FuncionarioException> {
     List<Funcionario> getFuncionarios();
     Funcionario atualizar(Funcionario funcionario);

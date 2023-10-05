@@ -5,7 +5,9 @@ import com.uefs.gerenciadorparabibliotecas.model.Leitor;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * CRUD e acesso aos dados dos leitores
+ */
 public class LeitorDAOList implements LeitorDAO {
 
     private List<Leitor> leitores = new ArrayList<>();

@@ -9,9 +9,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Testes do DAO Leitor
+ */
 public class LeitorDAOListTest {
-
+    /**
+     * Objeto do tipo leitor é criado para ser utilizado ao longo dos testes
+     */
     private Leitor leitor;
     @BeforeEach
     void setUp(){
@@ -25,6 +29,11 @@ public class LeitorDAOListTest {
         MasterDAO.getLeitorDAO().resetar();
     }
 
+    /**
+     * Teste para confirmar que a criação do objeto leitor foi feita da forma correta, todos os atributos usados
+     * no construtor são verificados um por um
+     * @throws LeitorException caso a busca pelo ID de um dos objetos falhe
+     */
     @Test
     void criar() throws LeitorException{
         assertEquals("Lucas",MasterDAO.getLeitorDAO().procurarPorID(0001).getNome());
@@ -34,6 +43,12 @@ public class LeitorDAOListTest {
         assertEquals(0001,MasterDAO.getLeitorDAO().procurarPorID(0001).getUserID());
     }
 
+    /**
+     * Teste para confirmar que a ação de deletar um leitor está sendo feita da forma correta, um novo
+     * leitor auxiliar é criado para que o size da lista de leitores seja de 2, após deletar é verificado
+     * se o size foi para 1
+     * @throws LeitorException caso o objeto a ser deletado não seja encontrado
+     */
     @Test
     void deletar() throws LeitorException {
         Leitor leitorAux = new Leitor("Felipe","UEFS","senha321","40045001",
@@ -44,17 +59,28 @@ public class LeitorDAOListTest {
 
     }
 
+    /**
+     * Teste para confirmar que após um resete, não exista nenhum leitor na lista
+     */
     @Test
     void resetar() throws LeitorException{
         MasterDAO.getLeitorDAO().resetar();
         assertEquals(0, MasterDAO.getLeitorDAO().getLeitores().size());
     }
 
+    /**
+     * Teste para confirmar que a busca por ID encontre um leitor
+     * @throws LeitorException caso o leitor não seja encontrado
+     */
     @Test
     void procurarPorID() throws LeitorException {
         assertEquals(leitor, MasterDAO.getLeitorDAO().procurarPorID(0001));
     }
 
+    /**
+     * Teste para verificar uma situação de falha ao deletar um leitor, um leitor auxiliar que não foi
+     * adicionado a lista de leitores é usado é usado para validação
+     */
     @Test
     void failDelete() {
         try {
@@ -66,6 +92,12 @@ public class LeitorDAOListTest {
         }
     }
 
+    /**
+     * Teste para verificar se o método atualizar funciona corretamente, primeiramente os parâmetros do
+     * leitor são alterados manualmente, logo após um objeto leitor auxiliar é criado, para receber
+     * automaticamente as atualizações do leitor alterado. Os dois são comparados para atestar o funcionamento
+     * do método
+     */
     @Test
     void atualizar(){
         this.leitor.setEndereco("Casa");
@@ -77,6 +109,10 @@ public class LeitorDAOListTest {
         assertEquals(atual, this.leitor);
     }
 
+    /**
+     * Método que verifica uma situação de falha na busca por ID de um leitor, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBusca() throws LeitorException{
         try {

@@ -5,7 +5,9 @@ import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorExcep
 import com.uefs.gerenciadorparabibliotecas.model.Leitor;
 
 import java.util.List;
-
+/**
+ * Interface para o LeitorDAOList
+ */
 public interface LeitorDAO extends CRUD<Leitor, LeitorException> {
     List<Leitor> getLeitores();
     Leitor atualizar(Leitor leitor);

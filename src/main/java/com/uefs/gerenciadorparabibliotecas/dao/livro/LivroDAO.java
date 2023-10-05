@@ -8,7 +8,9 @@ import com.uefs.gerenciadorparabibliotecas.model.Livro;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Interface para o LivroDAOList
+ */
 public interface LivroDAO extends CRUD<Livro, LivroException> {
 
     Livro atualizar(Livro livro);

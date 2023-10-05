@@ -7,7 +7,9 @@ import com.uefs.gerenciadorparabibliotecas.model.Emprestimo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * CRUD e acesso aos dados dos empréstimos
+ */
 public class EmprestimoDAOList implements EmprestimoDAO{
 
     private List<Emprestimo> emprestimos = new ArrayList<>();

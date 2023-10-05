@@ -8,9 +8,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Testes do DAO Funcionário
+ */
  public class FuncionarioDAOListTest {
-
+    /**
+     * objetos do tipo funcionário (Bibliotecário e administrador) são criados para serem utilizados ao longo
+     * dos testes
+     */
     private Funcionario funcionarioAdm;
     private Funcionario funcionarioBiblio;
 
@@ -29,6 +34,11 @@ import static org.junit.jupiter.api.Assertions.*;
         MasterDAO.getFuncionarioDAO().resetar();
     }
 
+    /**
+     * Teste para confirmar que a criação do objeto funcionário foi feita da forma correta, todos os atributos usados
+     * no construtor são verificados um por um
+     * @throws FuncionarioException caso a busca pelo ID de um dos objetos falhe
+     */
     @Test
      void criar() throws FuncionarioException{
         assertEquals("Luva de pedreiro",MasterDAO.getFuncionarioDAO().procurarPorID(7777).getNome());
@@ -41,6 +51,12 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals("BA",MasterDAO.getFuncionarioDAO().procurarPorID(3567).getEndereco());
     }
 
+    /**
+     * Teste para confirmar que a ação de deletar um funcionário está sendo feita da forma correta, um novo
+     * funcionário auxiliar é criado para que o size da lista de funcionários seja de 3, após deletar é verificado
+     * se o size foi para 2
+     * @throws FuncionarioException caso o objeto a ser deletado não seja encontrado
+     */
     @Test
      void deletar() throws FuncionarioException {
         Funcionario funcionarioAdm2 = new Administrador("Bora Bill","BA","4321",
@@ -51,8 +67,11 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(2, MasterDAO.getFuncionarioDAO().getFuncionarios().size());
     }
 
+    /**
+     * Teste para confirmar que após um resete, não exista nenhum funcionário na lista
+     */
     @Test
-     void resetar() throws FuncionarioException{
+     void resetar() {
         Funcionario funcionarioBiblio2 = new Bibliotecario("Luva de pedreiro","BA","1234",
                 "77998765012",9988);
         MasterDAO.getFuncionarioDAO().criar(funcionarioBiblio2);
@@ -60,12 +79,20 @@ import static org.junit.jupiter.api.Assertions.*;
         assertEquals(0, MasterDAO.getFuncionarioDAO().getFuncionarios().size());
     }
 
+    /**
+     * Teste para confirmar que a busca por ID encontre um funcionário
+     * @throws FuncionarioException caso o funcionário não seja encontrado
+     */
     @Test
      void procurarPorID() throws FuncionarioException {
         assertEquals(this.funcionarioAdm,MasterDAO.getFuncionarioDAO().procurarPorID(3567));
         assertEquals(this.funcionarioBiblio, MasterDAO.getFuncionarioDAO().procurarPorID(7777));
     }
 
+    /**
+     * Teste para verificar uma situação de falha ao deletar um funcionário, um funcionário auxiliar que não foi
+     * adicionado a lista de funcionários é usado é usado para validação
+     */
     @Test
     void failDelete() {
        try {
@@ -77,6 +104,12 @@ import static org.junit.jupiter.api.Assertions.*;
        }
     }
 
+    /**
+     * Teste para verificar se o método atualizar funciona corretamente, primeiramente os parâmetros do
+     * funcionário são alterados manualmente, logo após um objeto funcionário auxiliar é criado, para receber
+     * automaticamente as atualizações do funcionário alterado. Os dois são comparados para atestar o funcionamento
+     * do método
+     */
     @Test
     void atualizar() {
        this.funcionarioBiblio.setEndereco("Feira X");
@@ -88,6 +121,10 @@ import static org.junit.jupiter.api.Assertions.*;
        assertEquals(this.funcionarioBiblio, atual);
     }
 
+    /**
+     * Método que verifica uma situação de falha na busca por ID de um funcionário, uma indentificação inválida
+     * é passada como parâmetro da validação
+     */
     @Test
     void failBusca(){
        try {

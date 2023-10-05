@@ -7,6 +7,9 @@ import com.uefs.gerenciadorparabibliotecas.model.Livro;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * CRUD e acesso aos dados dos livros
+ */
 public class LivroDAOList implements LivroDAO{
 
     private List<Livro> livros  = new ArrayList<>();

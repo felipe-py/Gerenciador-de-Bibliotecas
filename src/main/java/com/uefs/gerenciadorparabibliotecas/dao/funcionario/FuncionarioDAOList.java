@@ -7,7 +7,9 @@ import com.uefs.gerenciadorparabibliotecas.model.Funcionario;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * CRUD e acesso aos dados dos funcionários
+ */
 public class FuncionarioDAOList implements FuncionarioDAO{
 
     private List<Funcionario> funcionarios = new ArrayList<>();
