@@ -1,9 +1,11 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import java.io.Serializable;
+
 /**
  * Classe Model do livro
  */
-public class Livro {
+public class Livro implements Serializable {
     /**
      * título: String que armazena o título do livro
      * autor: String que armazena o autor do livro

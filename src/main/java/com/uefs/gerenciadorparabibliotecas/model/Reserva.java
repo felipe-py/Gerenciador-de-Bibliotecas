@@ -1,10 +1,11 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 /**
  * Classe Model da reserva
  */
-public class Reserva {
+public class Reserva implements Serializable {
     /**
      * reservaID: inteiro que armazena indentificação da reserva
      * livroReservado: objeto livro que foi reservado

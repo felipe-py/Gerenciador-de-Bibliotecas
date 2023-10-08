@@ -1,9 +1,11 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import java.io.Serializable;
+
 /**
  * Classe Model da Pessoa (Classe mãe dos usuários)
  */
-public abstract class Pessoa {
+public abstract class Pessoa implements Serializable {
     /**
      * nome: String que armazena o nome dos usuários do sistema
      * endereco: String que armazena o endereço dos usuários do sistema

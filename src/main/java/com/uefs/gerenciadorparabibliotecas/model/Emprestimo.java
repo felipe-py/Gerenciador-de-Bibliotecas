@@ -4,13 +4,14 @@ import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
 import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 /**
  * Classe Model do empréstimo
  */
-public class Emprestimo {
+public class Emprestimo implements Serializable {
     /**
      * empréstimoID: inteiro que armazena a indentificação do empréstimo
      * dataEmprestimo: localDate usado para definir a data em que o empréstimo iniciou

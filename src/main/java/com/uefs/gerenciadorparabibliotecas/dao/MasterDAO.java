@@ -5,6 +5,7 @@ import com.uefs.gerenciadorparabibliotecas.dao.funcionario.*;
 import com.uefs.gerenciadorparabibliotecas.dao.leitor.*;
 import com.uefs.gerenciadorparabibliotecas.dao.livro.*;
 import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAO;
+import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOFile;
 import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOList;
 
 /**
@@ -29,7 +30,7 @@ public class MasterDAO {
      */
     public static ReservaDAO getReservaDAO(){
         if(reservaDAO == null){
-            reservaDAO = new ReservaDAOList();
+            reservaDAO = new ReservaDAOFile("src/main/dados/reservas.bin");
         }
         return reservaDAO;
     }
@@ -39,7 +40,7 @@ public class MasterDAO {
      */
     public static EmprestimoDAO getEmprestimoDAO() {
         if (emprestimoDAO == null) {
-            emprestimoDAO = new EmprestimoDAOList();
+            emprestimoDAO = new EmprestimoDAOFile("src/main/dados/emprestimos.bin");
         }
         return emprestimoDAO;
     }
@@ -49,7 +50,7 @@ public class MasterDAO {
      */
     public static FuncionarioDAO getFuncionarioDAO() {
         if (funcionarioDAO == null) {
-            funcionarioDAO = new FuncionarioDAOList();
+            funcionarioDAO = new FuncionarioDAOFile("src/main/dados/funcionarios.bin");
         }
         return funcionarioDAO;
     }
@@ -59,7 +60,7 @@ public class MasterDAO {
      */
     public static LeitorDAO getLeitorDAO() {
         if (leitorDAO == null) {
-            leitorDAO = new LeitorDAOList();
+            leitorDAO = new LeitorDAOFile("src/main/dados/leitores.bin");
         }
         return leitorDAO;
     }
@@ -69,7 +70,7 @@ public class MasterDAO {
      */
     public static LivroDAO getLivroDAO() {
         if (livroDAO == null) {
-            livroDAO = new LivroDAOList();
+            livroDAO = new LivroDAOFile("src/main/dados/livros.bin");
         }
         return livroDAO;
     }
