@@ -23,6 +23,11 @@ import org.junit.platform.suite.api.SuiteDisplayName;
         ReservaDAOListTest.class,
         EmprestimoTest.class
 })
+
+// AVISO: CADA VEZ QUE O TESTSUITE É EXECUTADO OS VALORES DE ASSERT DE ALGUNS TESTES SE TORNAM
+// DESATUALIZADOS, APAGUE OS ARQUIVOS DENTRO DA PASTA DADOS CASO EXISTAM ANTES DE EXECUTAR O TESTE
+// SUITE.
+
 public class TestSuite {
 }
 
