@@ -37,6 +37,7 @@ public class EmprestimoTest {
     @AfterEach
     void tearDown() {
         MasterDAO.getEmprestimoDAO().resetar();
+        MasterDAO.getReservaDAO().resetar();
     }
 
     /**

@@ -2,6 +2,8 @@ package com.uefs.gerenciadorparabibliotecas.dao.emprestimo;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
+import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,6 +40,8 @@ import static org.junit.jupiter.api.Assertions.*;
     @AfterEach
      void tearDown() {
         MasterDAO.getEmprestimoDAO().resetar();
+        MasterDAO.getLivroDAO().resetar();
+        MasterDAO.getLeitorDAO().resetar();
     }
 
     /**
@@ -146,7 +150,7 @@ import static org.junit.jupiter.api.Assertions.*;
      * Teste que confirma a quantidade de livros que foram emprestados em todo o sistema
      */
     @Test
-    void numeroLivrosEmprestados(){
+    void numeroLivrosEmprestados() throws LeitorException, LivroException, EmprestimoException {
        LocalDate dataEmprestimo = LocalDate.now();
        LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
        Livro livroTeste = new Livro("Diário de um banana 44","Zezinho","Cultura","4455883","2013",
@@ -158,8 +162,7 @@ import static org.junit.jupiter.api.Assertions.*;
        MasterDAO.getLeitorDAO().criar(leitorTeste);
        MasterDAO.getEmprestimoDAO().criar(emprestimoTeste);
 
-       // RODANDO COM TESTESUITE VALOR ESPERADO = 9, CASO CONTRÁRIO VALOR = 2
-       assertEquals(9, MasterDAO.getLivroDAO().nLivrosEmprestados());
+       assertEquals(2, MasterDAO.getLivroDAO().nLivrosEmprestados());
     }
 
     /**

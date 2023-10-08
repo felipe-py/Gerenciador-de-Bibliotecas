@@ -22,7 +22,7 @@ public class LivroMasterDAOListTest {
     private Livro livro;
 
     @BeforeEach
-    void setUp() throws LivroException{
+    void setUp() {
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",
                 "2013",CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
         MasterDAO.getLivroDAO().criar(this.livro);
@@ -32,6 +32,9 @@ public class LivroMasterDAOListTest {
     @AfterEach
     void tearDown() {
         MasterDAO.getLivroDAO().resetar();
+        MasterDAO.getEmprestimoDAO().resetar();
+        MasterDAO.getLeitorDAO().resetar();
+        MasterDAO.getReservaDAO().resetar();
     }
 
     /**
@@ -64,7 +67,7 @@ public class LivroMasterDAOListTest {
      * @throws LivroException caso nenhum livro seja encontrado
      */
     @Test
-    void buscarPorISBN() {
+    void buscarPorISBN() throws LivroException {
         Livro livroAux2 = new Livro("Diário de um banana","Zezinho","Cultura",
                 "4455783","2013", CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
         MasterDAO.getLivroDAO().criar(livroAux2);
@@ -92,7 +95,7 @@ public class LivroMasterDAOListTest {
      * @throws LivroException caso nenhum livro seja encontrado
      */
     @Test
-    void buscarPorTitulo() {
+    void buscarPorTitulo() throws LivroException {
         Livro livroAux4 = new Livro("Diário de um banana 2","Zezinho","Cultura",
                 "4455999","2014", CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
         MasterDAO.getLivroDAO().criar(livroAux4);
@@ -127,9 +130,7 @@ public class LivroMasterDAOListTest {
                 ,"2001",
                 CategoriaLivro.FANTASIA,LocalizacaoLivro.alaD);
         MasterDAO.getLivroDAO().criar(livroAux);
-
         MasterDAO.getLivroDAO().deletar(this.livro);
-
         assertNull(MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()));
         assertNotNull(MasterDAO.getLivroDAO().procurarPorID(livroAux.getLivroID()));
     }
@@ -138,13 +139,9 @@ public class LivroMasterDAOListTest {
      * Teste para confirmar que após um resete, não exista nenhum livro não nulo na lista
      */
     @Test
-    void resetar() throws LivroException{
-        Livro livroAux = new Livro("Harry Potter 1","A chata","Warner","8899452","2001",
-                CategoriaLivro.FANTASIA,LocalizacaoLivro.alaD);
-        MasterDAO.getLivroDAO().criar(livroAux);
+    void resetar() {
         MasterDAO.getLivroDAO().resetar();
-        assertNull(MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()));
-        assertNull(MasterDAO.getLivroDAO().procurarPorID(livroAux.getLivroID()));
+        assertEquals(0,MasterDAO.getLivroDAO().getLivros().size());
     }
 
     /**
@@ -154,10 +151,10 @@ public class LivroMasterDAOListTest {
      * do método
      */
     @Test
-    void atualizar() {
-        Livro livroAux2 = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999","2008",
+    void atualizar() throws LivroException {
+        Livro livroAux = new Livro("Harry Potter 6","A CHATA","Warner Bros","9999999","2008",
                 CategoriaLivro.FANTASIA,LocalizacaoLivro.alaF);
-        MasterDAO.getLivroDAO().criar(livroAux2);
+        MasterDAO.getLivroDAO().criar(livroAux);
         this.livro.setTitulo("Casinha");
         this.livro.setIsbn("444444444");
         this.livro.setLocalizacao(LocalizacaoLivro.alaC);

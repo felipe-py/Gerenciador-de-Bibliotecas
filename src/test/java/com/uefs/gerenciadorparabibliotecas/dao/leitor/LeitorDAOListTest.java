@@ -56,14 +56,13 @@ public class LeitorDAOListTest {
         MasterDAO.getLeitorDAO().criar(leitorAux);
         MasterDAO.getLeitorDAO().deletar(this.leitor);
         assertEquals(1, MasterDAO.getLeitorDAO().getLeitores().size());
-
     }
 
     /**
      * Teste para confirmar que após um resete, não exista nenhum leitor na lista
      */
     @Test
-    void resetar() throws LeitorException{
+    void resetar() {
         MasterDAO.getLeitorDAO().resetar();
         assertEquals(0, MasterDAO.getLeitorDAO().getLeitores().size());
     }

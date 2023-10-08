@@ -1,6 +1,7 @@
 package com.uefs.gerenciadorparabibliotecas.dao.reserva;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.exeptions.reservaExcetions.ReservaException;
 import com.uefs.gerenciadorparabibliotecas.model.*;
@@ -36,6 +37,8 @@ public class ReservaDAOListTest {
     @AfterEach
     void tearDown(){
         MasterDAO.getReservaDAO().resetar();
+        MasterDAO.getLivroDAO().resetar();
+        MasterDAO.getLeitorDAO().resetar();
     }
 
     /**
@@ -55,7 +58,7 @@ public class ReservaDAOListTest {
      * @throws ReservaException caso o objeto a ser deletado não seja encontrado
      */
     @Test
-    void deletar() throws ReservaException {
+    void deletar() throws ReservaException, LeitorException, LivroException {
         Leitor leitorAux = new Leitor("Pedrin","Novo Horizonte","5566","77985241369",
                 7825);
         Livro livroAux = new Livro("Asassin's Creed","Não sei","HBO","4455223",
@@ -125,7 +128,7 @@ public class ReservaDAOListTest {
      * Teste para verificar o número de livros que estão reservados em todo o sistema
      */
     @Test
-    void numeroLivrosReservados(){
+    void numeroLivrosReservados() throws LivroException, LeitorException, ReservaException {
         Livro livroTeste = new Livro("Asassin's Creed","Não sei","HBO","4455223",
                 "1999", CategoriaLivro.FANTASIA, LocalizacaoLivro.alaD);
         Leitor leitorTeste = new Leitor("Carlos","Asa Branca","4455","75982560864",
@@ -135,7 +138,6 @@ public class ReservaDAOListTest {
         MasterDAO.getLivroDAO().criar(livroTeste);
         MasterDAO.getReservaDAO().criar(reservaTeste);
 
-        // RODANDO COM TESTESUITE VALOR ESPERADO = 7, CASO CONTRÁRIO VALOR = 2
-        assertEquals(7, MasterDAO.getLivroDAO().nLivrosReservados());
+        assertEquals(2, MasterDAO.getLivroDAO().nLivrosReservados());
     }
 }

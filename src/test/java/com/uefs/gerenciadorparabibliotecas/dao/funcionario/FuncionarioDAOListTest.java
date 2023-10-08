@@ -133,5 +133,4 @@ import static org.junit.jupiter.api.Assertions.*;
           assertEquals(FuncionarioException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
        }
     }
-
 }
