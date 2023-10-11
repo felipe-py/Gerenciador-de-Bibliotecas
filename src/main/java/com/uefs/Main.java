@@ -1,5 +1,9 @@
 package com.uefs;
 
+import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
+import com.uefs.gerenciadorparabibliotecas.model.Leitor;
+
 /**
  * GERENCIADOR DE BIBLIOTECA
  * @author Luis Felipe Cunha Silva
@@ -7,7 +11,6 @@ package com.uefs;
  * @version 1.0
  */
 public class Main {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws LeitorException {
     }
 }
