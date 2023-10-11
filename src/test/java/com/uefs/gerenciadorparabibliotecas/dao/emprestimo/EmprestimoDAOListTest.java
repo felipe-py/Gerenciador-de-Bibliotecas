@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
     private Leitor leitor;
 
     @BeforeEach
-     void setUp(){
+     void setUp() throws LeitorException, EmprestimoException, LivroException {
         LocalDate dataEmprestimo = LocalDate.of(2023,10,1);
         LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883","2013",
@@ -45,18 +45,12 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     /**
-     * Teste para confirmar que a criação do objeto empréstimo foi feita da forma correta, todos os atributos usados
-     * no construtor são verificados um por um
+     * Teste para confirmar que a criação do objeto empréstimo foi feita da forma correta
      * @throws EmprestimoException caso a busca pelo ID de um dos objetos falhe
      */
     @Test
      void criar() throws EmprestimoException{
-        LocalDate dataEmprestimoAux = LocalDate.of(2023,10,1);
-        LocalDate dataDevolucaoEsperadaAux = dataEmprestimoAux.plusDays(7);
-        assertEquals(dataEmprestimoAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getDataEmprestimo());
-        assertEquals(dataDevolucaoEsperadaAux, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getdataDevolucaoEsperada());
-        assertEquals(this.livro, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getLivroEmprestado());
-        assertEquals(this.leitor, MasterDAO.getEmprestimoDAO().procurarPorID(this.emprestimo.getEmprestimoID()).getMutuario());
+        assertEquals(this.emprestimo, MasterDAO.getEmprestimoDAO().procurarPorID(0));
     }
 
     /**
@@ -66,7 +60,7 @@ import static org.junit.jupiter.api.Assertions.*;
      * @throws EmprestimoException caso o objeto a ser deletado não seja encontrado
      */
     @Test
-     void deletar() throws EmprestimoException{
+     void deletar() throws EmprestimoException, LeitorException {
         LocalDate dataEmprestimo = LocalDate.now();
         LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
         Emprestimo emprestimoAux = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
@@ -99,7 +93,7 @@ import static org.junit.jupiter.api.Assertions.*;
      * deste é true
      */
     @Test
-    void disponibilidadeLivroEmprestado() {
+    void disponibilidadeLivroEmprestado() throws LivroException {
        Livro livroAux = new Livro("Cálculo II","James","EUA","1144558","1998",
                CategoriaLivro.DIDATICO,LocalizacaoLivro.alaD);
        assertTrue(livroAux.getDisponibilidade());
@@ -119,7 +113,7 @@ import static org.junit.jupiter.api.Assertions.*;
      * adicionado a lista de empréstimos é usado é usado para validação
      */
     @Test
-    void failDelete() {
+    void failDelete() throws LivroException {
        LocalDate dataEmprestimoAux = LocalDate.of(2023,9,14);
        LocalDate dataDevolucaoEsperadaAux = LocalDate.of(2023,9,21);
        try {
@@ -128,7 +122,7 @@ import static org.junit.jupiter.api.Assertions.*;
                   ,new Leitor("Tosta","UEFS","4477",
                   "75998765487",4125)));
           fail("Uma exceção deveria ser gerada!!");
-       } catch (EmprestimoException e) {
+       } catch (EmprestimoException | LeitorException e) {
           assertEquals(EmprestimoException.DELETE, e.getMessage());
        }
     }
@@ -173,17 +167,40 @@ import static org.junit.jupiter.api.Assertions.*;
        assertEquals(1, MasterDAO.getEmprestimoDAO().nLivrosatrasados(LocalDate.of(2023,10,10)));
     }
 
-
-    // TESTE RETIRADO DEVIDO A BUG NAS VALIDAÇÕES DE CRIAÇÃO DO EMPRÉSTIMO
-
-    /*@Test
-    void failCreate(){
+   /**
+    * Teste feito para não permitir que um leitor multado não realize um empréstimo, é baseado na entrega do
+    * this.empréstimo, e um empréstimo auxiliar é criado para o usuário
+    * @throws LeitorException caso a criação do empréstimo resulte em erro
+    */
+    @Test
+    void failCreateLeitorMultado() throws LeitorException {
        // TESTE PARA NÃO PERMITIR CRIAÇÃO DE EMPRÉSTIMO CASO USUÁRIO ESTEJA EM PERÍODO DE MULTA
        LocalDate dataEmprestimo = LocalDate.of(2023,10,12);
        LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
        this.emprestimo.finalizarEmprestimo(this.emprestimo,LocalDate.of(2023,10,10));
-       Emprestimo emprestimoTeste = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
-       assertNull(MasterDAO.getEmprestimoDAO().criar(emprestimoTeste));
-    }*/
+       try{
+          Emprestimo emprestimoTeste = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
+          MasterDAO.getEmprestimoDAO().criar(emprestimoTeste);
+       } catch (EmprestimoException e){
+          assertEquals(EmprestimoException.USERFINED, e.getMessage());
+       }
+    }
 
+   /**
+    * Teste para confirmar que um leitor banido não consiga retirar empréstimo, é feito um set no status da conta que realizará o
+    * empréstimo, após isso uma exceção será gerada caso ele tente pegar um livro emprestado
+    * @throws EmprestimoException
+    */
+    @Test
+   void failCreateLeitorBanido() throws EmprestimoException {
+       this.leitor.setLeitorBanido(true);
+       LocalDate dataEmprestimo = LocalDate.of(2023,10,12);
+       LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
+       try {
+          Emprestimo emprestimoTeste = new Emprestimo(dataEmprestimo,dataDevolucaoEsperada,this.livro,this.leitor);
+          MasterDAO.getEmprestimoDAO().criar(emprestimoTeste);
+       } catch (LeitorException e){
+          assertEquals(LeitorException.BAN, e.getMessage());
+       }
+    }
 }

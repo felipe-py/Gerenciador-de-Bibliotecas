@@ -2,6 +2,8 @@ package com.uefs.gerenciadorparabibliotecas.model.emprestimo;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
+import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,7 +24,7 @@ public class EmprestimoTest {
     private Livro livro;
     private Leitor leitor;
     @BeforeEach
-    void setUp() {
+    void setUp() throws LeitorException, EmprestimoException, LivroException {
         // DATA DEFINIDA MANUALMENTE PARA FACILITAR CALCULO DO ATRASO
         LocalDate dataEmprestimo = LocalDate.of(2023,10,1);
         LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
@@ -72,7 +74,7 @@ public class EmprestimoTest {
      * livro que está no empréstimo foi reservado
      */
     @Test
-    void estenderEmprestimoFalhaRenovacoes02()  {
+    void estenderEmprestimoFalhaRenovacoes02() throws LeitorException {
         // TESTE CASO UM LEITOR TENTE RENOVAR UM EMPRÉSTIMO COM LIVRO RESERVADO
         Leitor leitorAux = new Leitor("Lucas","Feira VI","senha123","40028922",
                 44710);

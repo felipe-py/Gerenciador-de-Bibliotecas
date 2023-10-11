@@ -23,8 +23,8 @@ public class ReservaDAOListTest {
     private Leitor leitor;
 
     @BeforeEach
-    void setUp(){
-        this.livro = new Livro("Asassin's Creed","Não sei","HBO","4455223",
+    void setUp() throws LeitorException, LivroException {
+        this.livro = new Livro("Assasins Creed","Um cara","HBO","4455223",
                 "1999", CategoriaLivro.FANTASIA, LocalizacaoLivro.alaD);
         this.leitor = new Leitor("Carlos","Asa Branca","4455","75982560864",
                 7896);
@@ -48,8 +48,7 @@ public class ReservaDAOListTest {
      */
     @Test
     void criar() throws ReservaException{
-        assertEquals(this.leitor, MasterDAO.getReservaDAO().procurarPorID(this.reserva.getReservaID()).getLeitorReservador());
-        assertEquals(this.livro, MasterDAO.getReservaDAO().procurarPorID(this.reserva.getReservaID()).getLivroReservado());
+        assertEquals(this.reserva, MasterDAO.getReservaDAO().procurarPorID(0));
     }
 
     /**
@@ -61,7 +60,7 @@ public class ReservaDAOListTest {
     void deletar() throws ReservaException, LeitorException, LivroException {
         Leitor leitorAux = new Leitor("Pedrin","Novo Horizonte","5566","77985241369",
                 7825);
-        Livro livroAux = new Livro("Asassin's Creed","Não sei","HBO","4455223",
+        Livro livroAux = new Livro("Assasins Creed","Um cara","HBO","4455223",
                 "1999", CategoriaLivro.FANTASIA,LocalizacaoLivro.alaA);
 
         Reserva reservaAux = new Reserva(leitorAux, livroAux);
@@ -74,10 +73,10 @@ public class ReservaDAOListTest {
      * Teste para confirmar que após um resete, o size da lista de reseervas seja de 0
      */
     @Test
-    void resetar() {
+    void resetar() throws LeitorException, LivroException {
         Leitor leitorAux = new Leitor("Pedrin","Novo Horizonte","5566","77985241369",
                 7825);
-        Livro livroAux = new Livro("Asassin's Creed","Não sei","HBO","4455223",
+        Livro livroAux = new Livro("Assasins Creed","Um cara","HBO","4455223",
                 "1999", CategoriaLivro.FANTASIA,LocalizacaoLivro.alaA);
 
         Reserva reservaAux = new Reserva(leitorAux, livroAux);
@@ -100,7 +99,7 @@ public class ReservaDAOListTest {
      * adicionado a lista de reservas é usada para validação
      */
     @Test
-    void failDelete() {
+    void failDelete() throws LeitorException, LivroException {
         try {
             MasterDAO.getReservaDAO().deletar(new Reserva(new Leitor("Tosta","UEFS","4477",
                     "75998765487",4125), new Livro("Dados","Roberto",
@@ -129,7 +128,7 @@ public class ReservaDAOListTest {
      */
     @Test
     void numeroLivrosReservados() throws LivroException, LeitorException, ReservaException {
-        Livro livroTeste = new Livro("Asassin's Creed","Não sei","HBO","4455223",
+        Livro livroTeste = new Livro("Assasins Creed","Um cara","HBO","4455223",
                 "1999", CategoriaLivro.FANTASIA, LocalizacaoLivro.alaD);
         Leitor leitorTeste = new Leitor("Carlos","Asa Branca","4455","75982560864",
                 7896);
@@ -137,7 +136,6 @@ public class ReservaDAOListTest {
         MasterDAO.getLeitorDAO().criar(leitorTeste);
         MasterDAO.getLivroDAO().criar(livroTeste);
         MasterDAO.getReservaDAO().criar(reservaTeste);
-
         assertEquals(2, MasterDAO.getLivroDAO().nLivrosReservados());
     }
 }
