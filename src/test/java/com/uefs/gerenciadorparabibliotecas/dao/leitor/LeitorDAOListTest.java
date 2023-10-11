@@ -18,7 +18,7 @@ public class LeitorDAOListTest {
      */
     private Leitor leitor;
     @BeforeEach
-    void setUp(){
+    void setUp() throws LeitorException {
         this.leitor = new Leitor("Lucas","Feira VI","senha123","40028922",
                 0001);
         MasterDAO.getLeitorDAO().criar(this.leitor);
@@ -36,11 +36,7 @@ public class LeitorDAOListTest {
      */
     @Test
     void criar() throws LeitorException{
-        assertEquals("Lucas",MasterDAO.getLeitorDAO().procurarPorID(0001).getNome());
-        assertEquals("Feira VI",MasterDAO.getLeitorDAO().procurarPorID(0001).getEndereco());
-        assertEquals("senha123",MasterDAO.getLeitorDAO().procurarPorID(0001).getSenha());
-        assertEquals("40028922",MasterDAO.getLeitorDAO().procurarPorID(0001).getNumeroDeTelefone());
-        assertEquals(0001,MasterDAO.getLeitorDAO().procurarPorID(0001).getUserID());
+        assertEquals(this.leitor,MasterDAO.getLeitorDAO().procurarPorID(0001));
     }
 
     /**
@@ -113,11 +109,68 @@ public class LeitorDAOListTest {
      * é passada como parâmetro da validação
      */
     @Test
-    void failBusca() throws LeitorException{
+    void failBusca() {
         try {
             MasterDAO.getLeitorDAO().procurarPorID(9999);
         } catch (LeitorException e) {
             assertEquals(LeitorException.SEARCH + "ID inválido:"+ 9999, e.getMessage());
+        }
+    }
+
+    /**
+     * Método que verifica uma falha no momento de criar um objeto leitor, é averiguado se o seu nome, senha, telefone ou
+     * endereço são strings vazias. É tambem observado se o nome de usuário possui algum número ou se o telefone possui alguma letra.
+     * Uma última observação é se o ID escolhido já existe em algum cadastro no sistema
+     */
+    @Test
+    void failCreate(){
+        // NOME VAZIO
+        try{
+            MasterDAO.getLeitorDAO().criar(new Leitor("","Feira X","1122","75998765432",1111));
+        } catch (LeitorException e){
+            assertEquals(LeitorException.EMPITY_INFO, e.getMessage());
+        }
+
+        // NOME COM NÚMERO
+        try{
+            MasterDAO.getLeitorDAO().criar(new Leitor("T3ddy","Feira X","1122","75998765432",1112));
+        } catch (LeitorException e){
+            assertEquals(LeitorException.INVALID_INFO + "T3ddy" + " INVÁLIDO/EXISTENTE", e.getMessage());
+        }
+
+        // TELEFONE COM LETRA
+        try{
+            MasterDAO.getLeitorDAO().criar(new Leitor("Carlos","Feira X","1122","7599876543C",1113));
+        } catch (LeitorException e){
+            assertEquals(LeitorException.INVALID_INFO + "7599876543C" + " INVÁLIDO/EXISTENTE", e.getMessage());
+        }
+
+        // TELEFONE VAZIO
+        try{
+            MasterDAO.getLeitorDAO().criar(new Leitor("Carlos","Feira X","1122","",1114));
+        } catch (LeitorException e){
+            assertEquals(LeitorException.EMPITY_INFO, e.getMessage());
+        }
+
+        // ID EXISTENTE
+        try{
+            MasterDAO.getLeitorDAO().criar(new Leitor("Carlos","Feira X","1122","75998765432",1114));
+        } catch (LeitorException e){
+            assertEquals(LeitorException.INVALID_INFO + 1114 + " INVÁLIDO/EXISTENTE", e.getMessage());
+        }
+
+        // SENHA VAZIA
+        try{
+            MasterDAO.getLeitorDAO().criar(new Leitor("Carlos","Feira X","","75998765432",1116));
+        } catch (LeitorException e){
+            assertEquals(LeitorException.EMPITY_INFO, e.getMessage());
+        }
+
+        // ENDEREÇO VAZIO
+        try{
+            MasterDAO.getLeitorDAO().criar(new Leitor("Carlos","","","75998765432",1116));
+        } catch (LeitorException e){
+            assertEquals(LeitorException.EMPITY_INFO, e.getMessage());
         }
     }
 }
