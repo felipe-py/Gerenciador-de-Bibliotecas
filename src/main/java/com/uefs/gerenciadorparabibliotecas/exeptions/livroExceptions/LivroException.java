@@ -14,7 +14,9 @@ import com.uefs.gerenciadorparabibliotecas.model.Livro;
 public class LivroException extends Exception{
     public static final String DELETE = "Operação de EXCLUSÃO não realizada.";
     public static final String UPDATE = "Operação de ATUALIZAÇÃO não realizada.";
-    public static final String SEARCH = "Operação de BUSCA não realizada.";
+    public static final String SEARCH = "Operação de BUSCA não realizada. (INFORMAÇÃO ENVIADA INVÁLIDA/INEXISTENTE)";
+    public static final String INVALID_INFO = "ERRO: ";
+    public static final String EMPITY_INFO = "INFORMAÇÂO VAZIA";
     private Livro livro;
 
     public LivroException(String create, Livro livro) {
@@ -23,6 +25,10 @@ public class LivroException extends Exception{
     }
 
     public LivroException(String create) {
-        super(create + "Informação enviada inválida.");
+        super(create);
+    }
+
+    public LivroException(String create, String atributo) {
+        super(create + atributo + " INVÁLIDO/EXISTENTE");
     }
 }

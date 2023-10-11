@@ -15,6 +15,8 @@ public class FuncionarioException extends Exception{
     public static final String DELETE = "Operação de EXCLUSÃO não realizada.";
     public static final String UPDATE = "Operação de ATUALIZAÇÃO não realizada.";
     public static final String SEARCH = "Operação de BUSCA não realizada.";
+    public static final String INVALID_INFO = "ERRO: ";
+    public static final String EMPITY_INFO = "INFORMAÇÂO VAZIA";
     private Funcionario funcionario;
 
     public FuncionarioException(String create, Funcionario funcionario) {
@@ -25,5 +27,8 @@ public class FuncionarioException extends Exception{
     public FuncionarioException(String create, Integer id) {
         super(create + "ID inválido:" + id);
         this.funcionario = funcionario;
+    }
+    public FuncionarioException(String create, String atributo) {
+        super(create + atributo + " INVÁLIDO/EXISTENTE");
     }
 }
