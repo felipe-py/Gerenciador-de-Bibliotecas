@@ -3,7 +3,7 @@ package com.uefs.gerenciadorparabibliotecas;
 import com.uefs.gerenciadorparabibliotecas.dao.emprestimo.EmprestimoDAOListTest;
 import com.uefs.gerenciadorparabibliotecas.dao.funcionario.FuncionarioDAOListTest;
 import com.uefs.gerenciadorparabibliotecas.dao.leitor.LeitorDAOListTest;
-import com.uefs.gerenciadorparabibliotecas.dao.livro.LivroMasterDAOListTest;
+import com.uefs.gerenciadorparabibliotecas.dao.livro.LivroDAOListTest;
 import com.uefs.gerenciadorparabibliotecas.dao.reserva.ReservaDAOListTest;
 import com.uefs.gerenciadorparabibliotecas.model.emprestimo.EmprestimoTest;
 import org.junit.platform.suite.api.SelectClasses;
@@ -19,12 +19,10 @@ import org.junit.platform.suite.api.SuiteDisplayName;
         EmprestimoDAOListTest.class,
         FuncionarioDAOListTest.class,
         LeitorDAOListTest.class,
-        LivroMasterDAOListTest.class,
+        LivroDAOListTest.class,
         ReservaDAOListTest.class,
         EmprestimoTest.class
 })
 
 public class TestSuite {
 }
-
-
