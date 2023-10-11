@@ -1,5 +1,7 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
+
 import java.io.Serializable;
 
 /**
@@ -40,9 +42,10 @@ public class Livro implements Serializable {
      * @param novoAnoDePublicacao ano de publicação do livro
      * @param novaCategoria categoria do livro
      * @param novaLocalizacao localização do livro
+     * O método de validação é chamado para averiguar todos os atributos enviados
      */
     public Livro (String novoTitulo, String novoAutor, String novaEditora, String novoIsbn,
-                  String novoAnoDePublicacao, CategoriaLivro novaCategoria, LocalizacaoLivro novaLocalizacao) {
+                  String novoAnoDePublicacao, CategoriaLivro novaCategoria, LocalizacaoLivro novaLocalizacao) throws LivroException {
         this.titulo = novoTitulo;
         this.autor = novoAutor;
         this.editora = novaEditora;
@@ -50,6 +53,29 @@ public class Livro implements Serializable {
         this.anoDePublicacao = novoAnoDePublicacao;
         this.categoria = novaCategoria;
         this.localizacao = novaLocalizacao;
+        validarLivro();
+    }
+
+    /**
+     * Método para veriicar se todos os atributos do livro informados na criação são válidos, é averiguado se
+     * as informações estão vazias, se o nome do autor só possui letras e se o ano de publicação e o ISBN só
+     * possuem números
+     * @throws LivroException caso qualquer uma das validações não seja atendida
+     */
+    private void validarLivro() throws LivroException {
+        if(this.getTitulo().isEmpty() || this.getautor().isEmpty() || this.getEditora().isEmpty() || this.getAnoDePublicacao().isEmpty() ||
+        this.getISBN().isEmpty()){
+            throw new LivroException(LivroException.EMPITY_INFO);
+        }
+        if(!(this.getautor().matches("^[a-zA-Z\\s]*$"))){
+            throw new LivroException(LivroException.INVALID_INFO, this.getautor());
+        }
+        if(!(this.getAnoDePublicacao().matches("^[0-9\\s-]*$"))){
+            throw new LivroException(LivroException.INVALID_INFO, this.getAnoDePublicacao());
+        }
+        if(!(this.getISBN().matches("^[0-9\\s-]*$"))){
+            throw new LivroException(LivroException.INVALID_INFO, this.getISBN());
+        }
     }
 
     /**

@@ -39,9 +39,10 @@ public class Emprestimo implements Serializable {
      * @param novaDataDeDevolucao data em que se espera que o empréstimo seja finalizado
      * @param novoLivroEmprestado livro que serpa emprestado
      * @param novoMutuario leitor responsável pelo empréstimo
+     * O método de verificação é chamado para validar a criação do objeto empréstimo
      */
     public Emprestimo (LocalDate novaDataEmprestimo, LocalDate novaDataDeDevolucao,
-                       Livro novoLivroEmprestado, Leitor novoMutuario) {
+                       Livro novoLivroEmprestado, Leitor novoMutuario) throws EmprestimoException, LeitorException{
         this.dataEmprestimo = novaDataEmprestimo;
         this.dataDevolucaoEsperada = novaDataDeDevolucao;
         this.atraso = 0;
@@ -49,6 +50,20 @@ public class Emprestimo implements Serializable {
         this.mutuario = novoMutuario;
         this.numeroDeRenovacoes = 0;
         this.naoDevolvido = true;
+        verificacao();
+    }
+
+    /**
+     * Método que reúne as verificações que devem ser feitas na criação de um empréstimo
+     * @throws Exception caso livro esteja reservado, usuário esteja banido ou multado
+     */
+    public void verificacao () throws EmprestimoException, LeitorException {
+        if (this.getMutuario().getDiasDeMulta() > 0) {
+            throw new EmprestimoException(EmprestimoException.USERFINED, this.getMutuario());           //criar exception para usuario multado
+        }
+        if (this.mutuario.isLeitorBanido()) {    //criar atributo bool para verificar se esta banido
+            throw new LeitorException(LeitorException.BAN, this.getMutuario());         //criar exception para usuario banido
+        }
     }
 
     /**
@@ -257,27 +272,6 @@ public class Emprestimo implements Serializable {
         MasterDAO.getLeitorDAO().atualizar(emprestimo.getMutuario());
         MasterDAO.getLivroDAO().atualizar(emprestimo.getLivroEmprestado());
         MasterDAO.getEmprestimoDAO().atualizar(emprestimo);
-    }
-
-    /**
-     * Método que reúne as verificações que devem ser feitas na criação de um empréstimo
-     * @param emprestimo a ser criado
-     * @return booleano caso passe em todas as condições
-     * @throws Exception caso livro esteja reservado, usuário esteja banido ou multado
-     * Método ainda não utilizado no sistema, vericação está sendo feita de forma manual no método
-     * criar do DAO empréstimo
-     */
-    public boolean verificacao (Emprestimo emprestimo) throws Exception {
-        if (!emprestimo.getLivroEmprestado().estaReservado()) {
-            throw new EmprestimoException(EmprestimoException.RENEW, emprestimo);           //criar exception para livro não disponivel
-        }
-        if (emprestimo.getMutuario().getDiasDeMulta() > 0) {
-            throw new LeitorException(LeitorException.USERFINED, emprestimo.getMutuario());           //criar exception para usuario multado
-        }
-        if (emprestimo.mutuario.isLeitorBanido()) {    //criar atributo bool para verificar se esta banido
-            throw new LeitorException(LeitorException.BAN, emprestimo.getMutuario());         //criar exception para usuario banido
-        }
-        return true;
     }
 
     /**

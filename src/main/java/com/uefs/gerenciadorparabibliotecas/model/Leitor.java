@@ -1,5 +1,8 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
@@ -52,12 +55,14 @@ public class Leitor extends Pessoa {
      * @param novaSenha
      * @param novoNumeroDeTelefone
      * @param novoUserID
+     * O método de validação do leitor é chamado para averiguar as informações enviadas
      */
-    public Leitor(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, int novoUserID) {
+    public Leitor(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, int novoUserID) throws LeitorException{
         super(novoNome, novoEndereco, novaSenha, novoNumeroDeTelefone, novoUserID);
         this.diasDeMulta = 0;
         this.historicoEmprestimos = new ArrayList<>();
         this.dataDoFimDaMulta = LocalDate.now();
+        validacaoLeitor();
     }
 
     /**
@@ -115,5 +120,27 @@ public class Leitor extends Pessoa {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    /**
+     * Método que realiza as principais validações para criação do leitor, é observado se o nome possui somente
+     * letras em sua formação, se o número de telefone é composto apenas por números ou se o ID enviado já está
+     * cadastrado n sistema
+     * @throws LeitorException caso qualquer uma das validações não passe
+     */
+    private void validacaoLeitor() throws LeitorException {
+        if(!(this.getNome().matches("^[a-zA-Z\\s]*$"))) {
+            throw new LeitorException(LeitorException.INVALID_INFO,this.getNome());
+        }
+        if(!(this.getNumeroDeTelefone().matches("^[0-9\\s-]*$"))){
+            throw new LeitorException(LeitorException.INVALID_INFO, this.getNumeroDeTelefone());
+        }
+        if(MasterDAO.getLeitorDAO().getLeitores().contains(this.getUserID())){
+            throw new LeitorException(LeitorException.INVALID_INFO, this.getUserID());
+        }
+        if(this.getNome().isEmpty() || this.getNumeroDeTelefone().isEmpty() || this.getSenha().isEmpty() ||
+        this.getEndereco().isEmpty()){
+            throw new LeitorException(LeitorException.EMPITY_INFO, this);
+        }
     }
 }
