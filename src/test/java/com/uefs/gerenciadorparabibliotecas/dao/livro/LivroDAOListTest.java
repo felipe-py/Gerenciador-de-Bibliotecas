@@ -1,6 +1,8 @@
 package com.uefs.gerenciadorparabibliotecas.dao.livro;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
+import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
+import com.uefs.gerenciadorparabibliotecas.exeptions.leitorExeptions.LeitorException;
 import com.uefs.gerenciadorparabibliotecas.exeptions.livroExceptions.LivroException;
 import com.uefs.gerenciadorparabibliotecas.model.*;
 import org.junit.jupiter.api.AfterEach;
@@ -15,14 +17,14 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Testes do DAO Livro
  */
-public class LivroMasterDAOListTest {
+public class LivroDAOListTest {
     /**
      * objeto livro é criado para ser utilizado durante os testes
      */
     private Livro livro;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws LivroException {
         this.livro = new Livro("Diário de um banana","Zezinho","Cultura","4455883",
                 "2013",CategoriaLivro.OUTRA,LocalizacaoLivro.alaC);
         MasterDAO.getLivroDAO().criar(this.livro);
@@ -44,13 +46,7 @@ public class LivroMasterDAOListTest {
      */
     @Test
     void criar() throws LivroException{
-        assertEquals("Diário de um banana", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getTitulo());
-        assertEquals("Zezinho", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getautor());
-        assertEquals("Cultura", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getEditora());
-        assertEquals("4455883", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getISBN());
-        assertEquals("2013", MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getAnoDePublicacao());
-        assertEquals(CategoriaLivro.OUTRA, MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getCategoria());
-        assertEquals(LocalizacaoLivro.alaC, MasterDAO.getLivroDAO().procurarPorID(this.livro.getLivroID()).getLocalizacao());
+        assertEquals(this.livro, MasterDAO.getLivroDAO().procurarPorID(0));
     }
 
     /**
@@ -203,7 +199,7 @@ public class LivroMasterDAOListTest {
         try{
             MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorAutor("Zezinho"));
         } catch (LivroException e) {
-            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+            assertEquals(LivroException.SEARCH, e.getMessage());
         }
     }
 
@@ -216,7 +212,7 @@ public class LivroMasterDAOListTest {
         try{
             MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorISBN("00000000"));
         } catch (LivroException e) {
-            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+            assertEquals(LivroException.SEARCH , e.getMessage());
         }
     }
 
@@ -229,7 +225,7 @@ public class LivroMasterDAOListTest {
         try{
             MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorTitulo("00000000"));
         } catch (LivroException e) {
-            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+            assertEquals(LivroException.SEARCH, e.getMessage());
         }
     }
 
@@ -242,7 +238,7 @@ public class LivroMasterDAOListTest {
         try{
             MasterDAO.getLivroDAO().livrosEncontrados(MasterDAO.getLivroDAO().procurarPorCategoria(CategoriaLivro.POESIA));
         } catch (LivroException e) {
-            assertEquals(LivroException.SEARCH + "Informação enviada inválida.", e.getMessage());
+            assertEquals(LivroException.SEARCH, e.getMessage());
         }
     }
 
@@ -251,7 +247,7 @@ public class LivroMasterDAOListTest {
      * correta, empréstimos auxiliares são criados para preencher a lista de empréstimos
      */
     @Test
-    void livrosPopulares(){
+    void livrosPopulares() throws LeitorException, EmprestimoException, LivroException {
 
         LocalDate dataEmprestimo = LocalDate.now();
         LocalDate dataDevolucaoEsperada = dataEmprestimo.plusDays(7);
@@ -289,12 +285,74 @@ public class LivroMasterDAOListTest {
         MasterDAO.getEmprestimoDAO().criar(emprestimo04);
 
         System.out.println("\n= TESTE DOS LIVROS MAIS POPULARES =\n");
-        System.out.println("OBSERVAÇÕES\n VALORES DIFEREM ENTRE RODAR COM TESTE SUITE E REALIZAR ESTE TESTE UNITARIAMENTE");
 
         int soma = 1;
         for (Map.Entry<Integer, List<String>> entry : MasterDAO.getLivroDAO().livrosPopulares(MasterDAO.getLivroDAO().agruparLivrosPorISBN()).entrySet()) {
             System.out.println(soma + "º: Número de empréstimos => " + entry.getKey() + " || Livro: " + entry.getValue());
             soma++;
+        }
+    }
+
+    /**
+     * Teste para averiguar se as validações feitas no momento da criação de um livro estão corretas, é observado se o título, autor, editora, ano de publicação e
+     * ISBN são valores vazios, autor informado possui algum número, ano de publicação possui letra
+     */
+    @Test
+    void failCreate() {
+        // TÍTULO VAZIO
+        try{
+            MasterDAO.getLivroDAO().criar(new Livro("","Zezinho","Cultura","12345678","2013",
+                    CategoriaLivro.OUTRA, LocalizacaoLivro.alaC));
+        } catch (LivroException e){
+            assertEquals(LivroException.EMPITY_INFO, e.getMessage());
+        }
+
+        // AUTOR VAZIO
+        try{
+            MasterDAO.getLivroDAO().criar(new Livro("Harry","","Cultura","12345678","2013",
+                    CategoriaLivro.OUTRA, LocalizacaoLivro.alaC));
+        } catch (LivroException e){
+            assertEquals(LivroException.EMPITY_INFO, e.getMessage());
+        }
+
+        // EDITORA VAZIO
+        try{
+            MasterDAO.getLivroDAO().criar(new Livro("Harry","Zezo","","12345678","2013",
+                    CategoriaLivro.OUTRA, LocalizacaoLivro.alaC));
+        } catch (LivroException e){
+            assertEquals(LivroException.EMPITY_INFO, e.getMessage());
+        }
+
+        // ANO DE PUBLICAÇÃO VAZIO
+        try{
+            MasterDAO.getLivroDAO().criar(new Livro("Harry","Zezo","Cultura","12345678","",
+                    CategoriaLivro.OUTRA, LocalizacaoLivro.alaC));
+        } catch (LivroException e){
+            assertEquals(LivroException.EMPITY_INFO, e.getMessage());
+        }
+
+        // ISBN VAZIO
+        try{
+            MasterDAO.getLivroDAO().criar(new Livro("Harry","Zezo","Cultura","","1978",
+                    CategoriaLivro.OUTRA, LocalizacaoLivro.alaC));
+        } catch (LivroException e){
+            assertEquals(LivroException.EMPITY_INFO, e.getMessage());
+        }
+
+        // AUTOR COM NÚMERO NO NOME
+        try{
+            MasterDAO.getLivroDAO().criar(new Livro("Harry","Zez3","Cultura","147896325","1978",
+                    CategoriaLivro.OUTRA, LocalizacaoLivro.alaC));
+        } catch (LivroException e){
+            assertEquals(LivroException.INVALID_INFO + "Zez3" + " INVÁLIDO/EXISTENTE", e.getMessage());
+        }
+
+        // ANO DE PUBLICAÇÃO COM LETRA
+        try{
+            MasterDAO.getLivroDAO().criar(new Livro("Harry","Zezo","Cultura","147896325","197E",
+                    CategoriaLivro.OUTRA, LocalizacaoLivro.alaC));
+        } catch (LivroException e){
+            assertEquals(LivroException.INVALID_INFO + "197E" + " INVÁLIDO/EXISTENTE", e.getMessage());
         }
     }
 }
