@@ -1,4 +1,7 @@
 package com.uefs.gerenciadorparabibliotecas.model;
+
+import com.uefs.gerenciadorparabibliotecas.exeptions.funcionarioExceptions.FuncionarioException;
+
 /**
  * Classe Model do bibliotecário
  */
@@ -12,7 +15,7 @@ public class Bibliotecario extends Funcionario {
      * @param novoNumeroDeTelefone número de telefone do bibliotecário
      * @param novoUserID indentificação do bibliotecário
      */
-    public Bibliotecario(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, Integer novoUserID) {
+    public Bibliotecario(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, Integer novoUserID) throws FuncionarioException {
         super(novoNome, novoEndereco, novaSenha, novoNumeroDeTelefone, novoUserID);
     }
 

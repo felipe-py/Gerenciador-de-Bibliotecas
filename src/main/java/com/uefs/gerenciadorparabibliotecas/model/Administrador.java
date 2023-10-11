@@ -1,5 +1,7 @@
 package com.uefs.gerenciadorparabibliotecas.model;
 
+import com.uefs.gerenciadorparabibliotecas.exeptions.funcionarioExceptions.FuncionarioException;
+
 /**
  * Classe Model do administrador
  */
@@ -13,7 +15,7 @@ public class Administrador extends Funcionario{
      * @param novoNumeroDeTelefone número de telefone do administrador
      * @param novoUserID indentificação do administrador
      */
-    public Administrador(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, Integer novoUserID) {
+    public Administrador(String novoNome, String novoEndereco, String novaSenha, String novoNumeroDeTelefone, Integer novoUserID) throws FuncionarioException {
         super(novoNome, novoEndereco, novaSenha, novoNumeroDeTelefone, novoUserID);
     }
 
