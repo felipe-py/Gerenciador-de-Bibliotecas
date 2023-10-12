@@ -27,5 +27,4 @@ public class Administrador extends Funcionario{
     public String toString() {
         return super.toString();
     }
-
 }
