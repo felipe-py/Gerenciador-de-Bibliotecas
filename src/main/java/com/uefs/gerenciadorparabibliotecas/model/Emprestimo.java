@@ -248,11 +248,7 @@ public class Emprestimo implements Serializable {
         int multa = this.calcularMulta(emprestimo, data);
         if (multa > 0) {
             emprestimo.mutuario.setDiasDeMulta(multa);
-            if ((emprestimo.mutuario.getDataDoFimDaMulta()).isBefore(data)) {
-                emprestimo.mutuario.setDataDoFimDaMulta(data.plusDays(multa));
-            } else {
-                emprestimo.mutuario.setDataDoFimDaMulta((emprestimo.mutuario.getDataDoFimDaMulta()).plusDays(multa));
-            }
+            emprestimo.mutuario.setDataDoFimDaMulta(data.plusDays(multa));
         }
     }
 

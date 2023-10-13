@@ -97,7 +97,7 @@ public class EmprestimoTest {
         this.emprestimo.finalizarEmprestimo(this.emprestimo, LocalDate.of(2023,10,10));
         assertEquals(-2,this.emprestimo.getAtraso(),"Dias do atraso empréstimo (NEGATIVADO)");
         assertEquals(4,this.emprestimo.getMutuario().getDiasDeMulta(), "Dias de multa do leitor, o dobro do atraso");
-        assertEquals(LocalDate.of(2023,10,16),this.emprestimo.getMutuario().getDataDoFimDaMulta());
+        assertEquals(LocalDate.of(2023,10,14),this.leitor.getDataDoFimDaMulta());
     }
 
     /**
