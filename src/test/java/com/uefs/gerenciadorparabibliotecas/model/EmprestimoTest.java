@@ -1,4 +1,4 @@
-package com.uefs.gerenciadorparabibliotecas.model.emprestimo;
+package com.uefs.gerenciadorparabibliotecas.model;
 
 import com.uefs.gerenciadorparabibliotecas.dao.MasterDAO;
 import com.uefs.gerenciadorparabibliotecas.exeptions.emprestimoExceptions.EmprestimoException;
