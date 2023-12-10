@@ -9,16 +9,30 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CRUD e acesso aos dados dos funcionários em arquivo
+ */
+
 public class FuncionarioDAOFile implements FuncionarioDAO{
     private List<Funcionario> funcionarios;
     private final String filename;
 
+    /**
+     * Contrutor do DAO funcionário responsável por receber o caminho até o arquivo de armazenamento e
+     * realizar a leitura do arquivo para a lista em memória com o método ler.
+     * @param filename caminho até a pásta em que se encontra a base de dados do projeto
+     */
     public FuncionarioDAOFile(String filename) {
         this.filename = filename;
         this.funcionarios = new ArrayList<>();
         this.funcionarios = ler();
     }
 
+    /**
+     * Método utilizado para salvar a lista que contém todos os funcionários armazenados em memória
+     * para o arquivo em disco.
+     * @param funcionarios Lista que possui todos os funcionários em memória
+     */
     public void salvar(List<Funcionario> funcionarios) {
         try {
             ObjectOutputStream file = new ObjectOutputStream(new FileOutputStream(this.filename));
@@ -30,6 +44,11 @@ public class FuncionarioDAOFile implements FuncionarioDAO{
         }
     }
 
+    /**
+     * Método para leitura do arquivo relacionado aos funcionários, todos os funcionários encontrados no
+     * arquivo são colocados em uma lista do tipo Funcionario.
+     * @return lista contendo todos os funcionários encontrados no arquivo
+     */
     public List<Funcionario> ler() {
         List<Funcionario> funcionarios = new ArrayList<>();
         try {

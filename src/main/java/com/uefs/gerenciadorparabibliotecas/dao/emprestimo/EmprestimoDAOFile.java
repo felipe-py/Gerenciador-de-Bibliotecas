@@ -9,11 +9,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CRUD e acesso aos dados dos empréstimos em arquivo
+ */
+
 public class EmprestimoDAOFile implements EmprestimoDAO{
     private String filename;
     private List<Emprestimo> emprestimos;
     private int novoID;
 
+    /**
+     * Contrutor do DAO empréstimo responsável por receber o caminho até o arquivo de armazenamento,
+     * realizar a leitura do arquivo para a lista em memória com o método ler e definição de inicialização
+     * do ID para os empréstimos
+     * @param filename caminho até a pásta em que se encontra a base de dados do projeto
+     */
     public EmprestimoDAOFile(String filename) {
         this.filename = filename;
         this.emprestimos = new ArrayList<>();
@@ -26,6 +36,11 @@ public class EmprestimoDAOFile implements EmprestimoDAO{
         }
     }
 
+    /**
+     * Método utilizado para salvar a lista que contém todos os empréstimos armazenados em memória
+     * para o arquivo em disco.
+     * @param emprestimos Lista que possui todos os empréstimos em memória
+     */
     public void salvar(List<Emprestimo> emprestimos) {
         try {
             ObjectOutputStream file = new ObjectOutputStream(new FileOutputStream(this.filename));
@@ -37,6 +52,11 @@ public class EmprestimoDAOFile implements EmprestimoDAO{
         }
     }
 
+    /**
+     * Método para leitura do arquivo relacionado aos empréstimos, todos os empréstimos encontrados no
+     * arquivo são colocados em uma lista do tipo Emprestimo.
+     * @return lista contendo todos os empréstimos encontrados no arquivo
+     */
     public List<Emprestimo> ler() {
         List<Emprestimo> emprestimos = new ArrayList<>();
         try {

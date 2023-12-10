@@ -7,16 +7,30 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CRUD e acesso aos dados dos leitores em arquivo
+ */
+
 public class LeitorDAOFile implements LeitorDAO{
     private List<Leitor> leitores;
     private String filename;
 
+    /**
+     * Contrutor do DAO leitor responsável por receber o caminho até o arquivo de armazenamento e
+     * realizar a leitura do arquivo para a lista em memória com o método ler.
+     * @param filename caminho até a pásta em que se encontra a base de dados do projeto
+     */
     public LeitorDAOFile(String filename) {
         this.filename = filename;
         this.leitores = new ArrayList<>();
         this.leitores = ler();
     }
 
+    /**
+     * Método utilizado para salvar a lista que contém todos os leitores armazenados em memória
+     * para o arquivo em disco.
+     * @param leitores Lista que possui todos os leitores em memória
+     */
     public void salvar(List<Leitor> leitores) {
         try {
             ObjectOutputStream file = new ObjectOutputStream(new FileOutputStream(this.filename));
@@ -28,6 +42,11 @@ public class LeitorDAOFile implements LeitorDAO{
         }
     }
 
+    /**
+     * Método para leitura do arquivo relacionado aos leitores, todos os leitores encontrados no
+     * arquivo são colocados em uma lista do tipo Leitor.
+     * @return lista contendo todos os leitores encontrados no arquivo
+     */
     public List<Leitor> ler() {
         List<Leitor> leitores = new ArrayList<>();
         try {

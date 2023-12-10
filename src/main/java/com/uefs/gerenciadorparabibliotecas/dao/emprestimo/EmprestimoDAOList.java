@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * CRUD e acesso aos dados dos empréstimos
+ * CRUD e acesso aos dados dos empréstimos em lista
  */
 public class EmprestimoDAOList implements EmprestimoDAO{
 

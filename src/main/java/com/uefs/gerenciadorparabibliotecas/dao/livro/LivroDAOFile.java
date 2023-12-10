@@ -8,11 +8,21 @@ import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * CRUD e acesso aos dados dos livros em arquivo
+ */
+
 public class LivroDAOFile implements LivroDAO{
     private List<Livro> livros;
     private Integer novoID;
     private String filename;
 
+    /**
+     * Contrutor do DAO livro responsável por receber o caminho até o arquivo de armazenamento,
+     * realizar a leitura do arquivo para a lista em memória com o método ler e definição de inicialização
+     * do ID para os livros
+     * @param filename caminho até a pásta em que se encontra a base de dados do projeto
+     */
     public LivroDAOFile(String filename) {
         this.filename = filename;
         this.livros = new ArrayList<>();
@@ -25,6 +35,11 @@ public class LivroDAOFile implements LivroDAO{
         }
     }
 
+    /**
+     * Método utilizado para salvar a lista que contém todos os livros armazenados em memória
+     * para o arquivo em disco.
+     * @param livros Lista que possui todos os livros em memória
+     */
     public void salvar(List<Livro> livros) {
         try {
             ObjectOutputStream file = new ObjectOutputStream(new FileOutputStream(this.filename));
@@ -36,6 +51,11 @@ public class LivroDAOFile implements LivroDAO{
         }
     }
 
+    /**
+     * Método para leitura do arquivo relacionado aos livros, todos os livros encontrados no
+     * arquivo são colocados em uma lista do tipo Livro.
+     * @return lista contendo todos os livros encontrados no arquivo
+     */
     public List<Livro> ler() {
         List<Livro> livros = new ArrayList<>();
         try {

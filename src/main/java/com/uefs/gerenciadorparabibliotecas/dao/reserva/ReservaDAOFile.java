@@ -7,12 +7,21 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CRUD e acesso aos dados das reservas em arquivo
+ */
 public class ReservaDAOFile implements ReservaDAO{
     List<Reserva> reservas;
     private Integer novoID;
 
     private String filename;
 
+    /**
+     * Contrutor do DAO reserva responsável por receber o caminho até o arquivo de armazenamento,
+     * realizar a leitura do arquivo para a lista em memória com o método ler e definição de inicialização
+     * do ID para as reservas
+     * @param filename caminho até a pásta em que se encontra a base de dados do projeto
+     */
     public ReservaDAOFile(String filename) {
         this.filename = filename;
         this.reservas = new ArrayList<>();
@@ -25,6 +34,11 @@ public class ReservaDAOFile implements ReservaDAO{
         }
     }
 
+    /**
+     * Método utilizado para salvar a lista que contém todos as reservas armazenados em memória
+     * para o arquivo em disco.
+     * @param reservas Lista que possui todos as reservas em memória
+     */
     public void salvar(List<Reserva> reservas) {
         try {
             ObjectOutputStream file = new ObjectOutputStream(new FileOutputStream(this.filename));
@@ -35,7 +49,12 @@ public class ReservaDAOFile implements ReservaDAO{
         } catch (IOException e) {
         }
     }
-    
+
+    /**
+     * Método para leitura do arquivo relacionado as reservas, todos as reservas encontrados no
+     * arquivo são colocados em uma lista do tipo Reserva.
+     * @return lista contendo todos as reservas encontrados no arquivo
+     */
     public List<Reserva> ler() {
         List<Reserva> reservas = new ArrayList<>();
         try {
