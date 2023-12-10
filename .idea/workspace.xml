@@ -7,12 +7,119 @@
     <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/TestSuite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/CRUD.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/MasterDAO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOListTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOListTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/funcionario/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/funcionario/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOListTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/leitor/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/leitor/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroMasterDAOListTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/livro/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/livro/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOListTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/reserva/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/dao/reserva/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/FuncionarioException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/ReservaException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Administrador.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Bibliotecario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/CategoriaLivro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Emprestimo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Funcionario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Leitor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Livro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Pessoa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/Reserva.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/emprestimo/EmprestimoTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/emprestimo/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/emprestimo/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/model/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/gerenciadorparabibliotecas/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com/uefs/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/copy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-17.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-18.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-19.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/legal/COPYRIGHT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/legal/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/legal/jquery.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/legal/jqueryUI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-3.6.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/search-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/type-search-index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +169,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.HelloApplication.executor": "Run",
     "JUnit.TestSuite (1).executor": "Run",
+    "Maven.Gerenciadorparabibliotecas [-Dtest=NOT_RESOLVED...].executor": "Run",
+    "Maven.Gerenciadorparabibliotecas [clean...].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -104,7 +214,20 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite (1)">
+  <component name="RunManager" selected="Application.HelloApplication">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.HelloApplication" />
+      <module name="Gerenciadorparabibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in Gerenciadorparabibliotecas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciadorparabibliotecas" />
       <extension name="coverage">
@@ -155,21 +278,6 @@
     </configuration>
     <configuration name="TestSuite (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciadorparabibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.TestSuite" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciador_de_Bibliotecas" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.*" />
@@ -250,19 +358,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.HelloApplication" />
       <item itemvalue="JUnit.TestSuite (1)" />
       <item itemvalue="JUnit.EmprestimoTest.finalizarEmprestimoAtrasado" />
       <item itemvalue="JUnit.LivroDAOListTest.livrosPopulares" />
-      <item itemvalue="JUnit.TestSuite" />
       <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="JUnit.TestSuite (1)" />
         <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
         <item itemvalue="JUnit.LivroDAOListTest.livrosPopulares" />
         <item itemvalue="JUnit.EmprestimoTest.finalizarEmprestimoAtrasado" />
-        <item itemvalue="JUnit.TestSuite" />
       </list>
     </recent_temporary>
   </component>

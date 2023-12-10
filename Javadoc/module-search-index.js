@@ -1,1 +1,1 @@
-moduleSearchIndex = [];updateSearchResults();
+moduleSearchIndex = [{"l":"com.uefs.gerenciadorparabibliotecas"}];updateSearchResults();
