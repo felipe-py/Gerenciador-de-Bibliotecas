@@ -55,28 +55,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.HelloApplication.executor": "Run",
-    "JUnit.TestSuite (1).executor": "Run",
-    "JUnit.TestSuite.executor": "Run",
-    "Maven.Gerenciadorparabibliotecas [-Dtest=NOT_RESOLVED...].executor": "Run",
-    "Maven.Gerenciadorparabibliotecas [clean...].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador-de-Bibliotecas",
-    "onboarding.tips.debug.path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador de Bibliotecas/src/main/java/com/uefs/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.ChangelistConflict"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestSuite (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Gerenciadorparabibliotecas [-Dtest=NOT_RESOLVED...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Gerenciadorparabibliotecas [clean...].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Luisl/OneDrive/Área de Trabalho/Gerenciador-de-Bibliotecas&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador de Bibliotecas/src/main/java/com/uefs/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.ChangelistConflict&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador de Bibliotecas\docs" />
@@ -118,6 +118,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.app.Main" />
+      <module name="Gerenciadorparabibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in Gerenciadorparabibliotecas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Gerenciadorparabibliotecas" />
       <extension name="coverage">
@@ -130,38 +143,6 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmprestimoTest.finalizarEmprestimoAtrasado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciadorparabibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.model" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.model.EmprestimoTest" />
-      <option name="METHOD_NAME" value="finalizarEmprestimoAtrasado" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LivroDAOListTest.livrosPopulares" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciadorparabibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.livro.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro.LivroDAOListTest" />
-      <option name="METHOD_NAME" value="livrosPopulares" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -248,20 +229,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.HelloApplication" />
       <item itemvalue="JUnit.TestSuite" />
       <item itemvalue="JUnit.TestSuite (1)" />
-      <item itemvalue="JUnit.EmprestimoTest.finalizarEmprestimoAtrasado" />
-      <item itemvalue="JUnit.LivroDAOListTest.livrosPopulares" />
       <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestSuite (1)" />
         <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
-        <item itemvalue="JUnit.LivroDAOListTest.livrosPopulares" />
       </list>
     </recent_temporary>
   </component>

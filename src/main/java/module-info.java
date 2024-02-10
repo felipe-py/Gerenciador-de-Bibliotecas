@@ -1,6 +1,7 @@
 module com.uefs.gerenciadorparabibliotecas {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
 
     opens com.uefs.gerenciadorparabibliotecas.dao.livro;
     opens com.uefs.gerenciadorparabibliotecas.dao.leitor;
@@ -11,4 +12,6 @@ module com.uefs.gerenciadorparabibliotecas {
 
     opens com.uefs.gerenciadorparabibliotecas to javafx.fxml;
     exports com.uefs.gerenciadorparabibliotecas;
+    exports com.uefs.gerenciadorparabibliotecas.app;
+    opens com.uefs.gerenciadorparabibliotecas.app to javafx.fxml;
 }
