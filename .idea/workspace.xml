@@ -8,7 +8,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/icone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEmprestimos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLivros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerRegistroLivros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelEmprestimos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelLivros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/painelUsuarios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/RegistroLivros-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/icone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painel.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEmprestimos.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEstatisticas.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelLivros.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/HelloController.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/HelloController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +82,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
     "JUnit.TestSuite (1).executor": "Run",
     "JUnit.TestSuite.executor": "Run",
     "Maven.Gerenciadorparabibliotecas [-Dtest=NOT_RESOLVED...].executor": "Run",
@@ -69,7 +93,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador-de-Bibliotecas",
+    "last_opened_file_path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador-de-Bibliotecas/src/main/resources/com/uefs/gerenciadorparabibliotecas",
     "onboarding.tips.debug.path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador de Bibliotecas/src/main/java/com/uefs/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -79,12 +103,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src\main\resources\com\uefs\gerenciadorparabibliotecas" />
+      <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src\main\java\com\uefs\gerenciadorparabibliotecas" />
+      <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src" />
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador de Bibliotecas\docs" />
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador de Bibliotecas\src\main\java\com\uefs\gerenciadorparabibliotecas" />
-      <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador de Bibliotecas" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src\main\java\com\uefs\gerenciadorparabibliotecas" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.uefs.gerenciadorparabibliotecas.model" />
@@ -104,13 +133,26 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSuite">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.HelloApplication" />
       <module name="Gerenciadorparabibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.Main" />
+      <module name="Gerenciadorparabibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,7 +164,7 @@
       <module name="Gerenciadorparabibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,58 +176,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmprestimoTest.finalizarEmprestimoAtrasado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciadorparabibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.model" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.model.EmprestimoTest" />
-      <option name="METHOD_NAME" value="finalizarEmprestimoAtrasado" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LivroDAOListTest.livrosPopulares" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciadorparabibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.dao.livro.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.dao.livro.LivroDAOListTest" />
-      <option name="METHOD_NAME" value="livrosPopulares" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestSuite (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gerenciadorparabibliotecas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas" />
-      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.TestSuite" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="Gerenciadorparabibliotecas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.*" />
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -196,6 +191,21 @@
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Gerenciadorparabibliotecas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uefs.gerenciadorparabibliotecas.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uefs.gerenciadorparabibliotecas" />
+      <option name="MAIN_CLASS_NAME" value="com.uefs.gerenciadorparabibliotecas.TestSuite" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -248,20 +258,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.HelloApplication" />
       <item itemvalue="JUnit.TestSuite" />
       <item itemvalue="JUnit.TestSuite (1)" />
-      <item itemvalue="JUnit.EmprestimoTest.finalizarEmprestimoAtrasado" />
-      <item itemvalue="JUnit.LivroDAOListTest.livrosPopulares" />
       <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSuite" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="JUnit.TestSuite" />
         <item itemvalue="JUnit.TestSuite (1)" />
         <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
-        <item itemvalue="JUnit.LivroDAOListTest.livrosPopulares" />
       </list>
     </recent_temporary>
   </component>

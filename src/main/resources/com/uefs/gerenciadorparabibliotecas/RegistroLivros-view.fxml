@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uefs.gerenciadorparabibliotecas.ControllerRegistroLivros">
+   <children>
+      <Label layoutX="212.0" layoutY="25.0" text="Registro de livros">
+         <font>
+            <Font name="Franklin Gothic Medium" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="82.0" text="Título:" />
+      <TextField fx:id="textFieldtitulo" layoutX="38.0" layoutY="100.0" prefHeight="26.0" prefWidth="390.0" />
+      <Label layoutX="38.0" layoutY="132.0" text="Autor:" />
+      <TextField fx:id="textFieldautor" layoutX="38.0" layoutY="150.0" prefHeight="26.0" prefWidth="390.0" />
+      <Label layoutX="38.0" layoutY="182.0" text="Editora:" />
+      <TextField fx:id="textFieldeditora" layoutX="38.0" layoutY="200.0" prefHeight="26.0" prefWidth="390.0" />
+      <Label layoutX="38.0" layoutY="235.0" text="Ano de Publicação:" />
+      <TextField fx:id="textFieldanodepublicacao" layoutX="38.0" layoutY="253.0" prefHeight="26.0" prefWidth="390.0" />
+      <Label layoutX="38.0" layoutY="286.0" text="ISBN" />
+      <TextField fx:id="textFieldISBN" layoutX="38.0" layoutY="304.0" prefHeight="26.0" prefWidth="390.0" />
+      <Label layoutX="36.0" layoutY="337.0" prefHeight="18.0" prefWidth="54.0" text="Categoria" />
+      <TextField fx:id="textFieldcategoria" layoutX="36.0" layoutY="355.0" prefHeight="26.0" prefWidth="190.0" />
+      <Label layoutX="238.0" layoutY="337.0" prefHeight="18.0" prefWidth="66.0" text="Localização" />
+      <TextField fx:id="textFieldlocalizacao" layoutX="238.0" layoutY="355.0" prefHeight="26.0" prefWidth="189.0" />
+      <Button fx:id="buttonRegistrarLivro" layoutX="464.0" layoutY="200.0" mnemonicParsing="false" onAction="#onButtonRegistrarLivroClicked" prefHeight="26.0" prefWidth="101.0" text="Registrar" />
+      <Label fx:id="labelErrorRegistroLivros" layoutX="370.0" layoutY="63.0" prefHeight="18.0" prefWidth="215.0" text="  " textFill="RED" />
+   </children>
+</AnchorPane>
