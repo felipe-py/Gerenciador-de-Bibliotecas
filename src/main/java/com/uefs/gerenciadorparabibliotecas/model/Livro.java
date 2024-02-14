@@ -76,6 +76,9 @@ public class Livro implements Serializable {
         if(!(this.getISBN().matches("^[0-9\\s-]*$"))){
             throw new LivroException(LivroException.INVALID_INFO, this.getISBN());
         }
+        if(this.getLocalizacao() == null){
+            throw new LivroException((LivroException.INVALID_INFO), String.valueOf(this.getLocalizacao()));
+        }
     }
 
     /**
