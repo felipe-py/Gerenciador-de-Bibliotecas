@@ -8,30 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/icone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEmprestimos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLivros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerRegistroLivros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerUsuarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelEmprestimos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelLivros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelUsuarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/painelUsuarios.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/RegistroLivros-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/icone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painel.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEmprestimos.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEstatisticas.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelLivros.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEstatisticas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelLogin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/HelloController.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/HelloController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dados/livros.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dados/livros.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEmprestimos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLivros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLivros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/painelUsuarios.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelUsuarios.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEmprestimos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEmprestimos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEstatisticas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEstatisticas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelLivros.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelLivros.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,29 +70,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.TestSuite (1).executor": "Run",
-    "JUnit.TestSuite.executor": "Run",
-    "Maven.Gerenciadorparabibliotecas [-Dtest=NOT_RESOLVED...].executor": "Run",
-    "Maven.Gerenciadorparabibliotecas [clean...].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador-de-Bibliotecas/src/main/resources/com/uefs/gerenciadorparabibliotecas",
-    "onboarding.tips.debug.path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador de Bibliotecas/src/main/java/com/uefs/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.ChangelistConflict"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestSuite (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Gerenciadorparabibliotecas [-Dtest=NOT_RESOLVED...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Gerenciadorparabibliotecas [clean...].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Luisl/OneDrive/Área de Trabalho/Gerenciadorparabibliotecas&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador de Bibliotecas/src/main/java/com/uefs/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.ChangelistConflict&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src\main\resources\com\uefs\gerenciadorparabibliotecas" />
@@ -261,7 +253,6 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.HelloApplication" />
       <item itemvalue="JUnit.TestSuite" />
-      <item itemvalue="JUnit.TestSuite (1)" />
       <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
     </list>
     <recent_temporary>
@@ -269,7 +260,6 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="JUnit.TestSuite" />
-        <item itemvalue="JUnit.TestSuite (1)" />
         <item itemvalue="JUnit.All in Gerenciadorparabibliotecas" />
       </list>
     </recent_temporary>

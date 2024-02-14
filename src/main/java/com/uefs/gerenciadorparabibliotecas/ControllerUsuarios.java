@@ -15,6 +15,8 @@ import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -29,6 +31,8 @@ public class ControllerUsuarios implements Initializable {
     private Button btnregistrar;
     @FXML
     private Button btnbloquear;
+    @FXML
+    private Button btnlogar;
 
     public void initialize (URL url, ResourceBundle rb) {
         //
@@ -56,7 +60,19 @@ public class ControllerUsuarios implements Initializable {
         //bp.setCenter(view);
     }
 
-    private void loadPage (String panel) {
+    @FXML
+    public void clicarEmLogar (MouseEvent event) throws IOException {
+        System.out.println("Logar");
+
+        Stage stageRegistro = new Stage();
+        FXMLLoader pagina = new FXMLLoader();
+
+        Pane painelLogin = pagina.load(getClass().getResource("PainelLogin.fxml").openStream());
+        stageRegistro.setScene(new Scene (painelLogin, 200, 400));
+        stageRegistro.show();
+    }
+
+    /*private void loadPage (String panel) {
         Parent raiz = null;
 
         try {
@@ -69,6 +85,6 @@ public class ControllerUsuarios implements Initializable {
 
 
 
-    }
+    }*/
 
 }

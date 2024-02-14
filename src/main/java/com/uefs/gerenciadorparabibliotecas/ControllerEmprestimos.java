@@ -1,44 +1,101 @@
 package com.uefs.gerenciadorparabibliotecas;
 
-import java.io.File;
 import java.net.URL;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+
 public class ControllerEmprestimos implements Initializable {
+
+
+    ArrayList<String> palavras = new ArrayList<>(
+            //Substituir pelos empréstimos no registro!
+            Arrays.asList("empréstimo 1", "empréstimo 2","empréstimo 3")
+    );
+
+
+    //@FXML
+    //private ListView<String> listaview;
+
+    @FXML
+    void clicarEmBusca (MouseEvent event) {
+        lv.getItems().clear();
+        lv.getItems().addAll(buscar(tf.getText(),palavras));
+    }
+
+
+    private List<String> buscar (String palavrasChave, List<String> listaDePalavras) {
+
+        List<String> arrayDePalavras = Arrays.asList(palavrasChave.trim().split(" "));
+
+        return listaDePalavras.stream().filter(input -> {
+            return arrayDePalavras.stream().allMatch(word ->
+                    input.toLowerCase().contains(word.toLowerCase()));
+        }).collect(Collectors.toList());
+    }
 
     @FXML
     private BorderPane bp;
     @FXML
     private AnchorPane ap;
-
+    //@FXML
+    //private Button btnemprestar;
     @FXML
-    private Button btnemprestar;
+    private ListView lv;
+    @FXML
+    private TextField tf;
     @FXML
     private Button btndevolver;
     @FXML
     private Button btnrenovar;
+    @FXML
+    private Button btnbuscar;
+    @FXML
+    private Label labellivro;
+    @FXML
+    String livroEscolhido;
+
+
+
     public void initialize (URL url, ResourceBundle rb) {
-        //
+        lv.getItems().addAll(palavras);
+        lv.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+
+                livroEscolhido = (String) lv.getSelectionModel().getSelectedItem();
+                labellivro.setText(livroEscolhido);
+
+            }
+        })
+        ;
     }
 
-    @FXML
+    /*@FXML
     public void clicarEmEmprestar (MouseEvent event) throws IOException {
         System.out.println("Emprestar um Livro");
-    }
+    }*/
 
     @FXML
     public void clicarEmDevolver (MouseEvent event) throws IOException {

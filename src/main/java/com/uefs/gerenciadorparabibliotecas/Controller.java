@@ -33,6 +33,7 @@ public class Controller implements Initializable {
     private Button btnusuarios;
     @FXML
     private Button btnestatisticas;
+
     public void initialize (URL url, ResourceBundle rb) {
         //
     }
@@ -66,6 +67,7 @@ public class Controller implements Initializable {
         loadPage("painelUsuarios");
         File arq = new File("src/painelUsuarios.fxml");
         AnchorPane view = FXMLLoader.load(getClass().getResource(arq.toURI().toString()));
+
 
         bp.setCenter(view);
     }

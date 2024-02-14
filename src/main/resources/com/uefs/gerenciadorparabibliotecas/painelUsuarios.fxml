@@ -12,7 +12,8 @@
                 <Font name="Franklin Gothic Medium" size="25.0" />
             </font>
         </Text>
-        <Button fx:id="btnregistrar" layoutX="150.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#clicarEmRegistrar" prefHeight="25.0" prefWidth="100.0" text="Registrar" />
-        <Button fx:id="btnbloquear" layoutX="150.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#clicarEmBloquear" prefHeight="25.0" prefWidth="100.0" text="Bloquear" />
+        <Button fx:id="btnregistrar" layoutX="150.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#clicarEmRegistrar" prefHeight="25.0" prefWidth="100.0" text="Registrar" />
+        <Button fx:id="btnbloquear" layoutX="150.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#clicarEmBloquear" prefHeight="25.0" prefWidth="100.0" text="Bloquear" />
+      <Button fx:id="btnlogar" layoutX="150.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#clicarEmLogar" prefHeight="25.0" prefWidth="100.0" text="Logar" />
     </children>
 </AnchorPane>

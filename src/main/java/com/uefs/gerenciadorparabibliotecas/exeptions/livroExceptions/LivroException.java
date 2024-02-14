@@ -29,6 +29,6 @@ public class LivroException extends Exception{
     }
 
     public LivroException(String create, String atributo) {
-        super(create + atributo + " INVÁLIDO/EXISTENTE");
+        super(create + atributo + " TERMO INVÁLIDO");
     }
 }

@@ -13,7 +13,10 @@
             </font>
         </Text>
         <Button fx:id="btnregistrar" layoutX="150.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#clicarEmRegistrar" prefHeight="25.0" prefWidth="100.0" text="Registrar" />
-        <Button fx:id="btnreservar" layoutX="150.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#clicarEmReservar" prefHeight="25.0" prefWidth="100.0" text="Reservar" />
-        <Button fx:id="btnbuscar" layoutX="150.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#clicarEmBuscar" prefHeight="25.0" prefWidth="100.0" text="Buscar" />
+        <Button fx:id="btnreservar" layoutX="150.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#clicarEmReservar" prefHeight="25.0" prefWidth="100.0" text="Reservar" />
+        <Button fx:id="btnbuscar" layoutX="150.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#clicarEmBuscar" prefHeight="25.0" prefWidth="100.0" text="Buscar" />
+      <Button fx:id="btnremover" layoutX="150.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#clicarEmRemover" prefHeight="25.0" prefWidth="100.0" text="Remover" />
+      <Button fx:id="btneditar" layoutX="150.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#clicarEmEditar" prefHeight="25.0" prefWidth="100.0" text="Editar" />
+      <Button fx:id="btnemprestar" layoutX="150.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#clicarEmEmprestar" prefHeight="25.0" prefWidth="100.0" text="Emprestar" />
     </children>
 </AnchorPane>

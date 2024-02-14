@@ -33,6 +33,12 @@ public class ControllerLivros implements Initializable {
     private Button btnreservar;
     @FXML
     private Button btnbuscar;
+    @FXML
+    private Button btnremover;
+    @FXML
+    private Button btneditar;
+    @FXML
+    private Button btnemprestar;
 
     public void initialize (URL url, ResourceBundle rb) {
         //
@@ -51,6 +57,11 @@ public class ControllerLivros implements Initializable {
     }
 
     @FXML
+    public void clicarEmEmprestar (MouseEvent event) throws IOException {
+        System.out.println("Emprestar um Livro");
+    }
+
+    @FXML
     public void clicarEmReservar (MouseEvent event) throws IOException {
         System.out.println("Reservar um Livro");
     }
@@ -58,6 +69,16 @@ public class ControllerLivros implements Initializable {
     @FXML
     public void clicarEmBuscar (MouseEvent event) throws IOException {
         System.out.println("Buscar um Livro");
+    }
+
+    @FXML
+    public void clicarEmRemover (MouseEvent event) throws IOException {
+        System.out.println("Remover um livro");
+    }
+
+    @FXML
+    public void clicarEmEditar (MouseEvent event) throws IOException {
+        System.out.println("Editar um livro");
     }
 
     private void loadPage (String panel) {
