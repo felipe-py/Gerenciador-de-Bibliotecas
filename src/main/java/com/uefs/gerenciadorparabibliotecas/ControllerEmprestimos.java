@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -72,9 +71,9 @@ public class ControllerEmprestimos implements Initializable {
     @FXML
     private Button btnbuscar;
     @FXML
-    private Label labellivro;
+    private Label labelemprestimo;
     @FXML
-    String livroEscolhido;
+    String emprestimoEscolhido;
 
 
 
@@ -84,8 +83,8 @@ public class ControllerEmprestimos implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
 
-                livroEscolhido = (String) lv.getSelectionModel().getSelectedItem();
-                labellivro.setText(livroEscolhido);
+                emprestimoEscolhido = (String) lv.getSelectionModel().getSelectedItem();
+                labelemprestimo.setText(emprestimoEscolhido);
 
             }
         })

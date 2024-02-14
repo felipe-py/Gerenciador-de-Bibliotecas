@@ -12,6 +12,5 @@ module com.uefs.gerenciadorparabibliotecas {
 
     opens com.uefs.gerenciadorparabibliotecas to javafx.fxml;
     exports com.uefs.gerenciadorparabibliotecas;
-    exports com.uefs.gerenciadorparabibliotecas.app;
     opens com.uefs.gerenciadorparabibliotecas.app to javafx.fxml;
 }
