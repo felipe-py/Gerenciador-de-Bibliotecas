@@ -7,7 +7,156 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="" />
+    <list default="true" id="e79a3711-cd91-4c95-9189-544dac31d67c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEditarLivro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEditarUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLivrosEncontrados.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerPesquisaLivros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerPesquisaUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerRegistroUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerReserva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerResetSistema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PrincipalApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/viewResetSistema.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/EditarLivros-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/EditarUsuarios-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/Emprestimos-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/LivrosEncontrados-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/PesquisaLivros-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/PesquisaUsuarios-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/RegistroUsuarios-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/Reservas-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/ResetSistema-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewEditarLivros.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewEditarUsuarios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewEmprestimos.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewEstatisticas.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewLivrosEncontrados.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewLogin.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewPainelPrincipal.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewPesquisaLivros.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewPesquisaUsuarios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewRegistroLivros.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewRegistroUsuarios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/viewReservas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/CRUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/CRUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/MasterDAO.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/MasterDAO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAO.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/EmprestimoDAOList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/emprestimo/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAO.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/FuncionarioDAOList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/funcionario/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAO.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/LeitorDAOList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/leitor/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAO.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/LivroDAOList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/livro/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAO.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/ReservaDAOList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/dao/reserva/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/EmprestimoException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/emprestimoExceptions/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/FuncionarioException.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/FuncionarioException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/funcionarioExceptions/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorException.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/LeitorException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/leitorExeptions/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/LivroException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/livroExceptions/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/ReservaException.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/ReservaException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/exeptions/reservaExcetions/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Administrador.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Administrador.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Bibliotecario.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Bibliotecario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/CategoriaLivro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/CategoriaLivro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Emprestimo.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Emprestimo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Funcionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Funcionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Leitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Leitor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Livro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Livro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/LocalizacaoLivro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Pessoa.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Pessoa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Reserva.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/Reserva.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/model/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/com/uefs/gerenciadorparabibliotecas/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/module-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/com.uefs.gerenciadorparabibliotecas/module-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-18.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-19.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dados/emprestimos.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dados/emprestimos.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dados/funcionarios.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dados/funcionarios.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dados/leitores.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dados/leitores.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dados/livros.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dados/livros.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dados/reservas.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dados/reservas.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEmprestimos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEmprestimos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEstatisticas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerEstatisticas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLivros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLivros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerRegistroLivros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerRegistroLivros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/ControllerUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelEmprestimos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelLivros.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/PainelUsuarios.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/RegistroLivros-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/RegistroLivros-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/icone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEmprestimos.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelEstatisticas.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelLivros.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelLogin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/uefs/gerenciadorparabibliotecas/painelUsuarios.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,21 +217,21 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador-de-Bibliotecas/src/main/resources/com/uefs/gerenciadorparabibliotecas",
+    "last_opened_file_path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador-de-Bibliotecas/src/main/dados",
     "onboarding.tips.debug.path": "C:/Users/Luisl/OneDrive/Documentos/GitHub/Gerenciador de Bibliotecas/src/main/java/com/uefs/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.ChangelistConflict"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src\main\dados" />
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src\main\resources\com\uefs\gerenciadorparabibliotecas" />
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src\main\java\com\uefs\gerenciadorparabibliotecas" />
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador-de-Bibliotecas\src" />
       <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador de Bibliotecas\docs" />
-      <recent name="C:\Users\Luisl\OneDrive\Documentos\GitHub\Gerenciador de Bibliotecas\src\main\java\com\uefs\gerenciadorparabibliotecas" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />

@@ -8,6 +8,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,8 +21,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.stream.Collectors;
 
-public class ControllerLivros implements Initializable {
+/**
+ * Controlador responsável pela funcionalidade relacionada aos livros.
+ * Permite buscar, editar, reservar, emprestar e registrar livros.
+ */
 
+public class ControllerLivros implements Initializable {
 
     @FXML
     private ListView lv;
@@ -61,43 +66,71 @@ public class ControllerLivros implements Initializable {
             Arrays.asList("livro 1", "livro 2","livro 3")
     );
 
+
+    /**
+     * Executa a ação de busca quando o botão de busca é clicado.
+     * Limpa a ListView e adiciona os resultados da busca à ListView.
+     * Os resultados são obtidos chamando a função de busca e passando o texto digitado no TextField.
+     *
+     * @param event O evento de clique do mouse.
+     * @throws IOException se ocorrer um erro de entrada e saída.
+     */
+
     @FXML
-    void clicarEmBuscar(MouseEvent event) {
+    void clicarEmBuscar(MouseEvent event) throws IOException {
         lv.getItems().clear();
         lv.getItems().addAll(buscar(tf.getText(),palavras));
     }
 
-    private List<String> buscar (String palavrasChave, List<String> listaDePalavras) {
+    /**
+     * Realiza uma busca na lista de palavras com base nas palavras-chave fornecidas.
+     * Abre uma nova janela ao invés de realizar a busca diretamente.
+     *
+     * @param palavrasChave   As palavras-chave a serem usadas na busca.
+     * @param listaDePalavras A lista de palavras na qual realizar a busca.
+     * @return Uma lista de resultados da busca.
+     * @throws IOException se ocorrer um erro de entrada e saída ao abrir a nova janela.
+     */
 
+    private List<String> buscar (String palavrasChave, List<String> listaDePalavras) throws IOException {
+        /*
         List<String> arrayDePalavras = Arrays.asList(palavrasChave.trim().split(" "));
 
         return listaDePalavras.stream().filter(input -> {
             return arrayDePalavras.stream().allMatch(word ->
                     input.toLowerCase().contains(word.toLowerCase()));
         }).collect(Collectors.toList());
+         */
+        Stage stageRegistro = new Stage();
+        FXMLLoader pagina = new FXMLLoader();
+
+        Pane painelLogin = pagina.load(getClass().getResource("viewPesquisaLivros.fxml").openStream());
+        stageRegistro.setScene(new Scene (painelLogin, 600, 400));
+        stageRegistro.show();
+        return listaDePalavras;
     }
 
     public void clicarEmEditar (MouseEvent event) throws IOException {
-        System.out.println("Editar um livro");
+        //System.out.println("Editar um livro");
         //Abrir uma janela para editar um registro, e um botão para remover o dito livro.
     }
 
     public void clicarEmReservar (MouseEvent event) throws IOException {
-        System.out.println("Reservar um livro");
+        //System.out.println("Reservar um livro");
     }
 
     public void clicarEmEmprestar (MouseEvent event) throws IOException {
-        System.out.println("Emprestar um livro");
+        //System.out.println("Emprestar um livro");
     }
 
     @FXML
     public void clicarEmRegistrar (MouseEvent event) throws IOException {
-        System.out.println("Registrar um Livro");
+        //System.out.println("Registrar um Livro");
 
         Stage stageRegistro = new Stage();
         FXMLLoader pagina = new FXMLLoader();
 
-        Pane painelRegistro = pagina.load(getClass().getResource("RegistroLivros-view.fxml").openStream());
+        Pane painelRegistro = pagina.load(getClass().getResource("viewRegistroLivros.fxml").openStream());
         stageRegistro.setScene(new Scene (painelRegistro, 600, 400));
         stageRegistro.show();
     }
@@ -127,8 +160,8 @@ public class ControllerLivros implements Initializable {
         System.out.println("Editar um livro");
     }*/
 
+    /*
     private void loadPage (String panel) {
-        /*
         Parent raiz = null;
 
         try {
@@ -137,10 +170,10 @@ public class ControllerLivros implements Initializable {
             throw new RuntimeException(e);
         }
 
-        bp.setCenter(raiz);*/
-
-
+        bp.setCenter(raiz);
 
     }
+
+     */
 
 }

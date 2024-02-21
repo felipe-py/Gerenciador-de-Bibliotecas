@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView fx:id="TableViewLivrosEncontrados" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.uefs.gerenciadorparabibliotecas.ControllerLivrosEncontrados">
+  <columns>
+    <TableColumn fx:id="TableColumnTituloCol" prefWidth="75.0" text="Título" />
+    <TableColumn fx:id="TableColumnAutorCol" prefWidth="75.0" text="Autor" />
+      <TableColumn fx:id="TableColumnEditoraCol" prefWidth="75.0" text="Editora" />
+      <TableColumn fx:id="TableColumnISBNCol" prefWidth="75.0" text="ISBN" />
+      <TableColumn fx:id="TableColumnLocalizacaoCol" prefWidth="75.0" text="Localização" />
+      <TableColumn fx:id="TableColumnCategoriaCol" prefWidth="75.0" text="Categoria" />
+      <TableColumn fx:id="TableColumnAnodePublicacaoCol" prefWidth="148.0" text="Ano de publicação" />
+  </columns>
+</TableView>

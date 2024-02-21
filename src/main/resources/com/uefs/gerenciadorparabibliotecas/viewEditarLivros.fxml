@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uefs.gerenciadorparabibliotecas.ControllerEditarLivro">
+   <children>
+      <Label layoutX="242.0" layoutY="36.0" text="Editar Livro">
+         <font>
+            <Font name="Arial" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="91.0" prefHeight="27.0" prefWidth="74.0" text="ID do Livro">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldIDLivro" layoutX="126.0" layoutY="92.0" />
+      <Label layoutX="50.0" layoutY="210.0" text="Nova Informação">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="labelNovaInformacao" layoutX="167.0" layoutY="207.0" />
+      <Label layoutX="51.0" layoutY="248.0" text="Informação que será alterada">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="130.0" text="Livro">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelLivroEncontrado" layoutX="91.0" layoutY="131.0" prefHeight="18.0" prefWidth="493.0" />
+      <Button fx:id="buttonTitulo" layoutX="50.0" layoutY="281.0" mnemonicParsing="false" onAction="#onButtonTituloclicked" prefHeight="26.0" prefWidth="118.0" text="Título" />
+      <Button fx:id="buttonAutor" layoutX="199.0" layoutY="347.0" mnemonicParsing="false" onAction="#onButtonAutorclicked" prefHeight="26.0" prefWidth="118.0" text="Autor" />
+      <Button fx:id="buttonISBN" layoutX="199.0" layoutY="315.0" mnemonicParsing="false" onAction="#onButtonISBNclicked" prefHeight="26.0" prefWidth="118.0" text="ISBN" />
+      <Button fx:id="buttonEditora" layoutX="345.0" layoutY="315.0" mnemonicParsing="false" onAction="#onButtonEditoraclicked" prefHeight="26.0" prefWidth="118.0" text="Editora" />
+      <Button fx:id="buttonLocalizacao" layoutX="199.0" layoutY="281.0" mnemonicParsing="false" onAction="#onButtonLocalizacaoclicked" prefHeight="26.0" prefWidth="118.0" text="Localização" />
+      <Button fx:id="buttonCategoria" layoutX="50.0" layoutY="315.0" mnemonicParsing="false" onAction="#onButtonCategoriaclicked" prefHeight="26.0" prefWidth="118.0" text="Categoria" />
+      <Button fx:id="buttonAnoDePublicacao" layoutX="51.0" layoutY="347.0" mnemonicParsing="false" onAction="#onButtonAnoDePublicacaoclicked" prefHeight="26.0" prefWidth="117.0" text="Ano de Publicação" />
+      <Label fx:id="labelError" alignment="CENTER" contentDisplay="CENTER" layoutX="345.0" layoutY="350.0" prefHeight="20.0" prefWidth="215.0" textFill="RED" />
+      <Button fx:id="ButtonBuscarLivro" layoutX="291.0" layoutY="91.0" mnemonicParsing="false" onAction="#onButtonBuscarLivroclicked" prefHeight="26.0" prefWidth="107.0" text="Buscar" />
+      <Label fx:id="LabelLivroEncontrado2" layoutX="91.0" layoutY="164.0" prefHeight="18.0" prefWidth="493.0" />
+      <Button fx:id="buttonExcluir" layoutX="410.0" layoutY="92.0" mnemonicParsing="false" onAction="#onButtonExcluirclicked" prefHeight="25.0" prefWidth="107.0" text="Excluir" />
+   </children>
+</AnchorPane>

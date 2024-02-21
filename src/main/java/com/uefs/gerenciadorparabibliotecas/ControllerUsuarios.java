@@ -20,6 +20,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controlador responsável pela lógica de interação com a interface de usuário relacionada aos usuários.
+ * Este controlador gerencia as ações relacionadas ao registro, bloqueio e login de usuários no sistema.
+ */
 public class ControllerUsuarios implements Initializable {
 
     @FXML
@@ -38,19 +42,38 @@ public class ControllerUsuarios implements Initializable {
         //
     }
 
+    /**
+     * Método chamado quando o botão de registro de usuário é clicado.
+     * Ele abre uma nova janela para o registro de usuários.
+     * @param event O evento de clique do mouse.
+     * @throws IOException Se houver um erro ao carregar a interface gráfica de registro de usuários.
+     */
     @FXML
     public void clicarEmRegistrar (MouseEvent event) throws IOException {
-        System.out.println("Registrar um novo usuario");
+        //System.out.println("Registrar um novo usuario");
         //loadPage("painelLivros");
         //File arq = new File("src/painelLivros.fxml");
         //AnchorPane view = FXMLLoader.load(getClass().getResource(arq.toURI().toString()));
 
         //bp.setCenter(view);
+
+        Stage stageRegistro = new Stage();
+        FXMLLoader pagina = new FXMLLoader();
+
+        Pane painelLogin = pagina.load(getClass().getResource("viewRegistroUsuarios.fxml").openStream());
+        stageRegistro.setScene(new Scene (painelLogin, 600, 400));
+        stageRegistro.show();
     }
 
+    /**
+     * Método chamado quando o botão de bloqueio de usuário é clicado.
+     * Ele abre uma nova janela para a pesquisa e bloqueio de usuários.
+     * @param event O evento de clique do mouse.
+     * @throws IOException Se houver um erro ao carregar a interface gráfica de pesquisa e bloqueio de usuários.
+     */
     @FXML
     public void clicarEmBloquear (MouseEvent event) throws IOException {
-        System.out.println("Bloquear um usuario");
+        //System.out.println("Bloquear um usuario");
         //loadPage("painelEmprestimos");
         //loadPage("painelEmprestimos");
         //File arq = new File("src/painelEmprestimos.fxml");
@@ -58,11 +81,25 @@ public class ControllerUsuarios implements Initializable {
 
 
         //bp.setCenter(view);
+
+        Stage stageRegistro = new Stage();
+        FXMLLoader pagina = new FXMLLoader();
+
+        Pane painelLogin = pagina.load(getClass().getResource("viewPesquisaUsuarios.fxml").openStream());
+        stageRegistro.setScene(new Scene (painelLogin, 600, 400));
+        stageRegistro.show();
+
     }
 
+    /**
+     * Método chamado quando o botão de login é clicado.
+     * Ele abre uma nova janela para o login de usuários.
+     * @param event O evento de clique do mouse.
+     * @throws IOException Se houver um erro ao carregar a interface gráfica de login.
+     */
     @FXML
     public void clicarEmLogar (MouseEvent event) throws IOException {
-        System.out.println("Logar");
+        //System.out.println("Logar");
 
         Stage stageRegistro = new Stage();
         FXMLLoader pagina = new FXMLLoader();

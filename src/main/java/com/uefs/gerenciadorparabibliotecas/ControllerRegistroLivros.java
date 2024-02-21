@@ -43,6 +43,9 @@ public class ControllerRegistroLivros {
     @FXML
     private Label labelErrorRegistroLivros;
 
+    /**
+     * Limpa todos os campos da página de registro de livros.
+     */
     void limparPaginaRegistroLivros(){
         textFieldanodepublicacao.clear();
         textFieldautor.clear();
@@ -54,6 +57,11 @@ public class ControllerRegistroLivros {
         labelErrorRegistroLivros.setText("");
     }
 
+    /**
+     * Verifica e retorna a categoria de livro correspondente ao texto inserido no campo de categoria.
+     * Se nenhum correspondente for encontrado, retorna CategoriaLivro.OUTRA.
+     * @return A categoria de livro correspondente ao texto inserido.
+     */
     private CategoriaLivro categoriaRegistrada(){
         HashMap<String, CategoriaLivro> categorias = new HashMap<>();
         categorias.put("ficcao", CategoriaLivro.FICCAO);
@@ -77,6 +85,11 @@ public class ControllerRegistroLivros {
         return CategoriaLivro.OUTRA;
     }
 
+    /**
+     * Verifica e retorna a localização de livro correspondente ao texto inserido no campo de localização.
+     * Se nenhum correspondente for encontrado, retorna null.
+     * @return A localização de livro correspondente ao texto inserido.
+     */
     private LocalizacaoLivro localizacaoRegistrada(){
         HashMap<String, LocalizacaoLivro> localizacoes = new HashMap<>();
         localizacoes.put("a", LocalizacaoLivro.alaA);
@@ -97,10 +110,16 @@ public class ControllerRegistroLivros {
         return null;
     }
 
+    /**
+     * Método chamado quando o botão de registro de livro é clicado.
+     * Ele cria um novo livro com base nos dados fornecidos nos campos e o adiciona ao DAO de livros.
+     * @param event O evento de clique do botão.
+     * @throws LivroException Se houver um erro ao criar o livro.
+     */
     @FXML
     void onButtonRegistrarLivroClicked(ActionEvent event) throws LivroException {
         try{
-            Livro teste = MasterDAO.getLivroDAO().criar(new Livro(textFieldtitulo.getText(), textFieldautor.getText(), textFieldeditora.getText()
+            MasterDAO.getLivroDAO().criar(new Livro(textFieldtitulo.getText(), textFieldautor.getText(), textFieldeditora.getText()
                     , textFieldISBN.getText(), textFieldanodepublicacao.getText(), categoriaRegistrada(), localizacaoRegistrada()));
             limparPaginaRegistroLivros();
             for (Livro livro : MasterDAO.getLivroDAO().getLivros()){

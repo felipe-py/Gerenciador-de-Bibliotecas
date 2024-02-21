@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uefs.gerenciadorparabibliotecas.ControllerEmprestimos">
+   <children>
+      <Label layoutX="233.0" layoutY="23.0" text="Empréstimos">
+         <font>
+            <Font name="Arial" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="79.0" text="Abrir empréstimo">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IDLivroLabell" layoutX="167.0" layoutY="79.0" promptText="ID Livro" />
+      <TextField fx:id="IDUsuarioLabel" layoutX="342.0" layoutY="79.0" promptText="ID Usuário" />
+      <Button fx:id="buttonSalvar" layoutX="514.0" layoutY="79.0" mnemonicParsing="false" onAction="#onButtonSalvarClicked" prefHeight="26.0" prefWidth="60.0" text="Salvar" />
+      <TextField fx:id="IDemprestimoTextField" layoutX="33.0" layoutY="156.0" promptText="ID Empréstimo" />
+      <Button fx:id="buttonEncerrar" layoutX="212.0" layoutY="156.0" mnemonicParsing="false" onAction="#onButtonEncerrarClicked" text="Encerrar" />
+      <Button fx:id="buttonRenovar" layoutX="300.0" layoutY="156.0" mnemonicParsing="false" onAction="#onButtonRenovarClicked" text="Renovar" />
+      <Button fx:id="buttonVerificar" layoutX="387.0" layoutY="156.0" mnemonicParsing="false" onAction="#onButtonVerificarClicked" text="Verificar" />
+      <Label fx:id="labelError" alignment="CENTER" contentDisplay="CENTER" layoutX="286.0" layoutY="354.0" prefHeight="18.0" prefWidth="306.0" textFill="RED" />
+      <Label fx:id="labelEmprestimo1" layoutX="33.0" layoutY="209.0" prefHeight="26.0" prefWidth="550.0" />
+      <Label fx:id="labelEmprestimo2" layoutX="33.0" layoutY="255.0" prefHeight="26.0" prefWidth="550.0" />
+      <Label fx:id="labelEmprestimo3" layoutX="33.0" layoutY="300.0" prefHeight="26.0" prefWidth="550.0" />
+      <DatePicker fx:id="dataAbertura" layoutX="166.0" layoutY="116.0" prefHeight="26.0" prefWidth="150.0" promptText="Data Abertura" />
+      <DatePicker fx:id="dataEntrega" layoutX="341.0" layoutY="116.0" prefHeight="26.0" prefWidth="150.0" promptText="Data Entrega" />
+      <Button fx:id="buttonDeletar" layoutX="469.0" layoutY="156.0" mnemonicParsing="false" onAction="#onButtonDeletarClicked" prefHeight="26.0" prefWidth="60.0" text="Deletar" />
+   </children>
+</AnchorPane>

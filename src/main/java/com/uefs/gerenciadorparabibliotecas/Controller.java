@@ -2,9 +2,8 @@ package com.uefs.gerenciadorparabibliotecas;
 
 import java.io.File;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,9 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -24,66 +25,285 @@ public class Controller implements Initializable {
     private BorderPane bp;
     @FXML
     private AnchorPane ap;
+    @FXML
+    private Label mensagemBoasVindas;
 
     @FXML
-    private Button btnlivros;
+    private Button btnRegistrarLivro;
     @FXML
-    private Button btnemprestimos;
+    private Button btnEditarLivro;
+    //@FXML
+    //private Button btnRemoverLivro;
     @FXML
-    private Button btnusuarios;
+    private Button btnPesquisarLivro;
     @FXML
-    private Button btnestatisticas;
+    private Button btnEmprestar;
+    //@FXML
+    //private Button btnDevolver;
+    @FXML
+    private Button btnReservar;
+    //@FXML
+    //private Button btnRenovarEmprestimo;
+    @FXML
+    private Button btnCadastrarUsuario;
+    //@FXML
+    //private Button btnBloquearUsuario;
+    @FXML
+    private Button btnEditarUsuario;
+    @FXML
+    private Button btnEstatisticas;
+
 
     public void initialize (URL url, ResourceBundle rb) {
         //
+        //mandarMensagem("Lucas");
     }
 
-    @FXML
-    public void clicarEmLivros (MouseEvent event) throws IOException {
-        //System.out.println("livros");
-        loadPage("painelLivros");
-        File arq = new File("src/painelLivros.fxml");
-        AnchorPane view = FXMLLoader.load(getClass().getResource(arq.toURI().toString()));
+    public void mandarMensagem (String nome) {
+        //Mensagem para confirmar qual usuario esta logado no terminal
+        //System.out.println(nome + " esta logado");
+        mensagemBoasVindas.setText("Seja Bem-vindo(a) " + nome);
 
-        bp.setCenter(view);
     }
 
-    @FXML
-    public void clicarEmEmprestimos (MouseEvent event) throws IOException {
-        //System.out.println("emprestimos");
-        //loadPage("painelEmprestimos");
-        loadPage("painelEmprestimos");
-        File arq = new File("src/painelEmprestimos.fxml");
-        AnchorPane view = FXMLLoader.load(getClass().getResource(arq.toURI().toString()));
+    public void clicarEmRegistrarLivro (MouseEvent event) throws IOException {
 
+        Stage stageSecundario = new Stage();
 
-        bp.setCenter(view);
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewRegistroLivros.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Registrar um livro");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerRegistroLivros controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+        //controller.desativarBotaoUsuarios();
+
+        stageSecundario.show();
+
     }
 
-    @FXML
-    public void clicarEmUsuarios (MouseEvent event) throws IOException {
-        //System.out.println("usuarios");
-        //loadPage("painelUsuarios");
-        loadPage("painelUsuarios");
-        File arq = new File("src/painelUsuarios.fxml");
-        AnchorPane view = FXMLLoader.load(getClass().getResource(arq.toURI().toString()));
+    public void clicarEmPesquisarLivro (MouseEvent event) throws IOException {
 
+        Stage stageSecundario = new Stage();
 
-        bp.setCenter(view);
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewPesquisaLivros.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Pesquisar livros");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerPesquisaLivros controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+        //controller.desativarBotaoUsuarios();
+
+        stageSecundario.show();
+
     }
 
-    @FXML
+
+    public void clicarEmEditarLivro (MouseEvent event) throws IOException {
+
+        Stage stageSecundario = new Stage();
+
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewEditarLivros.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Editar um livro");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerEditarLivro controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+        //controller.desativarBotaoUsuarios();
+
+        stageSecundario.show();
+
+    }
+
+    public void clicarEmEmprestar (MouseEvent event) throws IOException {
+
+        Stage stageSecundario = new Stage();
+
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewEmprestimos.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Emprestimo");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerEmprestimos controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+        //controller.desativarBotaoUsuarios();
+
+        stageSecundario.show();
+
+    }
+
+
+    public void clicarReservar (MouseEvent event) throws IOException {
+
+        Stage stageSecundario = new Stage();
+
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewReservas.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Reservar um livro");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerReserva controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+
+        stageSecundario.show();
+
+    }
+    public void clicarCadastrarUsuario (MouseEvent event) throws IOException {
+
+        Stage stageSecundario = new Stage();
+
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewRegistroUsuarios.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Cadastro de Novo Usuario");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerRegistroUsuarios controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+        //controller.desativarBotaoUsuarios();
+
+        stageSecundario.show();
+    }
+    public void clicarEmEditarUsuario (MouseEvent event) throws IOException {
+
+        Stage stageSecundario = new Stage();
+
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewEditarUsuarios.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Editar usuário");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerEditarUsuarios controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+        //controller.desativarBotaoUsuarios();
+
+        stageSecundario.show();
+
+    }
+
     public void clicarEmEstatisticas (MouseEvent event) throws IOException {
-        //System.out.println("estatisticas");
-        //loadPage("painelEstatisticas");
-        loadPage("painelEstatisticas");
-        File arq = new File("src/painelEstatisticas.fxml");
-        AnchorPane view = FXMLLoader.load(getClass().getResource(arq.toURI().toString()));
 
-        bp.setCenter(view);
+        Stage stageSecundario = new Stage();
+
+        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("viewEstatisticas.fxml"));
+        Parent root1 = loader1.load();
+
+        Scene scene1 = new Scene(root1);
+        //scene.getStylesheets().add("/styles/Styles.css");
+
+        stageSecundario.setTitle("Estatísticas");
+        File file = new File("src/main/java/com/uefs/gerenciadorparabibliotecas/icone.png");
+        Image icone = new Image(file.toURI().toString());
+        stageSecundario.getIcons().add(icone);
+        stageSecundario.setScene(scene1);
+        ControllerEstatisticas controllerRegistro = loader1.getController();
+
+        stageSecundario.setScene(scene1);
+        //stage.setResizable(false);
+        //stage.setWidth(800);
+        //stage.setHeight(600);
+        //controller.desativarBotaoUsuarios();
+
+        stageSecundario.show();
+    }
+    public void desativarRegistrarLivro () {
+        btnRegistrarLivro.setDisable(true);
+    }
+    public void desativarEditarLivro () {
+        btnEditarLivro.setDisable(true);
+    }
+    public void desativarPesquisarLivro () {
+        btnPesquisarLivro.setDisable(true);
+    }
+    public void desativarEmprestar () {
+        btnEmprestar.setDisable(true);
+    }
+    public void desativarReservar () {
+        btnReservar.setDisable(true);
+    }
+    public void desativarCadastrarUsuario () {
+        btnCadastrarUsuario.setDisable(true);
+    }
+    public void desativarEditarUsuario () {
+        btnEditarUsuario.setDisable(true);
+    }
+    public void desativarEstatisticas () {
+        btnEstatisticas.setDisable(true);
     }
 
-    private void loadPage (String panel) {
+    public void loadPage (String panel) {
         Parent raiz = null;
 
         try {
@@ -91,11 +311,6 @@ public class Controller implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         bp.setCenter(raiz);
-
-
-
     }
-
 }
